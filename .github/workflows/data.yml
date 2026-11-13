@@ -1,0 +1,40 @@
+name: Data
+# Rebuilds channels.json and the guide daily and publishes them to the `dist` branch the TV reads.
+on:
+  schedule:
+    - cron: "30 19 * * *"   # 01:00 IST
+  workflow_dispatch:
+concurrency:
+  group: dist-publish
+  cancel-in-progress: false
+permissions:
+  contents: write
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-java@v4
+        with: { distribution: temurin, java-version: 17 }
+      - uses: actions/setup-node@v4
+        with: { node-version: 22 }
+      - uses: gradle/actions/setup-gradle@v4
+      - name: Build channels and guide
+        run: ./scripts/build-dist.sh
+      - name: Write config.json (keeps the app block of the last release)
+        run: |
+          git fetch --depth 1 origin dist:refs/remotes/origin/dist || true
+          git show origin/dist:config.json > build/previous-config.json 2>/dev/null || true
+          ./gradlew -q :tools:run --args="make-config --repo ${{ github.repository }} --previous build/previous-config.json --out dist/config.json"
+      - name: Commit new channel numbers
+        run: |
+          if [ -n "$(git status --porcelain data/numbers.json)" ]; then
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git add data/numbers.json
+            git commit -m "Assign channel numbers"
+            git push
+          fi
+      - name: Publish to dist
+        run: ./scripts/publish-dist.sh dist

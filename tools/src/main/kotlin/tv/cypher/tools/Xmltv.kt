@@ -83,10 +83,39 @@ object Xmltv {
         } finally {
             r.close()
         }
-        return acc.mapValues { (_, v) ->
-            v.sortedWith(compareBy({ it.start }, { it.stop })).distinct()
-                // Drop programmes that start at the same time as an earlier one.
-                .let { sorted -> sorted.filterIndexed { i, p -> i == 0 || sorted[i - 1].start != p.start } }
-        }.toSortedMap()
+        return acc.mapValues { (_, v) -> tidy(v) }.toSortedMap()
+    }
+
+    /** Sorted by start, without duplicates or programmes that start at the same time as an earlier one. */
+    private fun tidy(list: List<Programme>): List<Programme> {
+        val sorted = list.sortedWith(compareBy({ it.start }, { it.stop })).distinct()
+        return sorted.filterIndexed { i, p -> i == 0 || sorted[i - 1].start != p.start }
+    }
+
+    /** Combines guides parsed from several XMLTV files. */
+    fun merge(parts: List<Map<String, List<Programme>>>): Map<String, List<Programme>> {
+        val acc = HashMap<String, MutableList<Programme>>()
+        for (m in parts) for ((id, list) in m) acc.getOrPut(id) { ArrayList() }.addAll(list)
+        return acc.mapValues { (_, v) -> tidy(v) }.toSortedMap()
+    }
+
+    /** Channel ids (feed suffix removed) that have at least one programme in the file. */
+    fun ids(input: InputStream): Set<String> {
+        val factory = XMLInputFactory.newInstance().apply {
+            setProperty(XMLInputFactory.SUPPORT_DTD, false)
+            setProperty(XMLInputFactory.IS_SUPPORTING_EXTERNAL_ENTITIES, false)
+        }
+        val r = factory.createXMLStreamReader(input)
+        val out = HashSet<String>()
+        try {
+            while (r.hasNext()) {
+                if (r.next() == XMLStreamConstants.START_ELEMENT && r.localName == "programme") {
+                    r.getAttributeValue(null, "channel")?.substringBefore('@')?.let { out.add(it) }
+                }
+            }
+        } finally {
+            r.close()
+        }
+        return out
     }
 }

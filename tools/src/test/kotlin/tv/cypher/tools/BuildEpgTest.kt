@@ -23,4 +23,25 @@ class BuildEpgTest {
         assertEquals(1, n)
         assertEquals(setOf("A.in"), tv.cypher.core.Epg.readGzip(out.toByteArray().inputStream()).keys)
     }
+
+    @Test fun mergesSeveralXmltvFilesDroppingDuplicates() {
+        fun x(vararg p: Triple<String, String, String>) =
+            "<tv>" + p.joinToString("") { (ch, start, title) ->
+                """<programme start="$start +0530" stop="${start.dropLast(4)}5959 +0530" channel="$ch"><title>$title</title></programme>"""
+            } + "</tv>"
+        val a = x(Triple("A.in", "20261113060000", "One"), Triple("A.in", "20261113070000", "Two"))
+        val b = x(Triple("A.in", "20261113070000", "Two"), Triple("B.in", "20261113060000", "Bee"))
+        val chans = listOf("A.in", "B.in").map { Channel(it, 100, it, "Hindi", "News", null, listOf(Stream("u"))) }
+        val out = ByteArrayOutputStream()
+        val n = BuildEpg.convert(listOf(a.byteInputStream(), b.byteInputStream()), chans, 1794529800L, out)
+        assertEquals(2, n)
+        val guide = tv.cypher.core.Epg.readGzip(out.toByteArray().inputStream())
+        assertEquals(listOf("One", "Two"), guide.getValue("A.in").map { it.title })
+        assertEquals(listOf("Bee"), guide.getValue("B.in").map { it.title })
+    }
+
+    @Test fun idsWithProgrammesListsCoveredChannels() {
+        val xml = """<tv><programme start="20261113060000 +0530" stop="20261113070000 +0530" channel="A.in@SD"><title>X</title></programme></tv>"""
+        assertEquals(setOf("A.in"), BuildEpg.idsWithProgrammes(xml.byteInputStream()))
+    }
 }

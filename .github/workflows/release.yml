@@ -1,0 +1,61 @@
+name: Release
+# Tag vMAJOR.MINOR.PATCH: builds the signed APK, attaches it to a GitHub Release and offers it to installed apps.
+on:
+  push:
+    tags: ["v*"]
+concurrency:
+  group: dist-publish
+  cancel-in-progress: false
+permissions:
+  contents: write
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-java@v4
+        with: { distribution: temurin, java-version: 17 }
+      - uses: gradle/actions/setup-gradle@v4
+      - name: Version from tag
+        run: |
+          name="${GITHUB_REF_NAME#v}"
+          IFS=. read -r major minor patch <<EOT
+          $name
+          EOT
+          echo "VERSION_NAME=$name" >> "$GITHUB_ENV"
+          echo "VERSION_CODE=$((major * 10000 + minor * 100 + ${patch:-0}))" >> "$GITHUB_ENV"
+      - name: Bundle the latest channel list for first run
+        run: |
+          mkdir -p app/src/main/assets
+          curl -fsSL "https://raw.githubusercontent.com/${{ github.repository }}/dist/channels.json" \
+            -o app/src/main/assets/channels.json || echo "no published channels yet"
+      - name: Signing key
+        env:
+          KEYSTORE_B64: ${{ secrets.CYPHER_KEYSTORE_BASE64 }}
+        run: |
+          echo "$KEYSTORE_B64" | base64 -d > "$RUNNER_TEMP/release.jks"
+          echo "CYPHER_KEYSTORE=$RUNNER_TEMP/release.jks" >> "$GITHUB_ENV"
+      - name: Test and build
+        env:
+          CYPHER_KEYSTORE_PASSWORD: ${{ secrets.CYPHER_KEYSTORE_PASSWORD }}
+          CYPHER_KEY_ALIAS: ${{ secrets.CYPHER_KEY_ALIAS }}
+          CYPHER_KEY_PASSWORD: ${{ secrets.CYPHER_KEY_PASSWORD }}
+        run: ./gradlew :core:test :tools:test :app:assembleRelease -PversionCode=$VERSION_CODE -PversionName=$VERSION_NAME
+      - name: Name the APK
+        run: |
+          cp app/build/outputs/apk/release/app-release.apk "cypher-tv-$VERSION_NAME.apk"
+          echo "APK_SHA=$(sha256sum "cypher-tv-$VERSION_NAME.apk" | cut -d' ' -f1)" >> "$GITHUB_ENV"
+      - name: GitHub Release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh release create "$GITHUB_REF_NAME" "cypher-tv-$VERSION_NAME.apk" --title "Cypher TV $VERSION_NAME" --generate-notes
+      - name: Offer it to installed apps
+        run: |
+          git fetch --depth 1 origin dist:refs/remotes/origin/dist || true
+          mkdir -p dist
+          git show origin/dist:config.json > build-previous-config.json 2>/dev/null || true
+          ./gradlew -q :tools:run --args="make-config --repo ${{ github.repository }} --previous build-previous-config.json \
+            --version-code $VERSION_CODE --apk-url https://github.com/${{ github.repository }}/releases/download/$GITHUB_REF_NAME/cypher-tv-$VERSION_NAME.apk \
+            --sha256 $APK_SHA --notes 'Cypher TV $VERSION_NAME' --out dist/config.json"
+          ./scripts/publish-dist.sh dist

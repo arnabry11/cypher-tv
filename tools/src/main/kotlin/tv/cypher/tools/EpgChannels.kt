@@ -20,15 +20,20 @@ object EpgChannels {
                 if (id in ids && id !in chosen) chosen[id] = Entry(e.site, e.siteId, e.lang, id, e.name)
             }
         }
-        val out = buildString {
-            appendLine("""<?xml version="1.0" encoding="UTF-8"?>""")
-            appendLine("<channels>")
-            for (e in chosen.values) {
-                appendLine("""  <channel site="${esc(e.site)}" site_id="${esc(e.siteId)}" lang="${esc(e.lang)}" xmltv_id="${esc(e.xmltvId)}">${esc(e.name)}</channel>""")
-            }
-            appendLine("</channels>")
+        return Result(render(chosen.values), chosen.keys.toSet(), ids.filter { it !in chosen }.sorted())
+    }
+
+    /** [channelsXml] without the channels in [covered]: what is left to grab on a retry. */
+    fun without(channelsXml: String, covered: Set<String>): String =
+        render(parse(channelsXml).filter { it.xmltvId.substringBefore('@') !in covered })
+
+    private fun render(entries: Collection<Entry>) = buildString {
+        appendLine("""<?xml version="1.0" encoding="UTF-8"?>""")
+        appendLine("<channels>")
+        for (e in entries) {
+            appendLine("""  <channel site="${esc(e.site)}" site_id="${esc(e.siteId)}" lang="${esc(e.lang)}" xmltv_id="${esc(e.xmltvId)}">${esc(e.name)}</channel>""")
         }
-        return Result(out, chosen.keys.toSet(), ids.filter { it !in chosen }.sorted())
+        appendLine("</channels>")
     }
 
     private fun parse(xml: String): List<Entry> {

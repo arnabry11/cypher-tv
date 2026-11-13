@@ -12,7 +12,10 @@ private const val USAGE = """Usage: tools <command> [--key value ...]
   build-channels  --fta data/fta.json --streams in.m3u [--index countries-in.m3u] [--overrides data/overrides.json]
                   [--numbers data/numbers.json] --out dist [--report dist/match-report.md]
   epg-channels    --sites-dir epg/sites --sites tataplay.com,dishtv.in --channels dist/channels.json --out channels.xml
-  build-epg       --xmltv guide.xml --channels dist/channels.json --out dist/epg.json.gz [--now EPOCH]"""
+  make-config     --repo owner/name [--branch dist] [--previous config.json] --out dist/config.json
+                  [--version-code N --apk-url URL --sha256 HEX [--notes TEXT]]
+  epg-missing     --channels-xml channels.xml --xmltv a.xml[,b.xml] --out pending.xml
+  build-epg       --xmltv guide.xml[,guide2.xml] --channels dist/channels.json --out dist/epg.json.gz [--now EPOCH]"""
 
 fun main(args: Array<String>) {
     if (args.isEmpty()) { System.err.println(USAGE); exitProcess(2) }
@@ -55,11 +58,30 @@ fun main(args: Array<String>) {
             File(req("out")).also { it.absoluteFile.parentFile.mkdirs() }.writeText(r.xml)
             println("Grabber channels: ${r.covered.size} of ${channels.size} published channels have a guide source")
         }
+        "make-config" -> {
+            val previous = opts["previous"]?.let(::File)?.takeIf { it.exists() }?.readText()?.let(MakeConfig::parse)
+            val app = opts["version-code"]?.let {
+                AppInfo(it.toInt(), req("apk-url"), req("sha256").lowercase(), opts["notes"].orEmpty())
+            }
+            val cfg = MakeConfig.build(req("repo"), opts["branch"] ?: "dist", previous, app)
+            File(req("out")).also { it.absoluteFile.parentFile.mkdirs() }
+                .writeText(Formats.pretty.encodeToString(Config.serializer(), cfg) + "\n")
+            println("Wrote ${req("out")} (app versionCode ${cfg.app?.versionCode ?: "none"})")
+        }
+        "epg-missing" -> {
+            val covered = req("xmltv").split(',').map { File(it.trim()) }.filter { it.exists() }
+                .flatMap { f -> f.inputStream().use { BuildEpg.idsWithProgrammes(it).toList() } }.toSet()
+            val rest = EpgChannels.without(File(req("channels-xml")).readText(), covered)
+            File(req("out")).writeText(rest)
+            println("${rest.split("<channel ").size - 1} channels still without a guide")
+        }
         "build-epg" -> {
             val channels = Formats.compact.decodeFromString(ListSerializer(Channel.serializer()), File(req("channels")).readText())
             val now = opts["now"]?.toLong() ?: (System.currentTimeMillis() / 1000)
-            val n = File(req("xmltv")).inputStream().use { inp ->
-                File(req("out")).outputStream().use { BuildEpg.convert(inp, channels, now, it) }
+            val files = req("xmltv").split(',').map { File(it.trim()) }.filter { it.exists() }
+            val n = File(req("out")).outputStream().use { out ->
+                val streams = files.map { it.inputStream() }
+                try { BuildEpg.convert(streams, channels, now, out) } finally { streams.forEach { it.close() } }
             }
             println("Guide for $n of ${channels.size} channels")
         }
