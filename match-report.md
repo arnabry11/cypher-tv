@@ -1,0 +1,352 @@
+# Match report
+
+- FTA channels: 572
+- Exact: 251, alias: 8, override: 20, fuzzy: 55
+- Unmatched: 238, excluded: 0, duplicate claims: 8
+- Playlist channels: 776; published: 326 (261 with backup streams)
+
+Fix wrong or missing matches in `data/overrides.json` (`aliases`, `map`, `exclude`, `extra`).
+
+## Fuzzy matches: please review (55)
+
+- `ABN ANDHRA JYOTHI` -> `ABN Andhra Jyoti` (ABNAndhraJyoti.in), fuzzy score 0.93
+- `SHEMAROO MARATHIBANA` -> `Shemaroo Marathi Bana` (ShemarooMarathiBana.in), fuzzy score 1.00
+- `AMRITA` -> `Amrita TV` (AmritaTV.in), fuzzy score tv-suffix
+- `ARADANA` -> `Aradana TV` (AradanaTV.in), fuzzy score tv-suffix
+- `TV9 Telgu (earlier TV 9)` -> `TV9 Telugu` (TV9Telugu.in), fuzzy score 0.89
+- `Aadinath (Earlier AHSAS, Daati Ahsas)` -> `Aadinath TV` (AadinathTV.in), fuzzy score tv-suffix
+- `CAPTAIN TV` -> `Captain` (Captain.in), fuzzy score tv-suffix
+- `Shekinah (earlier known as CHANNEL 2)` -> `Shekinah TV` (ShekinahTV.in), fuzzy score tv-suffix
+- `CHARDIKALA TIME TV` -> `Chardikla Time TV` (ChardiklaTimeTV.in), fuzzy score 0.94
+- `News World` -> `NewsX World` (NewsXWorld.in), fuzzy score 0.90
+- `AASEERVATHAM` -> `Aaseervatham TV` (AaseervathamTV.in), fuzzy score tv-suffix
+- `Dangal (earlier ENTER 10 MOVIES)` -> `Dangal TV` (DangalTV.in), fuzzy score tv-suffix
+- `Dangal HD` -> `Dangal TV` (DangalTV.in), fuzzy score tv-suffix
+- `Enter 10 Bangla` -> `Enterr 10 Bangla` (Enterr10Bangla.in), fuzzy score 0.93
+- `PTC CHAK DE` -> `PTC Chakde` (PTCChakde.in), fuzzy score 1.00
+- `Peace of Mind` -> `Peace of Mind TV` (PeaceofMindTV.in), fuzzy score tv-suffix
+- `SIRIKANNADA` -> `Siri Kannada` (SiriKannada.in), fuzzy score 1.00
+- `SHUBHSANDESH` -> `Shubhsandesh TV` (ShubhsandeshTV.in), fuzzy score tv-suffix
+- `JKL 24X7 NEWS (Earlier known as Public First - Voice of Public, AWAKENING, PRERNA)` -> `JK 24x7 News` (JK24x7News.in), fuzzy score 0.91
+- `V TV News (earlier V TV)` -> `VTV News` (VTVNews.in), fuzzy score 1.00
+- `HARE KRSNA` -> `Hare Krsna TV` (HareKrsnaTV.in), fuzzy score tv-suffix
+- `Sakshi` -> `Sakshi TV` (SakshiTV.in), fuzzy score tv-suffix
+- `REPORTER` -> `Reporter TV` (ReporterTV.in), fuzzy score tv-suffix
+- `India News Madhya Pradesh Chattisgarh` -> `India News Madhya Pradesh/Chhattisgarh` (IndiaNewsMadhyaPradeshChhattisgarh.in), fuzzy score 0.97
+- `Janam` -> `Janam TV` (JanamTV.in), fuzzy score tv-suffix
+- `KAUMUDY` -> `Kaumudy TV` (KaumudyTV.in), fuzzy score tv-suffix
+- `KHUSBOO BANGLA` -> `Khushboo Bangla` (KhushbooBangla.in), fuzzy score 0.93
+- `Ashwa Vega News 24x7` -> `Ashwaveega News 24x7` (AshwaveegaNews24x7.in), fuzzy score 0.94
+- `MEDIA ONE TV` -> `Media One` (MediaOne.in), fuzzy score tv-suffix
+- `KAIRALI` -> `Kairali TV` (KairaliTV.in), fuzzy score tv-suffix
+- `SIRIKANNADA ALL TIME (Earlier ALL TIME, NAAPTOL BANGLA, MGK STAR)` -> `Siri Kannada All Time` (SiriKannadaAllTime.in), fuzzy score 1.00
+- `PEPPERS` -> `Peppers TV` (PeppersTV.in), fuzzy score tv-suffix
+- `NKTV BANGLA` -> `NK TV Bangla` (NKTVBangla.in), fuzzy score 1.00
+- `PUTHIYATHAILAIMURAI` -> `Puthiya Thalaimurai` (PuthiyaThalaimurai.in), fuzzy score 0.95
+- `IN- SYNC` -> `Insync` (Insync.in), fuzzy score 1.00
+- `POLIMER` -> `Polimer TV` (PolimerTV.in), fuzzy score tv-suffix
+- `NORTH EAST LIVE (Earlier NEWS LIVE ODISHA)` -> `Northeast Live` (NortheastLive.in), fuzzy score 1.00
+- `BHAKTHI` -> `Bhakthi TV` (BhakthiTV.in), fuzzy score tv-suffix
+- `VISSA` -> `Vissa TV` (VissaTV.in), fuzzy score tv-suffix
+- `KOLKATTA TV` -> `Kolkata TV` (KolkataTV.in), fuzzy score 0.90
+- `SAFARI` -> `Safari TV` (SafariTV.in), fuzzy score tv-suffix
+- `Jan-Tantra TV (earlier A1 TEHELKA HIMACHAL-HARYANA (Earlier known as HINDUSTAN LIVE /NEWS 17)` -> `Jantantra TV` (JantantraTV.in), fuzzy score 1.00
+- `Bhaktisagar (Initially granted as Bhaktisagar2 then Hastey Raho then changed to iConcerts)` -> `Bhakti Sagar` (BhaktiSagar.in), fuzzy score 1.00
+- `Sanskar (Initially known as Sanskar then changed to Sanskar HD)` -> `Sanskar TV` (SanskarTV.in), fuzzy score tv-suffix
+- `Satsang (earlier SANSKAR SATSANG (EARLIER: SATSANG)` -> `Satsang TV` (SatsangTV.in), fuzzy score tv-suffix
+- `SATHIYAM` -> `Sathiyam TV` (SathiyamTV.in), fuzzy score tv-suffix
+- `DARSHANA` -> `Darshana TV` (DarshanaTV.in), fuzzy score tv-suffix
+- `TV 27 News` -> `TV27 News` (TV27News.in), fuzzy score 1.00
+- `TV 5 Kannada` -> `TV5 Kannada` (TV5Kannada.in), fuzzy score 1.00
+- `Shubh Cinema` -> `Shubh Cinema TV` (ShubhCinemaTV.in), fuzzy score tv-suffix
+- `FOOD FOOD TV` -> `Food Food` (FoodFood.in), fuzzy score tv-suffix
+- `ISHWAR BHAKTI (EARLIER SUKH SAGAR)` -> `Ishwar Bhakti TV` (IshwarBhaktiTV.in), fuzzy score tv-suffix
+- `VASANTH` -> `Vasanth TV` (VasanthTV.in), fuzzy score tv-suffix
+- `Swatantra` -> `Swatantra TV` (SwatantraTV.in), fuzzy score tv-suffix
+- `PROTIDIN TIME (EARLIER KHABAR 365 DIN, REPORTER HARYANA)` -> `Pratidin Time` (PratidinTime.in), fuzzy score 0.92
+
+## Matched through an alias: please review (8)
+
+- `NL TV (Earlier NEWS 11, DY-365 UP)` -> `News 11` (News11.in) via `NEWS 11`
+- `Pasand (earlier Mango)` -> `Mango` (Mango.in) via `Mango`
+- `Goldmines Bhojpuri (earlier Goldmines)` -> `Goldmines` (Goldmines.in) via `Goldmines`
+- `Bharat 24 vision of New India (Earlier known as Lotus News, NATION NEWS)` -> `Nation News` (NationNews.in) via `NATION NEWS`
+- `PITAARA MOVIES (Earlier PITAARA)` -> `Pitaara` (Pitaara.in) via `PITAARA`
+- `BALLE BALLE Non Stop Music (earlier Andy Haryana)` -> `Andy Haryana` (AndyHaryana.in) via `Andy Haryana`
+- `Sri Venkateswara Bhakti Channel-3 (SVBC-3, Kannada)` -> `SVBC 3` (SVBC3.in) via `SVBC-3`
+- `Sri Venkateswara Bhakti Channel-4 (SVBC-4, Hindi)` -> `SVBC 4` (SVBC4.in) via `SVBC-4`
+
+## Matched through overrides (20)
+
+- `PRAG (earlier NEWS BANGLA)` -> `Prag News` (PragNews.in)
+- `REPUBLIC TV BHARAT` -> `Republic Bharat` (RepublicBharat.in)
+- `Malai Murasu Seithikal` -> `Malai Murasu TV` (MalaiMurasuTV.in)
+- `NKR TV` -> `NKR TV Kannada` (NKRTVKannada.in)
+- `CVR News English` -> `CVR English` (CVREnglish.in)
+- `CVR Spiritual Om` -> `CVR OM Spiritual` (CVROMSpiritual.in)
+- `WE` -> `Kairali We` (KairaliWe.in)
+- `TUNES 6 MUSIC` -> `Tunes 6` (Tunes6.in)
+- `HNN` -> `HNN 24x7` (HNN24x7.in)
+- `NTV` -> `NTV Telugu` (NTVTelugu.in)
+- `SANATAN TV` -> `Shree Sanatan TV` (ShreeSanatanTV.in)
+- `JINVANI` -> `Jinvani Channel` (JinvaniChannel.in)
+- `SHALOM TELEVISION` -> `Shalom` (Shalom.in)
+- `SHRADDHA MH ONE` -> `MH One Shraddha` (MHOneShraddha.in)
+- `WPN World Punjabi (EARLIER Sadhna National,R.K.NEWS, KATYAYANI)` -> `World Punjabi TV` (WorldPunjabiTV.in)
+- `Sudarshan` -> `Sudarshan News` (SudarshanNews.in)
+- `Harvest TV 24x7 Christian Channel (earlier Shri Navgrah Channel, Harvest TV 24x7 Christian Channel (earlier Gnext)` -> `Harvest TV` (HarvestTV.in)
+- `Argus` -> `Argus News` (ArgusNews.in)
+- `V6` -> `V6 News` (V6News.in)
+- `NEWS 22SCOPE` -> `22Scope News` (22ScopeNews.in)
+
+## Duplicate claims (8)
+
+- `ABP NEWS HD (Earlier known as ABP Kannada)` duplicate of `ABP NEWS (earlier STAR NEWS)`: both map to ABPNews.in
+- `Dangal HD` duplicate of `Dangal (earlier ENTER 10 MOVIES)`: both map to DangalTV.in
+- `Studio One Plus` duplicate of `Studio One + (earlier ASHIRWAD Gold)`: both map to StudioOnePlus.in
+- `Goldmines Bhojpuri (earlier Goldmines)` duplicate of `Goldmines (Earlier Goldmines Movies)`: both map to Goldmines.in
+- `MAZHAVIL MANORAMA HD (Earlier MANORAMA NEWS SOUTH)` duplicate of `MAZHAVIL MANORAMA (MANORAMA VISION)`: both map to MazhavilManorama.in
+- `NDTV INDIA HD` duplicate of `NDTV INDIA`: both map to NDTVIndia.in
+- `BALLE BALLE Non Stop Music (earlier Andy Haryana)` duplicate of `Andy Haryana (Earlier KHUSHI)`: both map to AndyHaryana.in
+- `SAI TV (Dharma)` duplicate of `Sai TV`: both map to SaiTV.in
+
+## Unmatched (238)
+
+- `9x` [News, Hindi]; maybe: `9X Jalwa` (9XJalwa.in), `9X Jhakaas` (9XJhakaas.in), `9X Tashan` (9XTashan.in)
+- `TV 24` [News, English/Punjabi/Hindi]
+- `Mantavya 24X7 (earlier BHASKAR NEWS, AP 9)` [News, English/Marathi/Hindi]
+- `SATYA` [Non-News, English/Marathi/Hindi]
+- `ABP Desam (earlier ABP Andhra)` [News, Hindi/Telugu]
+- `ABP Nadu` [News, Hindi/Tamil]
+- `ANB NEWS NATIONAL` [News, English/Hindi/Tamil/Assamese/Dogri/Konkani/Manipuri/Odia/Santhali/Telugu/Bengali/Kannada/Maithili/Punjabi/Sindhi/Urdu/Bodo/Gujarati/Kashmiri/Malayalam/Nepali/Sanskrit/Marathi/Bojpuri/Garhwali]; maybe: `ANB News` (ANBNews.in)
+- `ATE TV` [News, English/Malayalam]
+- `AL JAZEERA ENGLISH` [News, English]
+- `R. Kannada` [News, ]
+- `R.Bangla` [News, Bengali]
+- `Ashirwad` [Non-News, English/Marathi/Hindi]
+- `SUPER TV (earlier CEE VANDANA/Adhyatm)` [Non-News, English/Hindi]
+- `Anaadi TV` [News, ]
+- `News9` [News, ]
+- `Popcorn Movies` [Non-News, English/Urdu/Hindi]
+- `B4U Hitz` [Non-News, English/Hindi]
+- `Dhamaka Movies B4U` [Non-News, Hindi/English]; maybe: `B4U Movies` (B4UMovies.in)
+- `CHUMBAK TV` [Non-News, English/Marathi/Hindi]
+- `Times Now City (earlier ROMEDY NOW HD)` [Non-News, English]; maybe: `Times Now` (TimesNow.in), `Times Now Navbharat` (TimesNowNavbharat.in)
+- `JAI HIND` [News, Hindi/Marathi/Malayalam]
+- `GUARANTEE NEWS 24x7` [News, English/Hindi]; maybe: `Guarantee News` (GuaranteeNews.in), `Ashwaveega News 24x7` (AshwaveegaNews24x7.in), `News India 24x7` (NewsIndia24x7.in)
+- `1 YES NEWS (EARLIER BIZZ NEWS)` [News, English/Tamil/Hindi]; maybe: `Mh 1 News` (Mh1News.in), `News 1 India` (News1India.in)
+- `JEHOVAH (Earlier known as 99 Entertainment Channel)` [Non-News, English/Hindi]
+- `BLOOMBERG TELEVISION ASIA-PACIFIC FEED` [News, English]
+- `GANGAUR TELEVISION` [Non-News, Hindi]
+- `DHOOM MUSIC BANGLA` [Non-News, ]; maybe: `Dhoom Music` (DhoomMusic.in)
+- `NEWS TIME ASSAM` [News, ]
+- `NEWS TIME BANGLA` [News, ]; maybe: `News Live Bangla` (NewsLiveBangla.in)
+- `DW TV` [News, English/German]
+- `CALCUTTA NEWS (Earlier UTTAR BANGLA AKD & C BANGLA)` [News, Bengali]; maybe: `AKD Calcutta News` (AKDCalcuttaNews.in)
+- `CAPTAIN NEWS` [News, English/Tamil]; maybe: `Captain` (Captain.in)
+- `RAAPCHIK` [Non-News, English/Hindi/Bojpuri]
+- `ABC AUSTRALIA` [Non-News, English]
+- `EURO NEWS(Earlier TV5 Monde, Euro News)` [News, Arabic/English/German/Italian/Portuguese/Russian/Spanish/French]
+- `FRANCE 24` [News, French]
+- `NHK World Japan` [News, English]
+- `NHK World Premium` [Non-News, English]
+- `TV 5 MONDE` [News, French]
+- `IMAYAM TV` [News, Tamil/English]
+- `Kannada Naaptol (earlier known as NT4)` [Non-News, English/Hindi]
+- `Malayalam Naaptol (earlier known as NT3)` [Non-News, English/Hindi]
+- `Tamil Naaptol (earlier known as NT2)` [Non-News, English/Hindi]
+- `Telugu Naaptol (Earlier Known as NT9)` [Non-News, English/Hindi]
+- `WOW Cinema One (Earlier NT6)` [Non-News, English/Hindi]
+- `WOW CINEMA (Earlier TV PUNJABI)` [Non-News, ]
+- `SWARA SAGAR (Earlier LAKSHYYA ENTERTAINMENT, SUPER STAR-JOSH)` [Non-News, Kannada/Malayalam/Telugu/Tamil]
+- `INDIA 27` [News, ]
+- `NATION 27` [News, ]
+- `BS TV` [News, Hindi/English]
+- `Utkrisht News Samachar Plus Rajasthan` [News, English/Hindi]
+- `Utkrisht News Samachar Plus Uttar Pradesh/Uttrakhand` [News, English/Hindi]; maybe: `India News Uttar Pradesh` (IndiaNewsUttarPradesh.in)
+- `CUISINE TV` [News, English]
+- `WIN TV - U.P.` [News, Hindi]; maybe: `Win TV` (WinTV.in)
+- `DISHA NEWS CHANNEL (Earlier known as DHALIWAL TV)` [News, English/Punjabi/Hindi]
+- `DIVYA` [Non-News, English/Punjabi/Urdu/Hindi]; maybe: `Channel Divya` (ChannelDivya.in), `Divya Bhajan` (DivyaBhajan.in)
+- `Dangal Oriya` [Non-News, Odia]
+- `Sant Wani (earlier Zingaat, E AWAZ INDIA, AINDI, TULSI TV, VEDAS OM TV)))` [Non-News, Hindi/English]
+- `1st India News (Earlier Sanskriti TV, Zonet Zawlbuk ,EN TV)` [News, English/Hindi/Punjabi]; maybe: `India News` (IndiaNews.in), `News 1st` (News1st.in), `India News Gujarati` (IndiaNewsGujarati.in)
+- `BRIO TV` [Non-News, Tamil]
+- `ON TV` [Non-News, English/Hindi/Tamil/Assamese/Dogri/Konkani/Manipuri/Odia/Santhali/Telugu/Bengali/Kannada/Maithili/Punjabi/Sindhi/Urdu/Bodo/Gujarati/Kashmiri/Malayalam/Nepali/Sanskrit/Marathi/Bojpuri/Garhwali]
+- `MANGALAM (Earlier REPORTER 24X7, GN News, GNN NEWS)` [News, English/Hindi]
+- `WHISTLE TV (Earlier known as GN Bhakti GNN BHAKTI /GNN ENTERTAINMENT)` [Non-News, English/Hindi]
+- `Nambikkai Television` [Non-News, Tamil]
+- `SHUBHA VAARTHA` [Non-News, Telugu]
+- `DA News Plus(earlier Y TV, Voice 24 Tripura/Horizon News 24x7)` [News, English]; maybe: `9 Plus News` (9PlusNews.in), `Sadhna Plus News` (SadhnaPlusNews.in)
+- `HM TV` [News, English/Hindi/Telugu]
+- `IBC TAMIL` [Non-News, ]
+- `EPIC HD` [Non-News, Hindi/English]; maybe: `Epic Bharat` (EpicBharat.in), `Epic Bhojpuri` (EpicBhojpuri.in), `Epic Crimes` (EpicCrimes.in)
+- `Filamchi Bhojpuri (EARLIER Filamchi,Epic HD)` [Non-News, English/Hindi]
+- `LAMHE` [Non-News, Hindi/English]
+- `Nazara` [Non-News, Hindi/English]
+- `SHOWBOX` [Non-News, English/Hindi]
+- `Bharat Update` [News, English/Hindi]
+- `Free TV India News Gujarat (earlier Free TV)` [News, English/Hindi]; maybe: `News TV India` (NewsTVIndia.in), `India TV Speed News` (IndiaTVSpeedNews.in), `India News` (IndiaNews.in)
+- `India News Punjab/ Himachal/ Jammu Kashmir (Earlier India News Punjab)` [News, English/Hindi]; maybe: `India News Punjab/Himachal` (IndiaNewsPunjabHimachal.in), `News State Punjab Haryana Himachal` (NewsStatePunjabHaryanaHimachal.in)
+- `India News Uttar Pradesh-Uttarakhand` [News, Hindi/English]; maybe: `India News Uttar Pradesh` (IndiaNewsUttarPradesh.in), `News18 Uttar Pradesh Uttarakhand` (News18UttarPradeshUttarakhand.in), `Zee Uttar Pradesh/Uttarakhand` (ZeeUttarPradeshUttarakhand.in)
+- `Sadhna Gold` [Non-News, English/Hindi]; maybe: `Sadhna` (Sadhna.in)
+- `TWENTY FOUR (Earlier JANAPRIYA)` [News, English/Malayalam]
+- `Sports18 2HD` [Non-News, Hindi/English]
+- `Sports18 Hindi HD` [Non-News, Hindi/English]
+- `Unchi Udann(Earlier known as Sports 18 Hindi)` [Non-News, Hindi/English]
+- `TOP(EARLIER: OM BANGLA)` [Non-News, Bengali/English/Hindi]
+- `Tribe Plus` [Non-News, Hindi/English]
+- `TRIBE TV` [News, English/Hindi]
+- `SRI SANKARA` [Non-News, English/Kannada/Malayalam/Tamil/Telugu/Hindi]
+- `ODISHA TIME (earlier KAMYAB TV)` [News, Odia]
+- `Kasthuri` [News, Kannada]
+- `Kasthuri Comedy` [Non-News, Kannada]
+- `Kasthuri Gold` [Non-News, Kannada]
+- `Kasthuri News 24` [News, Kannada]; maybe: `24 News` (24News.in), `News 24` (News24.in), `News Daily 24` (NewsDaily24.in)
+- `Popular TV` [Non-News, English]
+- `DILLAGIII` [Non-News, Hindi]
+- `RUSSIA TODAY` [News, English]
+- `KARMA TV` [News, ]
+- `Mnadu` [News, Tamil]
+- `6TV Telangana` [News, Telugu]
+- `MANTRA TV` [Non-News, English/Hindi]
+- `AM News-Spandan Maharashtrache (Earlier known as LIVE TODAY)` [News, English/Hindi/Marathi]
+- `Living Foodz HD` [Non-News, English/Hindi]
+- `Love World` [Non-News, English/Hindi]
+- `MH 1` [Non-News, Hindi]; maybe: `Mh 1 Music` (Mh1Music.in), `Mh 1 News` (Mh1News.in), `Mh 1 Prime` (Mh1Prime.in)
+- `MH ONE NEWS` [News, Hindi]; maybe: `MH One` (MHOne.in), `Mh 1 News` (Mh1News.in), `MH One Movies` (MHOneMovies.in)
+- `MK TELEVISION` [Non-News, Tamil]
+- `MK Tunes` [Non-News, ]
+- `Jivan TV (with the tagline- Ke Har Modpar)` [Non-News, English/Hindi]
+- `NEWS J (earlier News J2)` [News, Tamil]
+- `ENRICH TV` [Non-News, English]
+- `THE Q (EARLIER MUBU TV, MT)` [Non-News, Hindi/Punjabi/English]
+- `CNA (earlier CHANNEL NEWS ASIA INTERNATIONAL)` [News, English]
+- `EDU TV` [Non-News, Hindi/English]
+- `News 11 Bharat (Earlier known as News 30, NEWS GURU)` [News, English/Hindi]; maybe: `News 11` (News11.in)
+- `BFLIX` [Non-News, English/Hindi]
+- `Meenakshi TV` [Non-News, Tamil]
+- `Malar TV` [Non-News, English/Tamil]
+- `MANORAMA NEWS CENTRAL` [News, Malayalam]; maybe: `Manorama News` (ManoramaNews.in)
+- `MANORAMA NEWS NORTH` [News, Malayalam]; maybe: `Manorama News` (ManoramaNews.in)
+- `MAZHAVIL MANORAMA INTERNATIONAL (earlier MANORAMA NEWS INTERNATIONAL)` [News, Malayalam]; maybe: `Mazhavil Manorama` (MazhavilManorama.in)
+- `MAHAVIRA TV CHANNEL- Jinvani Darshan (Earlier known as Boom Music)` [Non-News, English/Hindi/Punjabi]; maybe: `Jinvani Channel` (JinvaniChannel.in)
+- `True Sports(earlier MANGAL KALASH, Oye Music)` [Non-News, English/Hindi/Punjabi]
+- `NAXATRA NEWS JHARKHAND BIHAR (NAXTRA BARNALII)` [News, Bengali]; maybe: `Naxatra News` (NaxatraNews.in), `Naxatra News Hindi` (NaxatraNewsHindi.in), `News18 Bihar Jharkhand` (News18BiharJharkhand.in)
+- `NAXATRA TV` [News, Odia]
+- `NKTV PLUS` [News, Hindi/English/Assamese/Bengali]
+- `ND 24- Newsdaily24.in (Earlier Live Today-Tez Najar Sahi Khabar, SADHANA NEWS, SADHANA ARYAN NEWS, 24X7 BTV NEWS , Prabhatam LIFELINE)` [News, English/Hindi]
+- `STUDIO N NEWS (Earlier STUDIO N)` [News, English/Hindi/Telugu]
+- `NC 360 BUSINESS` [News, ]
+- `NC 360 Hindi` [News, ]
+- `NC360` [News, ]
+- `FTV.COM INDIA` [Non-News, English]
+- `Desh News` [News, English/Hindi]
+- `FIRSTPOST.` [News, English/Hindi]
+- `News18 Bharat (earlier NEWS18 PUNJAB)` [News, English/Hindi]
+- `NDTV Gujarati` [News, Gujarati]; maybe: `NDTV` (NDTV.in)
+- `Puthu Yugam (earlier KALAI SARAL)` [Non-News, Tamil]
+- `News State Bihar/Jharkhand` [News, ]; maybe: `News18 Bihar Jharkhand` (News18BiharJharkhand.in), `Zee Bihar Jharkhand` (ZeeBiharJharkhand.in)
+- `News State Madhya Pradesh/Chhatttisgarh (Earlier National Today Jhalak)` [News, Hindi]; maybe: `India News Madhya Pradesh/Chhattisgarh` (IndiaNewsMadhyaPradeshChhattisgarh.in), `Sadhna News Madhya Pradesh/Chhattisgarh` (SadhnaNewsMadhyaPradeshChhattisgarh.in)
+- `NEWS STATE UTTARAKHAND/UTTAR PRADESH (Earlier UPASANA)` [News, ]; maybe: `India News Uttar Pradesh` (IndiaNewsUttarPradesh.in), `News18 Uttar Pradesh Uttarakhand` (News18UttarPradeshUttarakhand.in), `Zee Uttar Pradesh/Uttarakhand` (ZeeUttarPradeshUttarakhand.in)
+- `News 24 Madhya Pradesh-Chattishgarh(earlier JK 24*7, JK CHANNEL , AAPNO 24 (BIZ 24)` [News, Hindi]; maybe: `India News Madhya Pradesh/Chhattisgarh` (IndiaNewsMadhyaPradeshChhattisgarh.in), `Sadhna News Madhya Pradesh/Chhattisgarh` (SadhnaNewsMadhyaPradeshChhattisgarh.in), `24 News` (24News.in)
+- `NEWS24 THINK FIRST` [News, Hindi]
+- `OTV` [News, English]
+- `News 1st Kannada` [News, English/Hindi]; maybe: `News 1st` (News1st.in), `Raj News Kannada` (RajNewsKannada.in), `Zee Kannada News` (ZeeKannadaNews.in)
+- `ARIRANG KOREA` [News, English]
+- `ONKAR ONLY TRUTH` [News, English/Hindi/Bengali]
+- `Power of God TV` [Non-News, ]; maybe: `Power TV` (PowerTV.in)
+- `Paras Gold One (Earlier Dum TV Kannada, DANGAL KANNADA, JAI PARAS TV)` [Non-News, ]; maybe: `Paras Gold` (ParasGold.in)
+- `B News (earlier PRABHATAM NEWS MAHARASHTRA)` [News, English/Hindi]
+- `PRAJAA KANNADA TV (Earlier PRABHATAM NEWS RAJASTHAN)` [News, English/Hindi]; maybe: `NKR TV Kannada` (NKRTVKannada.in)
+- `Sadhna Bhakti (earlier RT & PRABHATAM NEWS)` [Non-News, English/Hindi]; maybe: `Sadhna` (Sadhna.in)
+- `Pyramid Meditation Chanel` [Non-News, Telugu]
+- `Sanskriti 24X7` [Non-News, English/Hindi]
+- `KOLKATTA 24*7` [News, Bengali/English/Hindi]
+- `DHAMMAL GUJJUU` [Non-News, Gujarati]
+- `Seven (earlier SEVEN SISTERS RAINBOW)` [Non-News, ]
+- `SADHNA PRIME NEWS (EARLIER: POSITIVE HEALTH)` [News, English/Hindi]; maybe: `Prime News` (PrimeNews.in), `Sadhna Plus News` (SadhnaPlusNews.in)
+- `AALAMI SAHARA` [News, Hindi]
+- `SAHARA FILMY` [Non-News, Hindi]
+- `SAHARA FIRANGI` [Non-News, Hindi]
+- `SAHARA ONE` [Non-News, English/Hindi]
+- `SAHARA SAMAY BIHAR` [News, Hindi]
+- `SAHARA SAMAY MP` [News, Hindi]
+- `SAHARA SAMAY MUMBAI` [News, Hindi]
+- `SAHARA SAMAY NCR` [News, Hindi]
+- `SAHARA SAMAY UP` [News, Hindi]
+- `SAMAY` [News, Hindi]; maybe: `Samay Kolkata` (SamayKolkata.in)
+- `BHARAT TODAY` [News, Telugu]
+- `India Daily 24x7` [News, English/Hindi]; maybe: `India Daily Live` (IndiaDailyLive.in), `News India 24x7` (NewsIndia24x7.in)
+- `I NEWS` [News, English/Hindi/Telugu]
+- `News 360` [News, Telugu]
+- `CARE WORLD` [Non-News, Hindi]
+- `Shalini TV` [Non-News, ]
+- `Sadhna News Madhya Pradesh/ Chhatisgarh/ Rajasthan (earlier SADHNA NEWS BIHAR)` [News, Hindi]; maybe: `Sadhna News Madhya Pradesh/Chhattisgarh` (SadhnaNewsMadhyaPradeshChhattisgarh.in), `India News Madhya Pradesh/Chhattisgarh` (IndiaNewsMadhyaPradeshChhattisgarh.in)
+- `AMV Network` [News, ]
+- `NB TV` [News, ]
+- `Shemaroo Bhakti` [Non-News, Hindi]
+- `Shemaroo Bollywood` [Non-News, Hindi]
+- `Shemaroo Classic` [Non-News, Hindi]
+- `Shemaroo Comedy` [Non-News, Hindi]
+- `TV 5` [News, Telugu/English]
+- `GSTV (Earier AASPAS TV)` [News, English/Hindi/Marathi/Gujarati]
+- `AP 24x7 (earlier AP Times the News HQ, KHOJ INDIA)` [News, ]
+- `Bharatika TV` [News, English/Hindi]
+- `FW FASTWAY` [News, ]
+- `AKASH B` [News, Bengali]
+- `99 TV (earlier 99 Percent, CHANNEL NO.3)` [News, English/Hindi/Punjabi]
+- `ABZY COOL (earlier known as Skystar Bangla)` [Non-News, English/Hindi]
+- `ABZY DHAKAD (earlier known as Skystar Telugu)` [Non-News, English/Hindi]
+- `ABZY MOVIES (earlier known as Skystar Movies)` [Non-News, English/Hindi]
+- `MKN News (earlier MKN )` [News, Marathi/Hindi]
+- `Madhya Bharat News` [Non-News, English/Hindi]
+- `VELICHAM PLUS (Earlier FAST 24*7)` [News, English/Hindi]
+- `News Tamil 24*7 Meiporul Kanbathu Arivu` [News, Tamil]; maybe: `News 7 Tamil` (News7Tamil.in)
+- `Sri Venkateswara Bhakti channel (Earlier SRI VENKATESWARA)` [Non-News, Telugu]
+- `A1 News` [News, English/Hindi]
+- `SUBHARTI` [Non-News, Hindi]
+- `A TO Z` [News, Hindi]
+- `A TO Z Documentary and Telefilms` [Non-News, Hindi]
+- `NEWS 7 (PRAMEYA NEWS)` [News, Odia]; maybe: `News 7 Tamil` (News7Tamil.in)
+- `SUN BANGLA (Earlier GEMINI NEWS)` [News, English]
+- `SUN BANGLA HD` [Non-News, ]
+- `SUN MARATHI (Earlier UDAYA NEWS UDAYA VARTHEGALU)` [News, English]
+- `SUN MARATHI HD` [Non-News, ]
+- `SUN NEO` [Non-News, ]
+- `SUN NEO HD` [Non-News, ]
+- `MOVIEPLEX` [Non-News, ]
+- `Orange Bangla (earlier known as ORANGE TV)` [Non-News, Bengali]
+- `TAMILAN TELEVISION` [News, Tamil]
+- `Prime 9 Plus` [News, English/Hindi]; maybe: `9 Plus News` (9PlusNews.in)
+- `1S News` [News, ]
+- `TOTAL TV` [News, Hindi]; maybe: `Total TV Haryana` (TotalTVHaryana.in)
+- `1st India Rajasthan (earlier TRANSMEDIA NEWS)` [News, Gujarati/Hindi/Marathi]; maybe: `India News Rajasthan` (IndiaNewsRajasthan.in)
+- `AAMAR CINEMA (EARLIER TRANSMEDIA GUJARAT)` [Non-News, Gujarati/Hindi/Marathi]
+- `TRANSMEDIA SOHAM` [Non-News, Gujarati/Hindi/Marathi]
+- `TVN News` [News, ]
+- `DABANGG` [Non-News, Hindi]
+- `Maiboli (earlier DHAMAKAA /APNA TV)` [Non-News, Hindi]
+- `Tirupathi` [Non-News, Hindi]
+- `Mathimugam Tholaikatchi (EARLIER NO.1 NEWS, VAARTHA)` [News, Telugu]
+- `POWER VISION` [Non-News, English/Hindi/Malayalam]; maybe: `Vision` (Vision.in)
+- `Vertent Samachar Plus 24x7` [News, English/Hindi]; maybe: `Samachar Plus 24x7` (SamacharPlus24x7.in)
+- `NIRMANA` [News, English/Gujarati/Hindi]
+- `VIKAAS TV` [News, English/Hindi/Gujarati]
+- `FM NEWS (EARLIER LIVING INDIA AYUR LIVING INDIA)` [News, English/Hindi]
+- `Movie Plus (Earlier Indian fashion TV)` [Non-News, Hindi/Bengali/Punjabi/Marathi/Bojpuri]
+- `RUDRAKSH` [Non-News, Hindi]
+- `VISHWAS` [Non-News, Hindi]
+- `Vistara News` [News, English/Hindi/Kannada]
+- `India Superfast (earlier Lokshahi,TTC,JANADESH)` [News, English/Hindi]
+- `Swaraj Express (Earlier NEWS TIME 24X7, JANSANDESH PLUS, FAST NEWS)` [News, English/Hindi]; maybe: `Swaraj Express SMBC` (SwarajExpressSMBC.in)
+- `ACTION CINEMA` [Non-News, English/Hindi]
+- `Anmol Cinema` [Non-News, Hindi]
+- `Anmol Cinema 2` [Non-News, Hindi]
+- `Big Magic (earlier Zee Josh, Big Magic, Zee Magic)` [Non-News, Hindi]
+- `Zee Biskope (earlier Ganga Biskope, Zee Bhojpuri Cinema)` [Non-News, Hindi/Bojpuri]
+- `Zee Chitramandir (earlier Zee Zabardast)` [Non-News, Marathi]
+- `Zee Power` [Non-News, Hindi/Malayalam]
+- `Zee Power HD` [Non-News, Kannada]
+- `MYLORD` [News, Hindi/English]
+- `Lokshahi Marathi` [News, ]
