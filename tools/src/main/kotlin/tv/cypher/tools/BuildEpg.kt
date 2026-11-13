@@ -15,7 +15,7 @@ object BuildEpg {
     /** Returns how many channels have guide data. */
     fun convert(xmltv: InputStream, channels: List<Channel>, now: Long, out: OutputStream): Int {
         val from = startOfIstDay(now)
-        val data = Epg.fromXmltv(xmltv, channels.map { it.id }.toSet(), from, from + 2 * DAY)
+        val data = Xmltv.fromXmltv(xmltv, channels.map { it.id }.toSet(), from, from + 2 * DAY)
         Epg.writeGzip(data, out)
         return data.size
     }
