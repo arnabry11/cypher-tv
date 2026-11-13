@@ -2,7 +2,7 @@ package tv.cypher.core
 
 object Languages {
     private val marker = Regex("""^all indian scheduled lang\w*$""", RegexOption.IGNORE_CASE)
-    private val canonical = mapOf("oriya" to "Odia", "bangla" to "Bengali", "telgu" to "Telugu", "malayali" to "Malayalam")
+    private val canonical = mapOf("oriya" to "Odia", "bangla" to "Bengali", "telgu" to "Telugu", "malayali" to "Malayalam", "bojpuri" to "Bhojpuri")
     private val hints = mapOf(
         "telugu" to "Telugu", "telgu" to "Telugu", "tamil" to "Tamil", "kannada" to "Kannada",
         "malayalam" to "Malayalam", "marathi" to "Marathi", "bangla" to "Bengali", "bengali" to "Bengali",

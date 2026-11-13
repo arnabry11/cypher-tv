@@ -37,4 +37,6 @@ class LanguagesTest {
     @Test fun cleanDropsNaAndAllScheduled() {
         assertEquals(listOf("Hindi", "English"), Languages.clean("All Indian Scheduled langauge, Hindi, NA, English , hindi"))
     }
+
+    @Test fun bojpuriIsBhojpuri() = assertEquals(listOf("Bhojpuri"), Languages.clean("Bojpuri"))
 }

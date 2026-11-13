@@ -85,7 +85,7 @@ object BuildChannels {
     }
 
     private fun category(group: String?): String =
-        group?.trim()?.takeIf { it.isNotEmpty() && it.lowercase() !in uselessGroups } ?: "Entertainment"
+        group?.substringBefore(';')?.trim()?.takeIf { it.isNotEmpty() && it.lowercase() !in uselessGroups } ?: "Entertainment"
 
     private fun report(
         fta: List<FtaChannel>,

@@ -86,4 +86,10 @@ class BuildChannelsTest {
         val r = BuildChannels.build(ftas, M3u.parse("#EXTM3U"), emptyList(), Overrides(), emptyMap())
         assertEquals(0, r.channels.size)
     }
+
+    @Test fun multiValuedGroupUsesFirstCategory() {
+        val idx = M3u.parse("#EXTM3U\n#EXTINF:-1 tvg-id=\"TV9Telugu.in@SD\" group-title=\"Culture;Music\",TV9 Telugu\nhttps://t/1.m3u8")
+        val r = BuildChannels.build(ftas, M3u.parse(streams), idx, Overrides(), emptyMap())
+        assertEquals("Culture", r.channels.first { it.id == "TV9Telugu.in" }.cat)
+    }
 }
