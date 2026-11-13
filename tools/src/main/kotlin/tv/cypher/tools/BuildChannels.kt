@@ -14,6 +14,8 @@ object BuildChannels {
         index: List<PlaylistEntry>,
         overrides: Overrides,
         existingNumbers: Map<String, Int>,
+        /** Playlist channel id -> language it broadcasts in, from iptv-org's feeds. */
+        feedLanguages: Map<String, String> = emptyMap(),
     ): Result {
         val byId = streams.filter { it.channelId.isNotEmpty() && it.url.isNotBlank() }.groupBy { it.channelId }
         val indexById = index.filter { it.channelId.isNotEmpty() }.groupBy { it.channelId }
@@ -40,7 +42,7 @@ object BuildChannels {
             picks[c.id] = Pick(
                 id = c.id,
                 name = c.name,
-                lang = overrides.lang[c.id] ?: Languages.primary(f.name, f.languages),
+                lang = overrides.lang[c.id] ?: Languages.file(c.name, f.languages, feedLanguages[c.id]),
                 cat = if (f.cat == "News") "News" else category(group),
             )
         }
@@ -53,7 +55,7 @@ object BuildChannels {
             val group = indexById[c.id]?.firstNotNullOfOrNull { it.group } ?: byId[c.id]?.firstNotNullOfOrNull { it.group }
             picks[c.id] = Pick(
                 c.id, c.name,
-                lang = x.lang ?: overrides.lang[c.id] ?: Languages.primary(c.name, emptyList()),
+                lang = x.lang ?: overrides.lang[c.id] ?: Languages.file(c.name, emptyList(), feedLanguages[c.id]),
                 cat = x.cat ?: category(group),
             )
             extrasAdded.add(c.id)

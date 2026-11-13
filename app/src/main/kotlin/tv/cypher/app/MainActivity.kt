@@ -74,6 +74,7 @@ class MainActivity : Activity(), PlayerController.Listener {
     private var longPressHandled = false
     /** "Switching to 720p": shown instead of plain "Buffering…" while the new stream starts. */
     private var switchText: String? = null
+    private var lastBackAt = -BACK_AGAIN_MS
     private var updateOffered = false
     private var updateInProgress = false
     /** A downloaded, verified APK waiting for the user to allow installs from this app. */
@@ -121,7 +122,7 @@ class MainActivity : Activity(), PlayerController.Listener {
         player = PlayerController(this, findViewById<SurfaceView>(R.id.surface), this)
 
         applyCatalog(repo.loadCachedChannels())
-        val first = favourites.ids.firstOrNull() ?: prefs.lastChannel?.takeIf { it in byId }
+        val first = favourites.ids.firstOrNull { it in byId } ?: prefs.lastChannel?.takeIf { it in byId }
         if (first != null) {
             tune(byId.getValue(first))
         } else if (channels.isNotEmpty()) {
@@ -136,7 +137,7 @@ class MainActivity : Activity(), PlayerController.Listener {
         super.onResume()
         pendingApk?.let { apk ->
             pendingApk = null
-            if (Updater.canInstall(this)) Updater.install(this, apk)
+            if (Updater.canInstall(this)) install(apk)
             else {
                 // The user came back without allowing it: don't send them to Settings again.
                 updateOffered = false
@@ -170,7 +171,9 @@ class MainActivity : Activity(), PlayerController.Listener {
         channels = list.sortedBy { it.num }
         byId = channels.associateBy { it.id }
         byNumber = channels.associate { it.num to it.id }
-        if (channels.isNotEmpty()) favourites = Favourites(prefs.favourites.filter { it in byId })
+        // Keep favourites whose channel is missing from today's list: they are hidden, not forgotten, so a
+        // channel that drops out for a day is still a favourite (in the same place) when it comes back.
+        favourites = Favourites(prefs.favourites)
         val present = channels.map { it.lang }.toSet()
         val ordered = Numbering.languages.filter { it in present } + (present - Numbering.languages.toSet()).sorted()
         tabs = listOf(Tab("Favourites", null), Tab("All", null)) + ordered.map { Tab(it, it) }
@@ -198,7 +201,7 @@ class MainActivity : Activity(), PlayerController.Listener {
                 ui.postDelayed(refreshLoop, backoff.next(r.ok, REFRESH_EVERY_MS))
                 r.channels?.takeIf { it != channels }?.let { applyCatalog(it) }
                 if (currentId == null && channels.isNotEmpty() && mode == Mode.PLAYER) {
-                    val first = favourites.ids.firstOrNull() ?: channels.first().id
+                    val first = favourites.ids.firstOrNull { it in byId } ?: channels.first().id
                     byId[first]?.let { tune(it) }
                     messageView.visibility = View.GONE
                 }
@@ -308,7 +311,7 @@ class MainActivity : Activity(), PlayerController.Listener {
         if (channels.isEmpty()) return
         mode = Mode.LIST
         inTabs = false
-        tabIndex = if (favourites.ids.isEmpty()) 1 else 0
+        tabIndex = if (favourites.ids.none { it in byId }) 1 else 0
         listPanel.visibility = View.VISIBLE
         schedulePanel.visibility = View.GONE
         banner.visibility = View.GONE
@@ -373,10 +376,12 @@ class MainActivity : Activity(), PlayerController.Listener {
     }
 
     private fun moveSelected(delta: Int) {
-        val to = favourites.move(channelAdapter.selected, delta)
+        val ch = selectedChannel() ?: return
+        favourites.moveAmongShown(ch.id, delta) { it in byId }
         saveFavourites()
-        channelAdapter.selected = to
         channelAdapter.rows = rowsForTab()
+        val to = channelAdapter.rows.indexOfFirst { it.id == ch.id }.coerceAtLeast(0)
+        channelAdapter.selected = to
         channelAdapter.notifyDataSetChanged()
         listView.scrollToPosition(to)
     }
@@ -464,6 +469,15 @@ class MainActivity : Activity(), PlayerController.Listener {
                 KeyEvent.KEYCODE_DPAD_DOWN, KeyEvent.KEYCODE_CHANNEL_DOWN, KeyEvent.KEYCODE_PAGE_DOWN -> { zap(false); return true }
                 KeyEvent.KEYCODE_MENU, KeyEvent.KEYCODE_GUIDE, KeyEvent.KEYCODE_TV -> { openList(); return true }
                 KeyEvent.KEYCODE_INFO -> { byId[currentId]?.let { showBanner(it) }; return true }
+                KeyEvent.KEYCODE_BACK -> {
+                    // One stray Back must not stop the TV: ask for a second press.
+                    val now = android.os.SystemClock.elapsedRealtime()
+                    if (now - lastBackAt > BACK_AGAIN_MS) {
+                        lastBackAt = now
+                        showMessage("Press Back again to exit", BACK_AGAIN_MS)
+                        return true
+                    }
+                }
                 else -> if (isOk) { openList(); return true }
             }
             Mode.LIST -> {
@@ -527,6 +541,19 @@ class MainActivity : Activity(), PlayerController.Listener {
             .show()
     }
 
+    /** As [Updater.install]; null (with a message) when this device has no installer or settings screen to open. */
+    private fun install(apk: java.io.File): Boolean? = try {
+        Updater.install(this, apk)
+    } catch (_: android.content.ActivityNotFoundException) {
+        updateOffered = false
+        showMessage("This device cannot install the update from here", 6000)
+        null
+    } catch (_: SecurityException) {
+        updateOffered = false
+        showMessage("This device cannot install the update from here", 6000)
+        null
+    }
+
     private fun startUpdate(info: tv.cypher.core.AppInfo) {
         updateInProgress = true
         showMessage("Downloading update… 0%", 0, MSG_UPDATE)
@@ -539,7 +566,7 @@ class MainActivity : Activity(), PlayerController.Listener {
                 runOnUiThread {
                     updateInProgress = false
                     messageView.visibility = View.GONE
-                    if (!Updater.install(this, apk)) {
+                    if (install(apk) == false) {
                         // Android opened its one-time "install unknown apps" screen; onResume continues from there.
                         pendingApk = apk
                         showMessage("Allow installs for Cypher TV, then press Back", 6000)
@@ -560,6 +587,7 @@ class MainActivity : Activity(), PlayerController.Listener {
         private const val NUMBER_COMMIT_MS = 2_000L
         private const val REFRESH_EVERY_MS = 3 * 60 * 60 * 1000L
         private const val SCROLL_PX = 240
+        private const val BACK_AGAIN_MS = 2_500L
         private const val MSG_STATUS = "status"
         private const val MSG_NOTE = "note"
         private const val MSG_UPDATE = "update"

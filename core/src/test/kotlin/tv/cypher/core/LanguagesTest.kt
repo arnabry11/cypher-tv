@@ -38,5 +38,25 @@ class LanguagesTest {
         assertEquals(listOf("Hindi", "English"), Languages.clean("All Indian Scheduled langauge, Hindi, NA, English , hindi"))
     }
 
+    @Test fun feedLanguageBeatsTheLicenceList() {
+        assertEquals("Hindi", Languages.file("ABP News", listOf("English", "Hindi", "Marathi"), "Hindi"))
+        assertEquals("Hindi", Languages.file("Aaj Tak", listOf("English"), "Hindi"))
+        assertEquals("Malayalam", Languages.file("Kerala Vision", emptyList(), "Malayalam"))
+    }
+
+    @Test fun nameAndLicenceTogetherBeatTheFeed() =
+        assertEquals("Kannada", Languages.file("Aastha Kannada", listOf("Hindi", "Kannada"), "Hindi"))
+
+    @Test fun nameAloneDoesNotBeatTheFeed() =
+        assertEquals("Hindi", Languages.file("Tamil Talkies", listOf("Hindi"), "Hindi"))
+
+    @Test fun withoutFeedLanguageFallsBackToTheLicenceList() =
+        assertEquals("Marathi", Languages.file("Mantavya 24X7", listOf("English", "Marathi", "Hindi"), null))
+
+    @Test fun isoCodes() {
+        assertEquals("Punjabi", Languages.fromIso("pan")); assertEquals("Odia", Languages.fromIso("ori"))
+        assertEquals(null, Languages.fromIso("xyz"))
+    }
+
     @Test fun bojpuriIsBhojpuri() = assertEquals(listOf("Bhojpuri"), Languages.clean("Bojpuri"))
 }

@@ -20,6 +20,19 @@ class Favourites(initial: List<String> = emptyList()) {
         if (to != index) list.add(to, list.removeAt(index))
         return to
     }
+
+    /**
+     * Moves [id] one step up ([delta] < 0) or down past the nearest favourite that [isShown]. Favourites that are
+     * not shown (their channel is missing from today's list) keep their place and are never dropped.
+     */
+    fun moveAmongShown(id: String, delta: Int, isShown: (String) -> Boolean) {
+        val from = list.indexOf(id)
+        if (from < 0 || delta == 0) return
+        val step = if (delta > 0) 1 else -1
+        var to = from + step
+        while (to in list.indices && !isShown(list[to])) to += step
+        if (to in list.indices) list.add(to, list.removeAt(from))
+    }
 }
 
 object Zap {

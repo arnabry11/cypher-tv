@@ -10,7 +10,7 @@ import kotlin.system.exitProcess
 private const val USAGE = """Usage: tools <command> [--key value ...]
   extract-fta     --xlsx FILE --out data/fta.json
   build-channels  --fta data/fta.json --streams in.m3u [--index countries-in.m3u] [--overrides data/overrides.json]
-                  [--numbers data/numbers.json] --out dist [--report dist/match-report.md]
+                  [--feeds feeds.json] [--numbers data/numbers.json] --out dist [--report dist/match-report.md]
   epg-channels    --sites-dir epg/sites --sites tataplay.com,dishtv.in --channels dist/channels.json --out channels.xml
   make-config     --repo owner/name [--branch dist] [--previous config.json] --out dist/config.json
                   [--version-code N --apk-url URL --sha256 HEX [--notes TEXT]]
@@ -38,7 +38,8 @@ fun main(args: Array<String>) {
             val numSer = MapSerializer(String.serializer(), Int.serializer())
             val existing = numbersFile?.takeIf { it.exists() }?.let { Formats.compact.decodeFromString(numSer, it.readText()) }.orEmpty()
 
-            val r = BuildChannels.build(fta, streams, index, overrides, existing)
+            val feedLanguages = opts["feeds"]?.let(::File)?.takeIf { it.exists() }?.let { Feeds.languages(it.readText()) }.orEmpty()
+            val r = BuildChannels.build(fta, streams, index, overrides, existing, feedLanguages)
             val out = File(req("out")).also { it.mkdirs() }
             File(out, "channels.json").writeText(Formats.compact.encodeToString(ListSerializer(Channel.serializer()), r.channels))
             File(opts["report"] ?: File(out, "match-report.md").path).writeText(r.report)

@@ -5,6 +5,19 @@ import kotlin.test.assertEquals
 import kotlin.test.assertNull
 
 class LogicTest {
+    @Test fun moveAmongShownSkipsHiddenFavouritesAndKeepsThem() {
+        val f = Favourites(listOf("a", "gone", "b", "c"))
+        val shown = { id: String -> id != "gone" }
+        f.moveAmongShown("a", +1, shown)
+        assertEquals(listOf("gone", "b", "a", "c"), f.ids)
+        f.moveAmongShown("a", -1, shown)
+        assertEquals(listOf("gone", "a", "b", "c"), f.ids)
+        f.moveAmongShown("a", -1, shown) // already the first shown one: nothing to pass
+        assertEquals(listOf("gone", "a", "b", "c"), f.ids)
+        f.moveAmongShown("c", +1, shown)
+        assertEquals(listOf("gone", "a", "b", "c"), f.ids)
+    }
+
     @Test fun favouritesToggleAddsAtEndAndRemoves() {
         val f = Favourites(listOf("a", "b"))
         f.toggle("c"); assertEquals(listOf("a", "b", "c"), f.ids)

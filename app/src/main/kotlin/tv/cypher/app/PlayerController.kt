@@ -173,9 +173,15 @@ class PlayerController(
             .setConnectTimeoutMs(8_000)
             .setReadTimeoutMs(10_000)
         s.referer?.let { http.setDefaultRequestProperties(mapOf("Referer" to it)) }
-        val source = DefaultMediaSourceFactory(http).createMediaSource(MediaItem.fromUri(s.url))
         val p = ensurePlayer()
-        p.setMediaSource(source)
+        try {
+            p.setMediaSource(DefaultMediaSourceFactory(http).createMediaSource(MediaItem.fromUri(s.url)))
+        } catch (_: RuntimeException) {
+            // A format this build cannot play (e.g. a DASH .mpd: only the HLS module is included) or a URL
+            // that does not parse throws here rather than through onPlayerError. Treat it as a dead stream.
+            fail()
+            return
+        }
         p.prepare()
         p.playWhenReady = true
         handler.removeCallbacks(stall)

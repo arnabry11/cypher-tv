@@ -5,7 +5,7 @@ where Kodi is too heavy). Turn it on and your first favourite is already playing
 reorder, see what's on. Nothing else.
 
 Native Kotlin, Media3 ExoPlayer, plain Views. No Compose, no image loader, no DI, no Room: the release APK
-is under 1 MB and uses roughly 80 MB of RAM while playing.
+is under 1 MB and uses roughly 45 MB of RAM while playing (measured on a Google TV 14 set).
 
 ## Using it
 
@@ -19,6 +19,7 @@ is under 1 MB and uses roughly 80 MB of RAM while playing.
 | Left / Right on the tab bar | | switch tab: Favourites, All, one per language |
 | 0-9 | type a channel number, tunes after 2 s | same |
 | Menu / Guide / Info | list / list / show banner | |
+| Back | press twice to exit | close the list |
 
 In Move mode Up/Down shifts the row and OK drops it. The zap banner shows number, name, Now and Next.
 Each channel's streams are published best resolution first (playlist order within a resolution). A channel

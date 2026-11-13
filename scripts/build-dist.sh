@@ -16,7 +16,7 @@ mkdir -p "$OUT" build
 
 ./scripts/fetch-playlists.sh "$IN"
 
-./gradlew -q :tools:run --args="build-channels --fta data/fta.json --streams $IN/streams_in.m3u --index $IN/index_in.m3u --overrides data/overrides.json --numbers data/numbers.json --out $OUT"
+./gradlew -q :tools:run --args="build-channels --fta data/fta.json --streams $IN/streams_in.m3u --index $IN/index_in.m3u --feeds $IN/feeds.json --overrides data/overrides.json --numbers data/numbers.json --out $OUT"
 
 if [ "${SKIP_EPG:-0}" = "1" ]; then
   echo "Skipping guide (SKIP_EPG=1)"

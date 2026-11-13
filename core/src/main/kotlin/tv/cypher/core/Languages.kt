@@ -17,7 +17,28 @@ object Languages {
             .map { canonical[it.lowercase()] ?: it.lowercase().replaceFirstChar(Char::uppercase) }
             .distinct()
 
-    /** The one language a channel is filed under. */
+    /** ISO 639-3 codes used by iptv-org's feeds, for the languages that have their own number block or tab. */
+    private val iso = mapOf(
+        "hin" to "Hindi", "eng" to "English", "tel" to "Telugu", "tam" to "Tamil", "kan" to "Kannada",
+        "mal" to "Malayalam", "mar" to "Marathi", "ben" to "Bengali", "guj" to "Gujarati", "pan" to "Punjabi",
+        "ori" to "Odia", "ory" to "Odia", "bho" to "Bhojpuri", "asm" to "Assamese", "urd" to "Urdu", "nep" to "Nepali",
+    )
+
+    fun fromIso(code: String): String? = iso[code.lowercase()]
+
+    /**
+     * The language a channel is filed under when iptv-org says what it broadcasts in ([feedLanguage], may be null).
+     * The licence list ([languages]) names every language a channel may use, so on its own it misfiles national
+     * Hindi channels under a regional language; it only overrides iptv-org when the channel's name agrees with it.
+     */
+    fun file(name: String, languages: List<String>, feedLanguage: String?): String {
+        if (feedLanguage == null) return primary(name, languages)
+        val hint = Names.normalize(name).split(' ').firstNotNullOfOrNull { hints[it] }
+        if (hint != null && hint != feedLanguage && hint in languages.flatMap { clean(it) }) return hint
+        return feedLanguage
+    }
+
+    /** The one language a channel is filed under, from the licence list and the name alone. */
     fun primary(name: String, languages: List<String>): String {
         val langs = languages.flatMap { clean(it) }.distinct()
         val hint = Names.normalize(name).split(' ').firstNotNullOfOrNull { hints[it] }
