@@ -11,7 +11,7 @@ is under 1 MB and uses roughly 45 MB of RAM while playing (measured on a Google 
 
 | Key | While watching | In the guide |
 | --- | --- | --- |
-| Up / CH+ | next channel (favourites, or all if none) | move up (CH+ jumps 6 rows) |
+| Up / CH+ | next channel (by number) | move up (CH+ jumps 6 rows) |
 | Down / CH- | previous channel | move down |
 | OK | open the guide on the channel being watched | watch the highlighted channel |
 | Hold OK | favourite / unfavourite the channel being watched | favourite / unfavourite. In the Favourites tab: Move or Remove |

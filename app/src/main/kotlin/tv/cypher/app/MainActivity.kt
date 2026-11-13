@@ -245,13 +245,9 @@ class MainActivity : Activity(), PlayerController.Listener {
         if (showBanner) showBanner(ch)
     }
 
-    private fun zapList(): List<String> {
-        val favs = favourites.ids.filter { it in byId }
-        return favs.ifEmpty { channels.map { it.id } }
-    }
-
+    /** Channel up/down always steps through every channel in numeric order, whether or not it is a favourite. */
     private fun zap(forward: Boolean) {
-        val list = zapList()
+        val list = channels.map { it.id }
         val id = (if (forward) Zap.next(list, currentId) else Zap.prev(list, currentId)) ?: return
         byId[id]?.let { tune(it) }
     }
