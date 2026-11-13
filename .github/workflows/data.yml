@@ -1,8 +1,10 @@
 name: Data
 # Rebuilds channels.json and the guide daily and publishes them to the `dist` branch the TV reads.
 on:
-  schedule:
-    - cron: "30 19 * * *"   # 01:00 IST
+  # Daily schedule is off until the first match report has been reviewed: the first run assigns channel numbers
+  # permanently. Re-enable by uncommenting the next two lines.
+  # schedule:
+  #   - cron: "30 19 * * *"   # 01:00 IST
   workflow_dispatch:
 concurrency:
   group: dist-publish
