@@ -1,8 +1,7 @@
 name: Data
-# Rebuilds channels.json and the guide daily and publishes them to the `dist` branch the TV reads.
+# Rebuilds channels.json and the guide and publishes them to the `dist` branch the TV reads.
+# Manual fallback only: the daily run happens on the home server (see server/ and the README).
 on:
-  schedule:
-    - cron: "30 19 * * *"   # 01:00 IST
   workflow_dispatch:
 concurrency:
   group: dist-publish

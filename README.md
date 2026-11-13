@@ -47,6 +47,7 @@ iptv-org/epg grabber ─> XMLTV ─> tools:build-epg ─> epg.json.gz ───�
   (channel numbers, append-only, never reused). `numbers.json` does not exist until the first daily run
   assigns numbers, and CI commits it from then on. A local `build-dist.sh` also writes it: discard that file
   (`git checkout data/numbers.json` or delete it) instead of committing numbers you did not review.
+* `server/` the daily updater that runs on the home server (see below).
 * `scripts/` `build-dist.sh` builds everything the TV downloads (the guide step retries throttled channels and stops after a 20 minute budget, publishing what it has), `publish-dist.sh` pushes it to `dist`.
 
 The only URL baked into the APK is `dist/config.json`; channels, guide and the app update offer can all be
@@ -86,13 +87,35 @@ For a first-run channel list inside the APK, copy `dist/channels.json` to `app/s
 
 ## Releasing
 
-* `data.yml` runs daily (01:00 IST) and on demand: rebuilds the data and publishes the `dist` branch.
+* The data (channels and guide) is rebuilt daily at 01:00 IST by the home-server updater (below) and published
+  to the `dist` branch. `data.yml` does the same on GitHub, on demand only, as a fallback.
 * `release.yml` runs on a tag `vMAJOR.MINOR.PATCH`: builds the signed APK, attaches it to a GitHub Release
   and writes it into `config.json`, so installed apps offer it.
 
 Repository secrets for releases: `CYPHER_KEYSTORE_BASE64`, `CYPHER_KEYSTORE_PASSWORD`, `CYPHER_KEY_ALIAS`,
 `CYPHER_KEY_PASSWORD`. **Back up the keystore.** Updates must be signed with the same key; if it is lost, the
 app has to be uninstalled and reinstalled.
+
+## Daily updater (home server)
+
+`server/` is a small Go service in one container. Once a day it runs `scripts/build-dist.sh` (the Kotlin tools
+on a trimmed Java runtime, plus the Node guide grabber) as an unprivileged user that cannot read the deploy
+key, checks the result (plain files, valid JSON, no sudden drop in channels or guide coverage), then pushes new
+channel numbers to `main` and the data to `dist`. It never touches `config.json`; releases own that.
+
+On the server, one directory holds `compose.yml` (from `server/`), `.env` (from `server/.env.example`) and
+`deploy_key` (a write deploy key of this repository):
+
+```sh
+docker compose up -d --build      # builds the image straight from GitHub; rerun after changing tools/ or server/
+docker compose logs -f
+```
+
+Changes to `data/` and `scripts/` need no rebuild: each run uses the current `main`. The status page (last run,
+counts, log, a "Run now" button) is on `127.0.0.1:8787` of the server: `ssh -L 8787:127.0.0.1:8787 homeserver`,
+then open http://localhost:8787. With `TELEGRAM_BOT_TOKEN` and `TELEGRAM_CHAT_ID` set in `.env` it sends a
+message when a run fails, publishes without a fresh guide, or works again after a failure. A failed run is
+retried twice, an hour apart.
 
 The first time an update is accepted, Android asks once to allow installs from Cypher TV; after that it is
 one OK on the system prompt.
