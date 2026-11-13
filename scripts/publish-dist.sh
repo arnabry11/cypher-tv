@@ -44,5 +44,10 @@ fi
 git checkout -q --orphan "$tmp"
 git -c user.name="${GIT_USER_NAME:-github-actions[bot]}" -c user.email="${GIT_USER_EMAIL:-41898282+github-actions[bot]@users.noreply.github.com}" \
   commit -q -m "Publish data $(date -u +%Y-%m-%dT%H:%MZ)"
-git push -q --force origin "$tmp:$branch"
+# With a lease on what we fetched: if someone else (a release) published in between, fail instead of undoing it.
+if [ "$rc" = 0 ]; then
+  git push -q --force-with-lease="$branch:$(git -C "$repo" rev-parse "origin/$branch")" origin "$tmp:$branch"
+else
+  git push -q origin "$tmp:$branch"
+fi
 echo "Published to $branch"

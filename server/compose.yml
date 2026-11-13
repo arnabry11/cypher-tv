@@ -1,0 +1,29 @@
+# Copy this file, .env (from .env.example) and the deploy key into one directory on the server, then:
+#   docker compose up -d --build
+# The image is built straight from GitHub: no checkout of the repository is needed on the server.
+services:
+  updater:
+    build:
+      context: https://github.com/arnabry11/cypher-tv.git#main
+      dockerfile: server/Dockerfile
+    image: cypher-tv-updater
+    container_name: cypher-tv-updater
+    restart: unless-stopped
+    env_file: .env
+    volumes:
+      - data:/data
+      - ./deploy_key:/run/secrets/deploy_key:ro
+    ports:
+      - "127.0.0.1:8787:8787"   # status page; reach it with: ssh -L 8787:127.0.0.1:8787 homeserver
+    mem_limit: 1g
+    cpus: 1.5
+    pids_limit: 512
+    security_opt: ["no-new-privileges:true"]
+    cap_drop: [ALL]
+    # Only what it takes to run the build as another user and hand it its working files.
+    cap_add: [CHOWN, DAC_OVERRIDE, FOWNER, SETUID, SETGID, KILL]
+    logging:
+      driver: json-file
+      options: { max-size: "5m", max-file: "2" }
+volumes:
+  data:
