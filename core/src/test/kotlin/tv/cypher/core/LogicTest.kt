@@ -1,0 +1,84 @@
+package tv.cypher.core
+
+import kotlin.test.Test
+import kotlin.test.assertEquals
+import kotlin.test.assertNull
+
+class LogicTest {
+    @Test fun favouritesToggleAddsAtEndAndRemoves() {
+        val f = Favourites(listOf("a", "b"))
+        f.toggle("c"); assertEquals(listOf("a", "b", "c"), f.ids)
+        f.toggle("a"); assertEquals(listOf("b", "c"), f.ids)
+    }
+
+    @Test fun favouritesMoveClampsAtEdges() {
+        val f = Favourites(listOf("a", "b", "c"))
+        assertEquals(1, f.move(0, +1)); assertEquals(listOf("b", "a", "c"), f.ids)
+        assertEquals(0, f.move(0, -1)); assertEquals(listOf("b", "a", "c"), f.ids)
+        assertEquals(2, f.move(2, +1)); assertEquals(listOf("b", "a", "c"), f.ids)
+        assertEquals(2, f.move(1, +1)); assertEquals(listOf("b", "c", "a"), f.ids)
+    }
+
+    @Test fun favouritesIgnoreDuplicatesOnLoad() {
+        assertEquals(listOf("a", "b"), Favourites(listOf("a", "b", "a")).ids)
+    }
+
+    @Test fun zapWrapsBothWays() {
+        val l = listOf("a", "b", "c")
+        assertEquals("b", Zap.next(l, "a")); assertEquals("a", Zap.next(l, "c"))
+        assertEquals("c", Zap.prev(l, "a")); assertEquals("a", Zap.prev(l, "b"))
+    }
+
+    @Test fun zapFromUnknownStartsAtEdges() {
+        val l = listOf("a", "b", "c")
+        assertEquals("a", Zap.next(l, "zzz")); assertEquals("c", Zap.prev(l, "zzz"))
+        assertNull(Zap.next(emptyList(), "a"))
+    }
+
+    @Test fun numberEntryAccumulatesAndCaps() {
+        val n = NumberEntry(maxDigits = 3)
+        n.press(1); n.press(0); assertEquals("10", n.text)
+        n.press(5); n.press(9); assertEquals("105", n.text)
+        assertEquals(105, n.commit()); assertEquals("", n.text)
+        assertNull(n.commit())
+    }
+
+    @Test fun numberEntryResolvesAgainstChannelNumbers() {
+        val byNum = mapOf(101 to "a", 205 to "b")
+        assertEquals("b", NumberEntry.resolve(205, byNum))
+        assertNull(NumberEntry.resolve(999, byNum))
+    }
+
+    private fun p(s: Long, e: Long, t: String) = Programme(s, e, t)
+
+    @Test fun nowNextPicksCurrentAndFollowing() {
+        val rows = listOf(p(0, 10, "A"), p(10, 20, "B"), p(20, 30, "C"))
+        val (now, next) = NowNext.pick(rows, 12)
+        assertEquals("B", now?.title); assertEquals("C", next?.title)
+    }
+
+    @Test fun nowNextWithGapHasNoNow() {
+        val rows = listOf(p(20, 30, "C"), p(30, 40, "D"))
+        val (now, next) = NowNext.pick(rows, 12)
+        assertNull(now); assertEquals("C", next?.title)
+    }
+
+    @Test fun nowNextAtBoundaryMovesOn() {
+        val rows = listOf(p(0, 10, "A"), p(10, 20, "B"))
+        assertEquals("B", NowNext.pick(rows, 10).first?.title)
+        assertNull(NowNext.pick(rows, 20).first)
+        assertNull(NowNext.pick(emptyList(), 5).second)
+    }
+
+    @Test fun failoverTriesLastGoodThenOthersOnce() {
+        val f = StreamFailover(count = 4, lastGood = 2)
+        assertEquals(2, f.current)
+        assertEquals(0, f.advance()); assertEquals(1, f.advance()); assertEquals(3, f.advance())
+        assertNull(f.advance())
+    }
+
+    @Test fun failoverIgnoresBadLastGood() {
+        assertEquals(0, StreamFailover(count = 2, lastGood = 9).current)
+        assertEquals(0, StreamFailover(count = 2, lastGood = -1).current)
+    }
+}
