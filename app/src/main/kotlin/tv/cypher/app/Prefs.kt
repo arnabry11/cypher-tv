@@ -2,7 +2,7 @@ package tv.cypher.app
 
 import android.content.Context
 
-/** Everything small the app remembers: favourites order, last channel, last-good stream per channel. */
+/** Everything small the app remembers: favourites order, last channel, recent stream step-downs. */
 class Prefs(ctx: Context) {
     private val sp = ctx.getSharedPreferences("cypher", Context.MODE_PRIVATE)
 
@@ -14,11 +14,10 @@ class Prefs(ctx: Context) {
         get() = sp.getString("last", null)
         set(v) = sp.edit().putString("last", v).apply()
 
-    fun lastGood(channelId: String): Int = sp.getInt("good:$channelId", -1)
+    /** Encoded by core's QualityMemory: the stream a channel recently had to step down to. */
+    fun qualityMemory(channelId: String): String? = sp.getString("down:$channelId", null)
 
-    fun setLastGood(channelId: String, index: Int) {
-        if (lastGood(channelId) != index) sp.edit().putInt("good:$channelId", index).apply()
-    }
+    fun setQualityMemory(channelId: String, raw: String) = sp.edit().putString("down:$channelId", raw).apply()
 
     fun etag(url: String): String? = sp.getString("etag:$url", null)
 

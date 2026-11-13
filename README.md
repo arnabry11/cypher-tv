@@ -21,8 +21,12 @@ is under 1 MB and uses roughly 80 MB of RAM while playing.
 | Menu / Guide / Info | list / list / show banner | |
 
 In Move mode Up/Down shifts the row and OK drops it. The zap banner shows number, name, Now and Next.
-If a stream fails or stalls for 10 s the next backup stream is tried; if all fail you see
-"Channel unavailable".
+Each channel's streams are published best resolution first (playlist order within a resolution). A channel
+starts on its best stream. If playback rebuffers (for more than 4 s, or 3 times in a minute) it steps down to
+the next lower-quality stream and says "Switching to 720p…"; it never steps back up on its own mid-stream.
+The step-down is remembered for 30 minutes so zapping back doesn't repeat the stall; after that the best
+stream is tried again. A stream that errors, ends, or does not start within 10 s moves on to the next one too;
+if all fail you see "Channel unavailable".
 
 ## How it fits together
 

@@ -18,11 +18,14 @@ import androidx.media3.exoplayer.ExoPlayer
 import androidx.media3.exoplayer.source.DefaultMediaSourceFactory
 import androidx.media3.exoplayer.upstream.DefaultAllocator
 import tv.cypher.core.Channel
+import tv.cypher.core.RebufferTracker
+import tv.cypher.core.Stream
 import tv.cypher.core.StreamFailover
 
 /**
- * Plays one channel at a time with the headers each stream needs. On an error or a stall it tries the
- * channel's backup streams in order, last-known-good first.
+ * Plays one channel at a time with the headers each stream needs. A channel's streams are sorted best quality
+ * first: it starts on the best (or the one it recently had to step down to), steps down one stream when
+ * playback rebuffers, and moves on to the next stream on an error or a stall.
  */
 @UnstableApi
 class PlayerController(
@@ -31,9 +34,12 @@ class PlayerController(
     private val listener: Listener,
 ) {
     interface Listener {
-        fun onPlaying(channel: Channel, streamIndex: Int)
+        /** [downgraded] is true when this is not the stream the channel started on in this tune. */
+        fun onPlaying(channel: Channel, streamIndex: Int, downgraded: Boolean)
         fun onBuffering(buffering: Boolean)
         fun onFailed(channel: Channel)
+        /** About to try a different stream of the channel (after buffering trouble or a failure). */
+        fun onSwitching(channel: Channel, stream: Stream)
     }
 
     private val handler = Handler(Looper.getMainLooper())
@@ -43,23 +49,33 @@ class PlayerController(
     /** When the current stream first reached READY (0 = not yet); decides retry-same-stream vs move-on. */
     private var readyAt = 0L
     private val stall = Runnable { fail() }
+    private val rebuffers = RebufferTracker()
+    private val stepDownLater = Runnable { stepDown() }
+    private var firstIndex = -1
+    private var startedIndex = -1
 
     val hasPlayer: Boolean get() = player != null
 
-    fun play(ch: Channel, lastGoodIndex: Int) {
+    /** [startIndex] is the stream to begin with (-1: the best one). */
+    fun play(ch: Channel, startIndex: Int) {
         channel = ch
-        failover = StreamFailover(ch.streams.size, lastGoodIndex)
+        failover = StreamFailover(ch.streams.size, startIndex)
+        firstIndex = failover?.current ?: -1
+        startedIndex = -1
+        handler.removeCallbacks(stepDownLater)
         startCurrent()
     }
 
     fun stop() {
         handler.removeCallbacks(stall)
+        handler.removeCallbacks(stepDownLater)
         player?.stop()
         player?.clearMediaItems()
     }
 
     fun release() {
         handler.removeCallbacks(stall)
+        handler.removeCallbacks(stepDownLater)
         player?.release()
         player = null
     }
@@ -89,12 +105,20 @@ class PlayerController(
                         listener.onBuffering(true)
                         handler.removeCallbacks(stall)
                         handler.postDelayed(stall, STALL_MS)
+                        if (readyAt > 0) {
+                            // Rebuffering during playback: step down to a lower-quality stream if it keeps happening
+                            // (3 times a minute) or lasts more than a few seconds.
+                            handler.removeCallbacks(stepDownLater)
+                            if (rebuffers.record(SystemClock.elapsedRealtime())) stepDown()
+                            else handler.postDelayed(stepDownLater, REBUFFER_STEP_DOWN_MS)
+                        }
                     }
                     Player.STATE_READY -> {
                         handler.removeCallbacks(stall)
+                        handler.removeCallbacks(stepDownLater)
                         if (readyAt == 0L) readyAt = SystemClock.elapsedRealtime()
                         listener.onBuffering(false)
-                        failover?.let { listener.onPlaying(ch, it.current) }
+                        failover?.let { listener.onPlaying(ch, it.current, it.current != firstIndex) }
                     }
                     // A live stream that ends (server closed it, ENDLIST) is as dead as one that errors.
                     Player.STATE_ENDED -> fail()
@@ -112,6 +136,12 @@ class PlayerController(
         })
         player = p
         return p
+    }
+
+    /** Buffering trouble: go to the next lower-quality stream, if there is one. */
+    private fun stepDown() {
+        handler.removeCallbacks(stepDownLater)
+        if (failover?.stepDown() != null) startCurrent()
     }
 
     /** The current stream stopped working: retry it if it had been healthy for a while, else try the next one. */
@@ -134,6 +164,8 @@ class PlayerController(
         val idx = failover?.current ?: return
         if (idx < 0) { listener.onFailed(ch); return }
         val s = ch.streams[idx]
+        if (startedIndex >= 0 && idx != startedIndex) listener.onSwitching(ch, s)
+        startedIndex = idx
         readyAt = 0L
         val http = DefaultHttpDataSource.Factory()
             .setUserAgent(s.ua ?: DEFAULT_UA)
@@ -158,5 +190,6 @@ class PlayerController(
         private const val REBUFFER_MS = 3_000
         private const val TARGET_BUFFER_BYTES = 6 * 1024 * 1024
         private const val STALL_MS = 10_000L
+        private const val REBUFFER_STEP_DOWN_MS = 4_000L
     }
 }

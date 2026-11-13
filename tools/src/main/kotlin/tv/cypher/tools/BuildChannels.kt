@@ -66,7 +66,7 @@ object BuildChannels {
         val channels = picks.values.map { p ->
             val entries = byId.getValue(p.id)
             // Best resolution first (stable: playlist order is kept within one resolution; unknown goes last).
-            var list = entries.distinctBy { it.url }.sortedByDescending { it.height }.map { Stream(it.url, it.ua, it.referer) }
+            var list = entries.distinctBy { it.url }.sortedByDescending { it.height }.map { Stream(it.url, it.ua, it.referer, it.height.takeIf { h -> h > 0 }) }
             overrides.preferred[p.id]?.let { sub ->
                 val (pref, rest) = list.partition { sub in it.url }
                 list = pref + rest

@@ -20,6 +20,8 @@ import tv.cypher.core.Favourites
 import tv.cypher.core.Numbering
 import tv.cypher.core.NumberEntry
 import tv.cypher.core.Programme
+import tv.cypher.core.QualityMemory
+import tv.cypher.core.Stream
 import tv.cypher.core.RetryBackoff
 import tv.cypher.core.Zap
 import java.text.DateFormat
@@ -70,6 +72,8 @@ class MainActivity : Activity(), PlayerController.Listener {
     private val numberEntry = NumberEntry()
     private var centerDownInList = false
     private var longPressHandled = false
+    /** "Switching to 720p": shown instead of plain "Buffering…" while the new stream starts. */
+    private var switchText: String? = null
     private var updateOffered = false
     private var updateInProgress = false
     /** A downloaded, verified APK waiting for the user to allow installs from this app. */
@@ -211,9 +215,11 @@ class MainActivity : Activity(), PlayerController.Listener {
 
     private fun tune(ch: Channel, showBanner: Boolean = true) {
         currentId = ch.id
+        switchText = null
         prefs.lastChannel = ch.id
         messageView.visibility = View.GONE
-        player.play(ch, prefs.lastGood(ch.id))
+        val start = QualityMemory.decode(prefs.qualityMemory(ch.id), System.currentTimeMillis())
+        player.play(ch, start)
         if (showBanner) showBanner(ch)
     }
 
@@ -228,14 +234,22 @@ class MainActivity : Activity(), PlayerController.Listener {
         byId[id]?.let { tune(it) }
     }
 
-    override fun onPlaying(channel: Channel, streamIndex: Int) {
-        prefs.setLastGood(channel.id, streamIndex)
+    override fun onPlaying(channel: Channel, streamIndex: Int, downgraded: Boolean) {
+        // Remember a step-down for a while so zapping back does not repeat the stall; it expires, so the best
+        // quality is tried again later.
+        switchText = null
+        if (downgraded) prefs.setQualityMemory(channel.id, QualityMemory.encode(streamIndex, System.currentTimeMillis()))
         if (messageView.tag == MSG_STATUS) messageView.visibility = View.GONE
     }
 
     override fun onBuffering(buffering: Boolean) {
-        if (buffering) showMessage("Buffering…", 0, MSG_STATUS)
+        if (buffering) showMessage(switchText ?: "Buffering…", 0, MSG_STATUS)
         else if (messageView.tag == MSG_STATUS) messageView.visibility = View.GONE
+    }
+
+    override fun onSwitching(channel: Channel, stream: Stream) {
+        switchText = stream.h?.let { "Switching to ${it}p…" } ?: "Switching stream…"
+        showMessage(switchText!!, 0, MSG_STATUS)
     }
 
     override fun onFailed(channel: Channel) {

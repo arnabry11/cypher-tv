@@ -4,7 +4,13 @@ import kotlinx.serialization.Serializable
 
 /** One playable URL for a channel, with the optional HTTP headers it needs. */
 @Serializable
-data class Stream(val url: String, val ua: String? = null, val referer: String? = null)
+data class Stream(
+    val url: String,
+    val ua: String? = null,
+    val referer: String? = null,
+    /** Vertical resolution (e.g. 720) when the playlist says so. Streams are published best-first. */
+    val h: Int? = null,
+)
 
 /** A channel as published to `channels.json` and read by the TV app. */
 @Serializable

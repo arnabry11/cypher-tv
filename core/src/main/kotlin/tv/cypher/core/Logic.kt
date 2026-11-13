@@ -71,16 +71,22 @@ object NowNext {
     }
 }
 
-/** Order in which a channel's backup streams are tried: last-known-good first, each once. */
+/** Order in which a channel's streams are tried: the remembered one first, then lower quality, then higher; each once. */
 class StreamFailover(private val count: Int, lastGood: Int) {
     private var order: List<Int> = orderWithFirst(lastGood)
     private var idx = 0
 
     val current: Int get() = order.getOrElse(idx) { -1 }
 
+    /** [first], then the streams after it (lower quality, as streams are sorted best-first), then those before it. */
     private fun orderWithFirst(first: Int): List<Int> = buildList {
-        if (first in 0 until count) add(first)
-        for (i in 0 until count) if (i != first) add(i)
+        if (first in 0 until count) {
+            add(first)
+            for (i in first + 1 until count) add(i)
+            for (i in 0 until first) add(i)
+        } else {
+            for (i in 0 until count) add(i)
+        }
     }
 
     /** Moves to the next untried stream, or returns null when all have failed. */
@@ -88,6 +94,17 @@ class StreamFailover(private val count: Int, lastGood: Int) {
         if (idx + 1 >= order.size) return null
         idx++
         return order[idx]
+    }
+
+    /**
+     * Buffering trouble: move to the next stream only if it is lower quality (later in the best-first list).
+     * Returns it, or null (and stays put) when already on the lowest.
+     */
+    fun stepDown(): Int? {
+        val next = order.getOrNull(idx + 1) ?: return null
+        if (next <= current) return null
+        idx++
+        return next
     }
 
     /**
@@ -119,5 +136,32 @@ class RetryBackoff(private val firstMs: Long = 60_000, private val maxMs: Long =
         val d = minOf(maxMs, firstMs shl minOf(failures, 20))
         failures++
         return d
+    }
+}
+
+/** Remembers, for a short time, which stream a channel had to step down to, so zapping back does not repeat the stall. */
+object QualityMemory {
+    const val TTL_MS = 30 * 60_000L
+
+    fun encode(index: Int, nowMs: Long): String = "$index@$nowMs"
+
+    /** The remembered stream index, or -1 when there is none, it is older than [ttlMs], or the value is junk. */
+    fun decode(raw: String?, nowMs: Long, ttlMs: Long = TTL_MS): Int {
+        val index = raw?.substringBefore('@')?.toIntOrNull() ?: return -1
+        val at = raw.substringAfter('@', "").toLongOrNull() ?: return -1
+        val age = nowMs - at
+        return if (index >= 0 && age in 0..ttlMs) index else -1
+    }
+}
+
+/** Counts playback rebuffers; true once [limit] happen within [windowMs], then starts over. */
+class RebufferTracker(private val windowMs: Long = 60_000, private val limit: Int = 3) {
+    private val times = ArrayDeque<Long>()
+
+    fun record(nowMs: Long): Boolean {
+        while (times.isNotEmpty() && nowMs - times.first() > windowMs) times.removeFirst()
+        times.addLast(nowMs)
+        if (times.size >= limit) { times.clear(); return true }
+        return false
     }
 }

@@ -108,6 +108,8 @@ class BuildChannelsTest {
             https://x/d
         """.trimIndent())
         val r = BuildChannels.build(listOf(fta("X", "News", "Hindi")), pl, emptyList(), Overrides(), emptyMap())
-        assertEquals(listOf("https://x/b", "https://x/d", "https://x/c", "https://x/a", "https://x/unknown"), r.channels.single().streams.map { it.url })
+        val streams = r.channels.single().streams
+        assertEquals(listOf("https://x/b", "https://x/d", "https://x/c", "https://x/a", "https://x/unknown"), streams.map { it.url })
+        assertEquals(listOf(1080, 1080, 720, 576, null), streams.map { it.h })
     }
 }

@@ -73,7 +73,8 @@ class LogicTest {
     @Test fun failoverTriesLastGoodThenOthersOnce() {
         val f = StreamFailover(count = 4, lastGood = 2)
         assertEquals(2, f.current)
-        assertEquals(0, f.advance()); assertEquals(1, f.advance()); assertEquals(3, f.advance())
+        // streams are sorted best-first, so from the remembered one go to lower quality first, higher last
+        assertEquals(3, f.advance()); assertEquals(0, f.advance()); assertEquals(1, f.advance())
         assertNull(f.advance())
     }
 
@@ -86,7 +87,7 @@ class LogicTest {
         val f = StreamFailover(count = 3, lastGood = 1)
         assertEquals(1, f.failed(playedMs = 60_000))
         assertEquals(1, f.current)
-        assertEquals(0, f.failed(playedMs = 1_000)) // now it moves on
+        assertEquals(2, f.failed(playedMs = 1_000)) // now it moves on, to lower quality first
     }
 
     @Test fun streamThatDiesQuicklyAlwaysMovesOnAndEventuallyGivesUp() {
@@ -110,5 +111,45 @@ class LogicTest {
         assertEquals(240_000L, b.next(false, 10_000_000L))
         assertEquals(10_000_000L, b.next(true, 10_000_000L))
         assertEquals(60_000L, b.next(false, 10_000_000L))
+    }
+
+    @Test fun qualityMemoryRoundTripsWhileFresh() {
+        val raw = QualityMemory.encode(2, nowMs = 1_000_000)
+        assertEquals(2, QualityMemory.decode(raw, nowMs = 1_000_000 + 60_000, ttlMs = 30 * 60_000))
+    }
+
+    @Test fun qualityMemoryExpiresAndToleratesJunk() {
+        val raw = QualityMemory.encode(2, nowMs = 1_000_000)
+        assertEquals(-1, QualityMemory.decode(raw, nowMs = 1_000_000 + 31 * 60_000, ttlMs = 30 * 60_000))
+        assertEquals(-1, QualityMemory.decode(raw, nowMs = 1_000_000 - 5_000, ttlMs = 30 * 60_000)) // clock went backwards
+        assertEquals(-1, QualityMemory.decode(null, 5, 10)); assertEquals(-1, QualityMemory.decode("junk", 5, 10))
+        assertEquals(-1, QualityMemory.decode("-3@100", 105, 10))
+    }
+
+    @Test fun threeRebuffersWithinAMinuteTriggerAStepDown() {
+        val t = RebufferTracker(windowMs = 60_000, limit = 3)
+        assertEquals(false, t.record(0)); assertEquals(false, t.record(20_000)); assertEquals(true, t.record(40_000))
+        assertEquals(false, t.record(41_000)) // counter restarted after triggering
+    }
+
+    @Test fun slowRebuffersDoNotAccumulate() {
+        val t = RebufferTracker(windowMs = 60_000, limit = 3)
+        assertEquals(false, t.record(0)); assertEquals(false, t.record(50_000)); assertEquals(false, t.record(100_000))
+        assertEquals(false, t.record(150_000))
+    }
+
+    @Test fun stepDownGoesToLowerQualityOneAtATimeThenStops() {
+        val f = StreamFailover(count = 3, lastGood = -1) // streams 0 (best), 1, 2 (worst)
+        assertEquals(0, f.current)
+        assertEquals(1, f.stepDown()); assertEquals(1, f.current)
+        assertEquals(2, f.stepDown())
+        assertNull(f.stepDown()); assertEquals(2, f.current) // already the lowest: stays put
+    }
+
+    @Test fun stepDownNeverWrapsBackUpToBetterQuality() {
+        val f = StreamFailover(count = 3, lastGood = 1) // order 1, 2, 0
+        assertEquals(2, f.stepDown())
+        assertNull(f.stepDown()); assertEquals(2, f.current)
+        assertEquals(0, f.advance()) // a real failure may still fall back to the best one
     }
 }
