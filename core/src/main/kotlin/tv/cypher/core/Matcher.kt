@@ -44,10 +44,29 @@ class Matcher(candidates: List<Candidate>, private val overrides: Overrides) {
         for (a in fta.aliases) {
             lookup(Names.normalize(a))?.let { return done(MatchKind.ALIAS, it, a) }
         }
+        tvSuffix(Names.normalize(primary))?.let { return done(MatchKind.FUZZY, it, "tv-suffix") }
         fuzzy(Names.normalize(primary))?.let { (c, score) ->
             return done(MatchKind.FUZZY, c, "%.2f".format(score))
         }
         return MatchResult(fta, MatchKind.NONE)
+    }
+
+    /** Closest playlist names by shared words, to help write overrides for unmatched channels. */
+    fun suggest(fta: FtaChannel, limit: Int = 3): List<Candidate> {
+        val a = Names.normalize(Names.primary(fta.name)).split(' ').filter { it.isNotEmpty() }.toSet()
+        if (a.isEmpty()) return emptyList()
+        return all.map { c ->
+            val b = c.norm.split(' ').toSet()
+            c to (a.intersect(b).size.toDouble() / a.union(b).size)
+        }.filter { it.second >= 0.34 }.sortedByDescending { it.second }.take(limit).map { it.first }
+    }
+
+    /** "Amrita" vs "Amrita TV": the same name with or without a trailing "TV". */
+    private fun tvSuffix(norm: String): Candidate? {
+        if (norm.length < 4) return null
+        val stripped = norm.removeSuffix(" tv")
+        val hits = listOfNotNull(lookup("$stripped tv"), lookup(stripped)).filter { it.norm != norm }.distinctBy { it.id }
+        return hits.singleOrNull()
     }
 
     private fun lookup(norm: String): Candidate? {

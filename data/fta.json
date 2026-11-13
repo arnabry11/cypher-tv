@@ -1,0 +1,5675 @@
+[
+    {
+        "name": "9x",
+        "cat": "News",
+        "languages": [
+            "Hindi"
+        ],
+        "company": "9X MEDIA PRIVATE LIMITED"
+    },
+    {
+        "name": "9X JALWA (PHIR SE 9X)",
+        "aliases": [
+            "PHIR SE 9X"
+        ],
+        "cat": "Non-News",
+        "languages": [
+            "Bengali",
+            "English",
+            "Hindi"
+        ],
+        "company": "9X MEDIA PRIVATE LIMITED"
+    },
+    {
+        "name": "9X JHAKAAS (9X MARATHI)",
+        "aliases": [
+            "9X MARATHI"
+        ],
+        "cat": "Non-News",
+        "languages": [
+            "Marathi"
+        ],
+        "company": "9X MEDIA PRIVATE LIMITED"
+    },
+    {
+        "name": "9XM",
+        "cat": "Non-News",
+        "languages": [
+            "Bengali",
+            "English",
+            "Hindi"
+        ],
+        "company": "9X MEDIA PRIVATE LIMITED"
+    },
+    {
+        "name": "TV 24",
+        "cat": "News",
+        "languages": [
+            "English",
+            "Punjabi",
+            "Hindi"
+        ],
+        "company": "A ONE NEWS TIME BROADCASTING PRIVATE LIMITED"
+    },
+    {
+        "name": "Mantavya 24X7 (earlier BHASKAR NEWS, AP 9)",
+        "aliases": [
+            "BHASKAR NEWS",
+            "AP 9"
+        ],
+        "cat": "News",
+        "languages": [
+            "English",
+            "Marathi",
+            "Hindi"
+        ],
+        "company": "A.R. RAIL VIKAS SERVICES PVT. LTD."
+    },
+    {
+        "name": "SATYA",
+        "cat": "Non-News",
+        "languages": [
+            "English",
+            "Marathi",
+            "Hindi"
+        ],
+        "company": "A.R. RAIL VIKAS SERVICES PVT. LTD."
+    },
+    {
+        "name": "ABN ANDHRA JYOTHI",
+        "cat": "News",
+        "languages": [
+            "Telugu"
+        ],
+        "company": "AAMODA BROADCASTING COMPANY PRIVATE LIMITED"
+    },
+    {
+        "name": "ANJAN TV",
+        "cat": "Non-News",
+        "languages": [
+            "English",
+            "Hindi"
+        ],
+        "company": "AAP MEDIA PVT.LTD."
+    },
+    {
+        "name": "Dharm Sandesh",
+        "cat": "Non-News",
+        "languages": [
+            "English",
+            "Gujarati",
+            "Hindi"
+        ],
+        "company": "AASTHA BROAD CASTING NETWORK LIMITED"
+    },
+    {
+        "name": "ABP ANANDA (Earlier ABP ANANDO, STAR ANANDO)",
+        "aliases": [
+            "ABP ANANDO",
+            "STAR ANANDO"
+        ],
+        "cat": "News",
+        "languages": [
+            "Bengali",
+            "English",
+            "Hindi"
+        ],
+        "company": "ABP Network Pvt. Ltd."
+    },
+    {
+        "name": "ABP ASMITA (Earlie ABP SAMACHAR GUJARATI, ABP Sanjha)",
+        "aliases": [
+            "ABP SAMACHAR GUJARATI",
+            "ABP Sanjha"
+        ],
+        "cat": "News",
+        "languages": [
+            "Gujarati"
+        ],
+        "company": "ABP Network Pvt. Ltd."
+    },
+    {
+        "name": "ABP Desam (earlier ABP Andhra)",
+        "aliases": [
+            "ABP Andhra"
+        ],
+        "cat": "News",
+        "languages": [
+            "Hindi",
+            "Telugu"
+        ],
+        "company": "ABP Network Pvt. Ltd."
+    },
+    {
+        "name": "ABP Ganga",
+        "cat": "News",
+        "languages": [
+            "Hindi"
+        ],
+        "company": "ABP Network Pvt. Ltd."
+    },
+    {
+        "name": "ABP MAJHA (earlier STAR MAJHA)",
+        "aliases": [
+            "STAR MAJHA"
+        ],
+        "cat": "News",
+        "languages": [
+            "English",
+            "Marathi",
+            "Hindi"
+        ],
+        "company": "ABP Network Pvt. Ltd."
+    },
+    {
+        "name": "ABP Nadu",
+        "cat": "News",
+        "languages": [
+            "Hindi",
+            "Tamil"
+        ],
+        "company": "ABP Network Pvt. Ltd."
+    },
+    {
+        "name": "ABP NEWS (earlier STAR NEWS)",
+        "aliases": [
+            "STAR NEWS"
+        ],
+        "cat": "News",
+        "languages": [
+            "English",
+            "Hindi",
+            "Marathi"
+        ],
+        "company": "ABP Network Pvt. Ltd."
+    },
+    {
+        "name": "ABP NEWS HD (Earlier known as ABP Kannada)",
+        "aliases": [
+            "ABP Kannada"
+        ],
+        "cat": "News",
+        "languages": [
+            "English",
+            "Hindi"
+        ],
+        "company": "ABP Network Pvt. Ltd."
+    },
+    {
+        "name": "ABP Sanjha",
+        "cat": "News",
+        "languages": [
+            "English",
+            "Hindi",
+            "Punjabi"
+        ],
+        "company": "ABP Network Pvt. Ltd."
+    },
+    {
+        "name": "Anand TV",
+        "cat": "Non-News",
+        "languages": [
+            "English",
+            "Hindi"
+        ],
+        "company": "ACCORD INFRATECH PRIVATE LIMITED"
+    },
+    {
+        "name": "ANB NEWS NATIONAL",
+        "cat": "News",
+        "languages": [
+            "English",
+            "Hindi",
+            "Tamil",
+            "Assamese",
+            "Dogri",
+            "Konkani",
+            "Manipuri",
+            "Odia",
+            "Santhali",
+            "Telugu",
+            "Bengali",
+            "Kannada",
+            "Maithili",
+            "Punjabi",
+            "Sindhi",
+            "Urdu",
+            "Bodo",
+            "Gujarati",
+            "Kashmiri",
+            "Malayalam",
+            "Nepali",
+            "Sanskrit",
+            "Marathi",
+            "Bojpuri",
+            "Garhwali"
+        ],
+        "company": "ADONAI BROADCASTING NETWORK PRIVATE LIMITED"
+    },
+    {
+        "name": "SHEMAROO MARATHIBANA",
+        "cat": "Non-News",
+        "languages": [
+            "English",
+            "Marathi",
+            "Punjabi",
+            "Hindi"
+        ],
+        "company": "AIKYAM ENTERTAINMENT PRIVATE LIMITED"
+    },
+    {
+        "name": "SHEMAROO TV",
+        "cat": "Non-News",
+        "languages": [
+            "English",
+            "Hindi",
+            "Tamil",
+            "Assamese",
+            "Dogri",
+            "Konkani",
+            "Manipuri",
+            "Odia",
+            "Santhali",
+            "Telugu",
+            "Bengali",
+            "Kannada",
+            "Maithili",
+            "Punjabi",
+            "Sindhi",
+            "Urdu",
+            "Bodo",
+            "Gujarati",
+            "Kashmiri",
+            "Malayalam",
+            "Nepali",
+            "Sanskrit",
+            "Marathi",
+            "Bojpuri",
+            "Other",
+            "Arabic",
+            "Garhwali",
+            "German",
+            "Italian",
+            "Khasi",
+            "Kumaoni",
+            "Nagamis",
+            "Portuguese",
+            "Russian",
+            "Spanish",
+            "French"
+        ],
+        "company": "AIKYAM ENTERTAINMENT PRIVATE LIMITED"
+    },
+    {
+        "name": "SHEMAROO UMANG",
+        "cat": "Non-News",
+        "languages": [
+            "Hindi",
+            "Punjabi",
+            "English"
+        ],
+        "company": "AIKYAM ENTERTAINMENT PRIVATE LIMITED"
+    },
+    {
+        "name": "ATE TV",
+        "cat": "News",
+        "languages": [
+            "English",
+            "Malayalam"
+        ],
+        "company": "Airtravel Enterprises India Limited"
+    },
+    {
+        "name": "AL JAZEERA ENGLISH",
+        "cat": "News",
+        "languages": [
+            "English"
+        ],
+        "company": "AJI INTERNATIONAL PRIVATE LIMITED"
+    },
+    {
+        "name": "NEWS 7 TAMIL (Earlier REAL ESTATE)",
+        "aliases": [
+            "REAL ESTATE"
+        ],
+        "cat": "News",
+        "languages": [
+            "English"
+        ],
+        "company": "ALLIANCE BROADCASTING PRIVATE LIMITED"
+    },
+    {
+        "name": "K NEWS INDIA (earlier MAGIK/Bhojpuria Magic)",
+        "aliases": [
+            "MAGIK",
+            "Bhojpuria Magic"
+        ],
+        "cat": "News",
+        "languages": [
+            "Garhwali",
+            "Kumaoni",
+            "Bojpuri",
+            "Hindi"
+        ],
+        "company": "ALLIANCE STRATEGIES LIMITED"
+    },
+    {
+        "name": "NE News",
+        "cat": "News",
+        "company": "AM Television Pvt. Ltd"
+    },
+    {
+        "name": "PRAG (earlier NEWS BANGLA)",
+        "aliases": [
+            "NEWS BANGLA"
+        ],
+        "cat": "News",
+        "languages": [
+            "Hindi",
+            "English"
+        ],
+        "company": "AM Television Pvt. Ltd"
+    },
+    {
+        "name": "RENGONI",
+        "cat": "Non-News",
+        "languages": [
+            "Assamese"
+        ],
+        "company": "AM Television Pvt. Ltd"
+    },
+    {
+        "name": "AMRITA",
+        "cat": "News",
+        "languages": [
+            "English",
+            "Hindi",
+            "Malayalam"
+        ],
+        "company": "AMRITA ENTERPRISES PRIVATE LIMITED"
+    },
+    {
+        "name": "INDIA AHEAD (EARLIER BHAARAT TODAY, BHARAT TODAY (Earlier YOUR NEWS))",
+        "aliases": [
+            "BHAARAT TODAY",
+            "BHARAT TODAY",
+            "YOUR NEWS"
+        ],
+        "cat": "News",
+        "languages": [
+            "English"
+        ],
+        "company": "ANDHRAPRABHA PUBLICATIONS LIMITED"
+    },
+    {
+        "name": "ANGEL TV",
+        "cat": "Non-News",
+        "languages": [
+            "English",
+            "Tamil"
+        ],
+        "company": "ANGEL BROADCASTING NETWORK PVT. LTD. (Earlier TRINITY TELEVISION PRIVATE LIMITED)"
+    },
+    {
+        "name": "ARADANA",
+        "cat": "Non-News",
+        "languages": [
+            "English",
+            "Hindi",
+            "Telugu"
+        ],
+        "company": "ARADANA BROADCASTING INTERNATIONAL PRIVATE LIMITED"
+    },
+    {
+        "name": "R. Kannada",
+        "cat": "News",
+        "company": "ARG Outlier Media Pvt. Ltd"
+    },
+    {
+        "name": "R.Bangla",
+        "cat": "News",
+        "languages": [
+            "Bengali"
+        ],
+        "company": "ARG Outlier Media Pvt. Ltd"
+    },
+    {
+        "name": "Republic TV",
+        "cat": "News",
+        "languages": [
+            "Hindi",
+            "English"
+        ],
+        "company": "ARG Outlier Media Pvt. Ltd"
+    },
+    {
+        "name": "REPUBLIC TV BHARAT",
+        "cat": "News",
+        "languages": [
+            "Hindi"
+        ],
+        "company": "ARG Outlier Media Pvt. Ltd"
+    },
+    {
+        "name": "IND 24 (earlier Live India Kannada, NEWS SUPER FAST)",
+        "aliases": [
+            "Live India Kannada",
+            "NEWS SUPER FAST"
+        ],
+        "cat": "News",
+        "languages": [
+            "English",
+            "Hindi"
+        ],
+        "company": "ARPAN MEDIA PRIVATE LIMITED"
+    },
+    {
+        "name": "Ashirwad",
+        "cat": "Non-News",
+        "languages": [
+            "English",
+            "Marathi",
+            "Hindi"
+        ],
+        "company": "Ashirwad Multimedia Pvt. Ltd."
+    },
+    {
+        "name": "B4U Bhojpuri (Earlier known as ASHIRWAD)",
+        "aliases": [
+            "ASHIRWAD"
+        ],
+        "cat": "Non-News",
+        "languages": [
+            "English",
+            "Hindi"
+        ],
+        "company": "ASHIRWAD TELENETWORK PRIVATE LIMITED"
+    },
+    {
+        "name": "B4U KADAK (Earleir MOVIE HOUSE, ASHIRWAD CLASSIC)",
+        "aliases": [
+            "MOVIE HOUSE",
+            "ASHIRWAD CLASSIC"
+        ],
+        "cat": "Non-News",
+        "languages": [
+            "Hindi"
+        ],
+        "company": "ASHIRWAD TELENETWORK PRIVATE LIMITED"
+    },
+    {
+        "name": "Studio One + (earlier ASHIRWAD Gold)",
+        "aliases": [
+            "ASHIRWAD Gold"
+        ],
+        "cat": "Non-News",
+        "languages": [
+            "Hindi"
+        ],
+        "company": "ASHIRWAD TELENETWORK PRIVATE LIMITED"
+    },
+    {
+        "name": "News 1 India (earlier High News (earlier News1 India, CEE NEWS)",
+        "aliases": [
+            "High News",
+            "News1 India",
+            "CEE NEWS"
+        ],
+        "cat": "News",
+        "languages": [
+            "English",
+            "Hindi"
+        ],
+        "company": "ASHOKA PRODUCTIONS AND COMMUNICATION PVT LTD"
+    },
+    {
+        "name": "SUPER TV (earlier CEE VANDANA/Adhyatm)",
+        "aliases": [
+            "CEE VANDANA",
+            "Adhyatm"
+        ],
+        "cat": "Non-News",
+        "languages": [
+            "English",
+            "Hindi"
+        ],
+        "company": "ASHOKA PRODUCTIONS AND COMMUNICATION PVT LTD"
+    },
+    {
+        "name": "ASIANET NEWS",
+        "cat": "News",
+        "languages": [
+            "Malayalam"
+        ],
+        "company": "ASIANET NEWS NETWORK PRIVATE LIMITED"
+    },
+    {
+        "name": "Asianet Suvarna News",
+        "cat": "News",
+        "languages": [
+            "Kannada"
+        ],
+        "company": "ASIANET NEWS NETWORK PRIVATE LIMITED"
+    },
+    {
+        "name": "Anaadi TV",
+        "cat": "News",
+        "company": "Asnani Builders & Developers Ltd"
+    },
+    {
+        "name": "News9",
+        "cat": "News",
+        "company": "ASSOCIATED BROADCASTING COMPANY PRIVATE LIMITED"
+    },
+    {
+        "name": "TV9 Bangla (Earlier TV 1)",
+        "aliases": [
+            "TV 1"
+        ],
+        "cat": "News",
+        "languages": [
+            "English",
+            "Hindi",
+            "Kannada",
+            "Malayalam",
+            "Tamil",
+            "Telugu",
+            "Marathi"
+        ],
+        "company": "ASSOCIATED BROADCASTING COMPANY PRIVATE LIMITED"
+    },
+    {
+        "name": "TV9 Bharatvarsh (Earlier known as TV9 AP, before that TV 9 KOLKATA)",
+        "aliases": [
+            "TV9 AP",
+            "before that TV 9 KOLKATA"
+        ],
+        "cat": "News",
+        "languages": [
+            "English",
+            "Hindi",
+            "Kannada",
+            "Malayalam",
+            "Marathi",
+            "Tamil",
+            "Telugu",
+            "Gujarati"
+        ],
+        "company": "ASSOCIATED BROADCASTING COMPANY PRIVATE LIMITED"
+    },
+    {
+        "name": "TV9 GUJARATI (earlier TV9 GUJARAT)",
+        "aliases": [
+            "TV9 GUJARAT"
+        ],
+        "cat": "News",
+        "languages": [
+            "English",
+            "Hindi",
+            "Kannada",
+            "Malayalam",
+            "Marathi",
+            "Tamil",
+            "Telugu",
+            "Gujarati"
+        ],
+        "company": "ASSOCIATED BROADCASTING COMPANY PRIVATE LIMITED"
+    },
+    {
+        "name": "TV9 KANNADA",
+        "cat": "News",
+        "languages": [
+            "English",
+            "Hindi",
+            "Kannada",
+            "Malayalam",
+            "Tamil",
+            "Telugu",
+            "Marathi"
+        ],
+        "company": "ASSOCIATED BROADCASTING COMPANY PRIVATE LIMITED"
+    },
+    {
+        "name": "TV9 Marathi (earlier TV9 MUMBAI)",
+        "aliases": [
+            "TV9 MUMBAI"
+        ],
+        "cat": "News",
+        "languages": [
+            "English",
+            "Hindi",
+            "Kannada",
+            "Malayalam",
+            "Tamil",
+            "Telugu",
+            "Marathi"
+        ],
+        "company": "ASSOCIATED BROADCASTING COMPANY PRIVATE LIMITED"
+    },
+    {
+        "name": "TV9 Telgu (earlier TV 9)",
+        "aliases": [
+            "TV 9"
+        ],
+        "cat": "News",
+        "languages": [
+            "English",
+            "Hindi",
+            "Kannada",
+            "Malayalam",
+            "Tamil",
+            "Telugu",
+            "Marathi"
+        ],
+        "company": "ASSOCIATED BROADCASTING COMPANY PRIVATE LIMITED"
+    },
+    {
+        "name": "Popcorn Movies",
+        "cat": "Non-News",
+        "languages": [
+            "English",
+            "Urdu",
+            "Hindi"
+        ],
+        "company": "Atiya Healthcare Pvt Ltd."
+    },
+    {
+        "name": "TV 100 (Earlier known as AVANTI SAMACHAR)",
+        "aliases": [
+            "AVANTI SAMACHAR"
+        ],
+        "cat": "News",
+        "languages": [
+            "Hindi"
+        ],
+        "company": "AVANTI MEDIA LIMITED"
+    },
+    {
+        "name": "AYUSH TV",
+        "cat": "Non-News",
+        "languages": [
+            "English",
+            "Kannada",
+            "Malayalam",
+            "Tamil",
+            "Telugu",
+            "Hindi"
+        ],
+        "company": "AYUSH TV PRIVATE LIMITED"
+    },
+    {
+        "name": "B4U Hitz",
+        "cat": "Non-News",
+        "languages": [
+            "English",
+            "Hindi"
+        ],
+        "company": "B4U TELEVISION NETWORK INDIA LIMITED"
+    },
+    {
+        "name": "B4U MOVIES",
+        "cat": "Non-News",
+        "languages": [
+            "Hindi",
+            "English"
+        ],
+        "company": "B4U TELEVISION NETWORK INDIA LIMITED"
+    },
+    {
+        "name": "B4U MUSIC",
+        "cat": "Non-News",
+        "languages": [
+            "Hindi",
+            "English"
+        ],
+        "company": "B4U TELEVISION NETWORK INDIA LIMITED"
+    },
+    {
+        "name": "Dhamaka Movies B4U",
+        "cat": "Non-News",
+        "languages": [
+            "Hindi",
+            "English"
+        ],
+        "company": "B4U TELEVISION NETWORK INDIA LIMITED"
+    },
+    {
+        "name": "CHUMBAK TV",
+        "cat": "Non-News",
+        "languages": [
+            "English",
+            "Marathi",
+            "Hindi"
+        ],
+        "company": "Beginnen Media Pvt. Ltd."
+    },
+    {
+        "name": "Times Now City (earlier ROMEDY NOW HD)",
+        "aliases": [
+            "ROMEDY NOW HD"
+        ],
+        "cat": "Non-News",
+        "languages": [
+            "English"
+        ],
+        "company": "BENNETT COLEMAN AND COMPANY LIMITED"
+    },
+    {
+        "name": "Times Now Navbharat",
+        "cat": "News",
+        "languages": [
+            "Hindi",
+            "English"
+        ],
+        "company": "BENNETT COLEMAN AND COMPANY LIMITED"
+    },
+    {
+        "name": "JAI HIND",
+        "cat": "News",
+        "languages": [
+            "Hindi",
+            "Marathi",
+            "Malayalam"
+        ],
+        "company": "BHARAT BROADCASTING NETWORK LIMITED"
+    },
+    {
+        "name": "NETWORK 10",
+        "cat": "News",
+        "languages": [
+            "Hindi"
+        ],
+        "company": "BHARAT HYDEL PROJECTS PRIVATE LIMITED"
+    },
+    {
+        "name": "Aadinath (Earlier AHSAS, Daati Ahsas)",
+        "aliases": [
+            "AHSAS",
+            "Daati Ahsas"
+        ],
+        "cat": "Non-News",
+        "languages": [
+            "English",
+            "Hindi"
+        ],
+        "company": "Bhole Baba Real Estate Developers Pvt. Ltd."
+    },
+    {
+        "name": "GUARANTEE NEWS 24x7",
+        "cat": "News",
+        "languages": [
+            "English",
+            "Hindi"
+        ],
+        "company": "Bhole Baba Real Estate Developers Pvt. Ltd."
+    },
+    {
+        "name": "1 YES NEWS (EARLIER BIZZ NEWS)",
+        "aliases": [
+            "BIZZ NEWS"
+        ],
+        "cat": "News",
+        "languages": [
+            "English",
+            "Tamil",
+            "Hindi"
+        ],
+        "company": "BIZZ NEWS PRIVATE LIMITED"
+    },
+    {
+        "name": "JEHOVAH (Earlier known as 99 Entertainment Channel)",
+        "aliases": [
+            "99 Entertainment Channel"
+        ],
+        "cat": "Non-News",
+        "languages": [
+            "English",
+            "Hindi"
+        ],
+        "company": "BKR international Media Private Limited"
+    },
+    {
+        "name": "BLOOMBERG TELEVISION ASIA-PACIFIC FEED",
+        "cat": "News",
+        "languages": [
+            "English"
+        ],
+        "company": "BLOOMBERG TELEVISION PRODUCTION SERVICES INDIA PVT. LTD."
+    },
+    {
+        "name": "GANGAUR TELEVISION",
+        "cat": "Non-News",
+        "languages": [
+            "Hindi"
+        ],
+        "company": "Box Cinemedia Services Pvt. Ltd."
+    },
+    {
+        "name": "LIVING INDIA NEWS (Earlier FW News (REPORTER 24*7)",
+        "aliases": [
+            "FW News",
+            "REPORTER 24*7"
+        ],
+        "cat": "News",
+        "languages": [
+            "Hindi"
+        ],
+        "company": "BPL MEDIA LIMITED"
+    },
+    {
+        "name": "PUNJABI HITS",
+        "cat": "Non-News",
+        "languages": [
+            "Punjabi",
+            "Hindi"
+        ],
+        "company": "BPL MEDIA LIMITED"
+    },
+    {
+        "name": "DY 365",
+        "cat": "News",
+        "languages": [
+            "English",
+            "Hindi",
+            "Assamese"
+        ],
+        "company": "BRAHMAPUTRA TELE-PRODUCTIONS PVT. LTD."
+    },
+    {
+        "name": "Jonack (earlier DHOOM /DY 365 ENTERTAINMENT)",
+        "aliases": [
+            "DHOOM",
+            "DY 365 ENTERTAINMENT"
+        ],
+        "cat": "Non-News",
+        "languages": [
+            "Assamese"
+        ],
+        "company": "BRAHMAPUTRA TELE-PRODUCTIONS PVT. LTD."
+    },
+    {
+        "name": "NL TV (Earlier NEWS 11, DY-365 UP)",
+        "aliases": [
+            "NEWS 11",
+            "DY-365 UP"
+        ],
+        "cat": "News",
+        "languages": [
+            "Bojpuri",
+            "Hindi"
+        ],
+        "company": "BRAHMAPUTRA TELE-PRODUCTIONS PVT. LTD."
+    },
+    {
+        "name": "DHOOM MUSIC BANGLA",
+        "cat": "Non-News",
+        "company": "BRAND VALUE COMMUNICATIONS PRIVATE LIMITED"
+    },
+    {
+        "name": "NEWS TIME ASSAM",
+        "cat": "News",
+        "company": "BRAND VALUE COMMUNICATIONS PRIVATE LIMITED"
+    },
+    {
+        "name": "NEWS TIME BANGLA",
+        "cat": "News",
+        "company": "BRAND VALUE COMMUNICATIONS PRIVATE LIMITED"
+    },
+    {
+        "name": "RUPASI BANGLA",
+        "cat": "Non-News",
+        "company": "BRAND VALUE COMMUNICATIONS PRIVATE LIMITED"
+    },
+    {
+        "name": "TNP NEWS",
+        "cat": "News",
+        "languages": [
+            "Hindi"
+        ],
+        "company": "Business Broadcast News Pvt. Ltd. (Earlier Known as UTV NEWS LIMITED)"
+    },
+    {
+        "name": "DW TV",
+        "cat": "News",
+        "languages": [
+            "English",
+            "German"
+        ],
+        "company": "CABSAT CHANNEL PRIVATE LIMITED"
+    },
+    {
+        "name": "CALCUTTA NEWS (Earlier UTTAR BANGLA AKD & C BANGLA)",
+        "aliases": [
+            "UTTAR BANGLA AKD & C BANGLA"
+        ],
+        "cat": "News",
+        "languages": [
+            "Bengali"
+        ],
+        "company": "CALCUTTA TELEVISION NETWORK PRIVATE LIMITED"
+    },
+    {
+        "name": "CTVN-AKD-PLUS",
+        "cat": "News",
+        "languages": [
+            "Bengali"
+        ],
+        "company": "CALCUTTA TELEVISION NETWORK PRIVATE LIMITED"
+    },
+    {
+        "name": "CAPTAIN NEWS",
+        "cat": "News",
+        "languages": [
+            "English",
+            "Tamil"
+        ],
+        "company": "CAPTAIN MEDIA PRIVATE LIMITED"
+    },
+    {
+        "name": "CAPTAIN TV",
+        "cat": "News",
+        "languages": [
+            "English",
+            "Tamil"
+        ],
+        "company": "CAPTAIN MEDIA PRIVATE LIMITED"
+    },
+    {
+        "name": "RAAPCHIK",
+        "cat": "Non-News",
+        "languages": [
+            "English",
+            "Hindi",
+            "Bojpuri"
+        ],
+        "company": "Captain Video Private Limited"
+    },
+    {
+        "name": "ABC AUSTRALIA",
+        "cat": "Non-News",
+        "languages": [
+            "English"
+        ],
+        "company": "CATVISION LTD."
+    },
+    {
+        "name": "EURO NEWS(Earlier TV5 Monde, Euro News)",
+        "aliases": [
+            "TV5 Monde",
+            "Euro News"
+        ],
+        "cat": "News",
+        "languages": [
+            "Arabic",
+            "English",
+            "German",
+            "Italian",
+            "Portuguese",
+            "Russian",
+            "Spanish",
+            "French"
+        ],
+        "company": "CATVISION LTD."
+    },
+    {
+        "name": "FRANCE 24",
+        "cat": "News",
+        "languages": [
+            "French"
+        ],
+        "company": "CATVISION LTD."
+    },
+    {
+        "name": "NHK World Japan",
+        "cat": "News",
+        "languages": [
+            "English"
+        ],
+        "company": "CATVISION LTD."
+    },
+    {
+        "name": "NHK World Premium",
+        "cat": "Non-News",
+        "languages": [
+            "English"
+        ],
+        "company": "CATVISION LTD."
+    },
+    {
+        "name": "TV 5 MONDE",
+        "cat": "News",
+        "languages": [
+            "French"
+        ],
+        "company": "CATVISION LTD."
+    },
+    {
+        "name": "IMAYAM TV",
+        "cat": "News",
+        "languages": [
+            "Tamil",
+            "English"
+        ],
+        "company": "CHANNEL BHARAT ENTERTAINMENT PRIVATE LIMITED"
+    },
+    {
+        "name": "Shekinah (earlier known as CHANNEL 2)",
+        "aliases": [
+            "CHANNEL 2"
+        ],
+        "cat": "News",
+        "languages": [
+            "English",
+            "Hindi",
+            "Punjabi"
+        ],
+        "company": "CHANNEL NO 2 NEWS MEDIA PVT LTD"
+    },
+    {
+        "name": "CHARDIKALA TIME TV",
+        "cat": "News",
+        "languages": [
+            "English",
+            "Punjabi"
+        ],
+        "company": "CHARDIKLA TIME TV PRIVATE LIMITED"
+    },
+    {
+        "name": "Malai Murasu Seithikal",
+        "cat": "News",
+        "languages": [
+            "Tamil"
+        ],
+        "company": "Chennai Murasu Private Limited"
+    },
+    {
+        "name": "CALVARY TV",
+        "cat": "Non-News",
+        "company": "CHRISTU KRUPA BROADCASTING PVT LTD"
+    },
+    {
+        "name": "Har Khabar (earlier Prerna)",
+        "aliases": [
+            "Prerna"
+        ],
+        "cat": "News",
+        "languages": [
+            "English",
+            "Hindi"
+        ],
+        "company": "Cimco Projects Ltd."
+    },
+    {
+        "name": "News Hour (earlier Pan Asia TV Bangla, Voice of Indian People- VIP)",
+        "aliases": [
+            "Pan Asia TV Bangla",
+            "Voice of Indian People- VIP"
+        ],
+        "cat": "News",
+        "languages": [
+            "English",
+            "Hindi"
+        ],
+        "company": "Cimco Projects Ltd."
+    },
+    {
+        "name": "Pratham Khabar 24x7",
+        "cat": "News",
+        "languages": [
+            "English",
+            "Hindi"
+        ],
+        "company": "Cimco Projects Ltd."
+    },
+    {
+        "name": "Kannada Naaptol (earlier known as NT4)",
+        "aliases": [
+            "NT4"
+        ],
+        "cat": "Non-News",
+        "languages": [
+            "English",
+            "Hindi"
+        ],
+        "company": "Cinema 24x7 Pvt. Ltd"
+    },
+    {
+        "name": "Malayalam Naaptol (earlier known as NT3)",
+        "aliases": [
+            "NT3"
+        ],
+        "cat": "Non-News",
+        "languages": [
+            "English",
+            "Hindi"
+        ],
+        "company": "Cinema 24x7 Pvt. Ltd"
+    },
+    {
+        "name": "Tamil Naaptol (earlier known as NT2)",
+        "aliases": [
+            "NT2"
+        ],
+        "cat": "Non-News",
+        "languages": [
+            "English",
+            "Hindi"
+        ],
+        "company": "Cinema 24x7 Pvt. Ltd"
+    },
+    {
+        "name": "Telugu Naaptol (Earlier Known as NT9)",
+        "aliases": [
+            "NT9"
+        ],
+        "cat": "Non-News",
+        "languages": [
+            "English",
+            "Hindi"
+        ],
+        "company": "Cinema 24x7 Pvt. Ltd"
+    },
+    {
+        "name": "WOW Cinema One (Earlier NT6)",
+        "aliases": [
+            "NT6"
+        ],
+        "cat": "Non-News",
+        "languages": [
+            "English",
+            "Hindi"
+        ],
+        "company": "Cinema 24x7 Pvt. Ltd"
+    },
+    {
+        "name": "WOW CINEMA (Earlier TV PUNJABI)",
+        "aliases": [
+            "TV PUNJABI"
+        ],
+        "cat": "Non-News",
+        "company": "CITY NETWORK BROADCAST CONVERGENCE PVT LTD"
+    },
+    {
+        "name": "Pasand (earlier Mango)",
+        "aliases": [
+            "Mango"
+        ],
+        "cat": "Non-News",
+        "languages": [
+            "English"
+        ],
+        "company": "Cobol Communications Pvt. Ltd."
+    },
+    {
+        "name": "Pear TV",
+        "cat": "Non-News",
+        "company": "Cobol Communications Pvt. Ltd."
+    },
+    {
+        "name": "Unique TV",
+        "cat": "Non-News",
+        "company": "Cobol Communications Pvt. Ltd."
+    },
+    {
+        "name": "SWARA SAGAR (Earlier LAKSHYYA ENTERTAINMENT, SUPER STAR-JOSH)",
+        "aliases": [
+            "LAKSHYYA ENTERTAINMENT",
+            "SUPER STAR-JOSH"
+        ],
+        "cat": "Non-News",
+        "languages": [
+            "Kannada",
+            "Malayalam",
+            "Telugu",
+            "Tamil"
+        ],
+        "company": "COXSWAIN TECHNOLOGIES LIMITED"
+    },
+    {
+        "name": "MANORANJAN GRAND",
+        "cat": "Non-News",
+        "languages": [
+            "Hindi",
+            "English"
+        ],
+        "company": "CREATIVE CHANNEL ADVERTISING AND MARKETING PRIVATE"
+    },
+    {
+        "name": "MANORANJAN MOVIES (Earlier Manoranjan Music)",
+        "aliases": [
+            "Manoranjan Music"
+        ],
+        "cat": "Non-News",
+        "languages": [
+            "Hindi"
+        ],
+        "company": "CREATIVE CHANNEL ADVERTISING AND MARKETING PRIVATE"
+    },
+    {
+        "name": "Manoranjan Prime",
+        "cat": "Non-News",
+        "languages": [
+            "Hindi",
+            "English"
+        ],
+        "company": "CREATIVE CHANNEL ADVERTISING AND MARKETING PRIVATE"
+    },
+    {
+        "name": "MANORANJAN TV",
+        "cat": "Non-News",
+        "languages": [
+            "English",
+            "Hindi"
+        ],
+        "company": "CREATIVE CHANNEL ADVERTISING AND MARKETING PRIVATE"
+    },
+    {
+        "name": "JAN TV",
+        "cat": "News",
+        "languages": [
+            "English",
+            "Hindi"
+        ],
+        "company": "CSL INFOMEDIA PRIVATE LIMITED"
+    },
+    {
+        "name": "SONY PAL",
+        "cat": "Non-News",
+        "languages": [
+            "English",
+            "Hindi"
+        ],
+        "company": "CULVER MAX ENTERTAINMENT PRIVATE LIMITED"
+    },
+    {
+        "name": "SONY WAH",
+        "cat": "Non-News",
+        "languages": [
+            "English",
+            "Hindi"
+        ],
+        "company": "CULVER MAX ENTERTAINMENT PRIVATE LIMITED"
+    },
+    {
+        "name": "INDIA 27",
+        "cat": "News",
+        "company": "DAY NIGHT MEDIA NETWORK PRIVATE LIMITED"
+    },
+    {
+        "name": "NATION 27",
+        "cat": "News",
+        "company": "DAY NIGHT MEDIA NETWORK PRIVATE LIMITED"
+    },
+    {
+        "name": "NKR TV",
+        "cat": "Non-News",
+        "languages": [
+            "Malayalam",
+            "Tamil",
+            "Telugu",
+            "Kannada"
+        ],
+        "company": "DDNK Media Pvt. Ltd."
+    },
+    {
+        "name": "MUNSIF TV",
+        "cat": "News",
+        "languages": [
+            "English",
+            "Hindi",
+            "Urdu"
+        ],
+        "company": "DERA TELEVISIONS PRIVATE LIMITED"
+    },
+    {
+        "name": "BS TV",
+        "cat": "News",
+        "languages": [
+            "Hindi",
+            "English"
+        ],
+        "company": "Dev Versha Jatropha Bio Energy Private Limited"
+    },
+    {
+        "name": "KHABAR FAST",
+        "cat": "News",
+        "languages": [
+            "English",
+            "Hindi"
+        ],
+        "company": "DEVBHUMI BROADCAST PRIVATE LIMITED"
+    },
+    {
+        "name": "Utkrisht News Samachar Plus Rajasthan",
+        "cat": "News",
+        "languages": [
+            "English",
+            "Hindi"
+        ],
+        "company": "Dharampal Satyapal Limited"
+    },
+    {
+        "name": "Utkrisht News Samachar Plus Uttar Pradesh/Uttrakhand",
+        "cat": "News",
+        "languages": [
+            "English",
+            "Hindi"
+        ],
+        "company": "Dharampal Satyapal Limited"
+    },
+    {
+        "name": "Hope Channel India (earlier Naaptol Malayalam, DHARM SANGEET)",
+        "aliases": [
+            "Naaptol Malayalam",
+            "DHARM SANGEET"
+        ],
+        "cat": "Non-News",
+        "company": "DHARM MEDIA VENTURES PRIVATE LIMITED"
+    },
+    {
+        "name": "News World",
+        "cat": "News",
+        "company": "Digiana Industries Pvt Ltd."
+    },
+    {
+        "name": "AASEERVATHAM",
+        "cat": "News",
+        "languages": [
+            "Kannada"
+        ],
+        "company": "DIKSAT TRANSWORLD LIMITED"
+    },
+    {
+        "name": "CUISINE TV",
+        "cat": "News",
+        "languages": [
+            "English"
+        ],
+        "company": "DIKSAT TRANSWORLD LIMITED"
+    },
+    {
+        "name": "WIN TV",
+        "cat": "News",
+        "languages": [
+            "Tamil"
+        ],
+        "company": "DIKSAT TRANSWORLD LIMITED"
+    },
+    {
+        "name": "WIN TV - U.P.",
+        "cat": "News",
+        "languages": [
+            "Hindi"
+        ],
+        "company": "DIKSAT TRANSWORLD LIMITED"
+    },
+    {
+        "name": "DISHA NEWS CHANNEL (Earlier known as DHALIWAL TV)",
+        "aliases": [
+            "DHALIWAL TV"
+        ],
+        "cat": "News",
+        "languages": [
+            "English",
+            "Punjabi",
+            "Hindi"
+        ],
+        "company": "DISHA MEDIA PVT. LTD. (earlier DHALIWAL ENTERTAINMENT PVT LTD)"
+    },
+    {
+        "name": "DIVYA",
+        "cat": "Non-News",
+        "languages": [
+            "English",
+            "Punjabi",
+            "Urdu",
+            "Hindi"
+        ],
+        "company": "DIVYA BROADCASTING NETWORK PRIVATE LIMITED"
+    },
+    {
+        "name": "DNN",
+        "cat": "News",
+        "languages": [
+            "Hindi"
+        ],
+        "company": "DNN Media Communication Pvt. Ltd. (earlier DILIP BUILDCON PRIVATELIMITED)"
+    },
+    {
+        "name": "DARSHAN 24 (Earlier LIFE 24)",
+        "aliases": [
+            "LIFE 24"
+        ],
+        "cat": "Non-News",
+        "languages": [
+            "English",
+            "Hindi"
+        ],
+        "company": "E24 Glamour Ltd. (Earlier known as B.A.G. GLAMOUR LIMITED)"
+    },
+    {
+        "name": "E 24",
+        "cat": "Non-News",
+        "languages": [
+            "English",
+            "Hindi"
+        ],
+        "company": "E24 Glamour Ltd. (Earlier known as B.A.G. GLAMOUR LIMITED)"
+    },
+    {
+        "name": "KANAK NEWS (Earlier KANAK TV & KANAK SAMBAD)",
+        "aliases": [
+            "KANAK TV & KANAK SAMBAD"
+        ],
+        "cat": "News",
+        "languages": [
+            "Odia"
+        ],
+        "company": "EASTERN MEDIA LIMITED"
+    },
+    {
+        "name": "Tehzeeb TV (earlier known as PENGAL)",
+        "aliases": [
+            "PENGAL"
+        ],
+        "cat": "Non-News",
+        "company": "EASWARI MEDIA PRIVATE LIMITED"
+    },
+    {
+        "name": "BHOJPURI CINEMA",
+        "cat": "Non-News",
+        "company": "ENTER 10 TELEVISION PRIVATE LIMITED"
+    },
+    {
+        "name": "Dangal (earlier ENTER 10 MOVIES)",
+        "aliases": [
+            "ENTER 10 MOVIES"
+        ],
+        "cat": "Non-News",
+        "languages": [
+            "English",
+            "Hindi"
+        ],
+        "company": "ENTER 10 TELEVISION PRIVATE LIMITED"
+    },
+    {
+        "name": "Dangal 2",
+        "cat": "Non-News",
+        "languages": [
+            "English",
+            "Hindi"
+        ],
+        "company": "ENTER 10 TELEVISION PRIVATE LIMITED"
+    },
+    {
+        "name": "Dangal HD",
+        "cat": "Non-News",
+        "languages": [
+            "Hindi"
+        ],
+        "company": "ENTER 10 TELEVISION PRIVATE LIMITED"
+    },
+    {
+        "name": "Dangal Oriya",
+        "cat": "Non-News",
+        "languages": [
+            "Odia"
+        ],
+        "company": "ENTER 10 TELEVISION PRIVATE LIMITED"
+    },
+    {
+        "name": "Enter 10 Bangla",
+        "cat": "Non-News",
+        "company": "ENTER 10 TELEVISION PRIVATE LIMITED"
+    },
+    {
+        "name": "Fakt Marathi",
+        "cat": "Non-News",
+        "company": "ENTER 10 TELEVISION PRIVATE LIMITED"
+    },
+    {
+        "name": "GRACE TV (Earlier PHENO TV & NEWS MAKERS)",
+        "aliases": [
+            "PHENO TV & NEWS MAKERS"
+        ],
+        "cat": "Non-News",
+        "company": "ESSENCE TELEVISION PVT.LTD."
+    },
+    {
+        "name": "Sharnam TV (earlier Lord Buddha TV, LORD BUDDHA SHARNAM TV (Earlier SHARNAM)",
+        "aliases": [
+            "Lord Buddha TV",
+            "LORD BUDDHA SHARNAM TV",
+            "SHARNAM"
+        ],
+        "cat": "Non-News",
+        "languages": [
+            "English",
+            "Hindi"
+        ],
+        "company": "EXCLUSIVE VISION BROADCAST PVT. LTD."
+    },
+    {
+        "name": "Sant Wani (earlier Zingaat, E AWAZ INDIA, AINDI, TULSI TV, VEDAS OM TV)))",
+        "aliases": [
+            "Zingaat",
+            "E AWAZ INDIA",
+            "AINDI",
+            "TULSI TV",
+            "VEDAS OM TV"
+        ],
+        "cat": "Non-News",
+        "languages": [
+            "Hindi",
+            "English"
+        ],
+        "company": "EXCLUSIVE VISION MEDIA PVT. LTD."
+    },
+    {
+        "name": "1st India News (Earlier Sanskriti TV, Zonet Zawlbuk ,EN TV)",
+        "aliases": [
+            "Sanskriti TV",
+            "Zonet Zawlbuk",
+            "EN TV"
+        ],
+        "cat": "News",
+        "languages": [
+            "English",
+            "Hindi",
+            "Punjabi"
+        ],
+        "company": "EXPRESS BROADCASTING PRIVATE LIMITED"
+    },
+    {
+        "name": "PTC CHAK DE",
+        "cat": "Non-News",
+        "languages": [
+            "Hindi",
+            "Punjabi"
+        ],
+        "company": "G-NEXT MEDIA PRIVATE LIMITED"
+    },
+    {
+        "name": "PTC MUSIC",
+        "cat": "Non-News",
+        "languages": [
+            "English",
+            "Hindi",
+            "Punjabi"
+        ],
+        "company": "G-NEXT MEDIA PRIVATE LIMITED"
+    },
+    {
+        "name": "PTC NEWS",
+        "cat": "News",
+        "languages": [
+            "Hindi",
+            "Punjabi"
+        ],
+        "company": "G-NEXT MEDIA PRIVATE LIMITED"
+    },
+    {
+        "name": "PTC PUNJABI",
+        "cat": "Non-News",
+        "languages": [
+            "Hindi",
+            "Punjabi"
+        ],
+        "company": "G-NEXT MEDIA PRIVATE LIMITED"
+    },
+    {
+        "name": "PTC PUNJABI GOLD",
+        "cat": "Non-News",
+        "languages": [
+            "English",
+            "Hindi",
+            "Punjabi"
+        ],
+        "company": "G-NEXT MEDIA PRIVATE LIMITED"
+    },
+    {
+        "name": "PTC SIMRAN",
+        "cat": "Non-News",
+        "languages": [
+            "English",
+            "Hindi",
+            "Punjabi"
+        ],
+        "company": "G-NEXT MEDIA PRIVATE LIMITED"
+    },
+    {
+        "name": "Studio One Plus",
+        "cat": "Non-News",
+        "languages": [
+            "Hindi",
+            "Telugu"
+        ],
+        "company": "Ganesh Digital Networks Pvt Ltd."
+    },
+    {
+        "name": "Studio Yuva",
+        "cat": "Non-News",
+        "languages": [
+            "English",
+            "Hindi",
+            "Telugu"
+        ],
+        "company": "Ganesh Digital Networks Pvt Ltd."
+    },
+    {
+        "name": "BRIO TV",
+        "cat": "Non-News",
+        "languages": [
+            "Tamil"
+        ],
+        "company": "GEMBRIO MEDIA & ENTERTAINMENT PRIVATE LIMITED"
+    },
+    {
+        "name": "ON TV",
+        "cat": "Non-News",
+        "languages": [
+            "English",
+            "Hindi",
+            "Tamil",
+            "Assamese",
+            "Dogri",
+            "Konkani",
+            "Manipuri",
+            "Odia",
+            "Santhali",
+            "Telugu",
+            "Bengali",
+            "Kannada",
+            "Maithili",
+            "Punjabi",
+            "Sindhi",
+            "Urdu",
+            "Bodo",
+            "Gujarati",
+            "Kashmiri",
+            "Malayalam",
+            "Nepali",
+            "Sanskrit",
+            "Marathi",
+            "Bojpuri",
+            "Garhwali"
+        ],
+        "company": "GLOBAL TELECASTING PVT. LTD."
+    },
+    {
+        "name": "MANGALAM (Earlier REPORTER 24X7, GN News, GNN NEWS)",
+        "aliases": [
+            "REPORTER 24X7",
+            "GN News",
+            "GNN NEWS"
+        ],
+        "cat": "News",
+        "languages": [
+            "English",
+            "Hindi"
+        ],
+        "company": "GN INFOMEDIA PVT LTD"
+    },
+    {
+        "name": "WHISTLE TV (Earlier known as GN Bhakti GNN BHAKTI /GNN ENTERTAINMENT)",
+        "aliases": [
+            "GN Bhakti GNN BHAKTI",
+            "GNN ENTERTAINMENT"
+        ],
+        "cat": "Non-News",
+        "languages": [
+            "English",
+            "Hindi"
+        ],
+        "company": "GN INFOMEDIA PVT LTD"
+    },
+    {
+        "name": "Peace of Mind",
+        "cat": "Non-News",
+        "languages": [
+            "English",
+            "Hindi"
+        ],
+        "company": "God Media Pvt. Ltd."
+    },
+    {
+        "name": "7S Music ( Earlier MAAS TV)",
+        "aliases": [
+            "MAAS TV"
+        ],
+        "cat": "Non-News",
+        "company": "Gokann International Media Pvt. Ltd"
+    },
+    {
+        "name": "SIRIKANNADA",
+        "cat": "Non-News",
+        "languages": [
+            "Kannada"
+        ],
+        "company": "GOLDENMEN STUDIOS PRIVATE LIMITED"
+    },
+    {
+        "name": "Goldmines (Earlier Goldmines Movies)",
+        "aliases": [
+            "Goldmines Movies"
+        ],
+        "cat": "Non-News",
+        "languages": [
+            "English",
+            "Hindi"
+        ],
+        "company": "Goldmines Telefilms Pvt. Ltd."
+    },
+    {
+        "name": "Goldmines 2",
+        "cat": "Non-News",
+        "languages": [
+            "Hindi"
+        ],
+        "company": "Goldmines Telefilms Pvt. Ltd."
+    },
+    {
+        "name": "GOLDMINES ACTION",
+        "cat": "Non-News",
+        "languages": [
+            "Hindi"
+        ],
+        "company": "Goldmines Telefilms Pvt. Ltd."
+    },
+    {
+        "name": "Goldmines Bhojpuri (earlier Goldmines)",
+        "aliases": [
+            "Goldmines"
+        ],
+        "cat": "Non-News",
+        "languages": [
+            "English",
+            "Hindi"
+        ],
+        "company": "Goldmines Telefilms Pvt. Ltd."
+    },
+    {
+        "name": "Goldmines Bollywood",
+        "cat": "Non-News",
+        "languages": [
+            "English",
+            "Hindi"
+        ],
+        "company": "Goldmines Telefilms Pvt. Ltd."
+    },
+    {
+        "name": "Goodnews TV",
+        "cat": "Non-News",
+        "languages": [
+            "English"
+        ],
+        "company": "GOOD NEWS CHANNEL PRIVATE LIMITED"
+    },
+    {
+        "name": "Nambikkai Television",
+        "cat": "Non-News",
+        "languages": [
+            "Tamil"
+        ],
+        "company": "GOOD NEWS CHANNEL PRIVATE LIMITED"
+    },
+    {
+        "name": "SHUBHA VAARTHA",
+        "cat": "Non-News",
+        "languages": [
+            "Telugu"
+        ],
+        "company": "GOOD NEWS CHANNEL PRIVATE LIMITED"
+    },
+    {
+        "name": "SHUBHSANDESH",
+        "cat": "Non-News",
+        "languages": [
+            "Hindi"
+        ],
+        "company": "GOOD NEWS CHANNEL PRIVATE LIMITED"
+    },
+    {
+        "name": "GOODNESS TV",
+        "cat": "Non-News",
+        "languages": [
+            "English",
+            "Malayalam"
+        ],
+        "company": "GOODNESS MEDIA PVT LTD"
+    },
+    {
+        "name": "Awakening TV(earlier Ptunes)",
+        "aliases": [
+            "Ptunes"
+        ],
+        "cat": "Non-News",
+        "languages": [
+            "English",
+            "Hindi"
+        ],
+        "company": "Graphisads Limited"
+    },
+    {
+        "name": "JKL 24X7 NEWS (Earlier known as Public First - Voice of Public, AWAKENING, PRERNA)",
+        "aliases": [
+            "Public First - Voice of Public",
+            "AWAKENING",
+            "PRERNA"
+        ],
+        "cat": "News",
+        "languages": [
+            "English",
+            "Hindi"
+        ],
+        "company": "Graphisads Limited"
+    },
+    {
+        "name": "SADHNA TV (Earlier known as P Plus)",
+        "aliases": [
+            "P Plus"
+        ],
+        "cat": "News",
+        "languages": [
+            "English",
+            "Hindi"
+        ],
+        "company": "Graphisads Limited"
+    },
+    {
+        "name": "V TV News (earlier V TV)",
+        "aliases": [
+            "V TV"
+        ],
+        "cat": "News",
+        "languages": [
+            "English",
+            "Gujarati",
+            "Hindi"
+        ],
+        "company": "GUJARAT NEWS BROADCASTERS PRIVATE LIMITED"
+    },
+    {
+        "name": "GULISTAN NEWS",
+        "cat": "News",
+        "languages": [
+            "English",
+            "Punjabi",
+            "Hindi"
+        ],
+        "company": "GULISTAN TV NETWORK PRIVATE LIMITED"
+    },
+    {
+        "name": "HARE KRSNA",
+        "cat": "Non-News",
+        "languages": [
+            "English",
+            "Hindi"
+        ],
+        "company": "HARE KRSNA CONTENT BROADCAST PVT LTD"
+    },
+    {
+        "name": "BHARAT EXPRESS",
+        "cat": "News",
+        "languages": [
+            "English",
+            "Hindi"
+        ],
+        "company": "HARI BHOOMI COMMUNICATIONS PVT. LIMITED (EARLIER KNOWN AS LEGEND TRAVEL PVT LTD)"
+    },
+    {
+        "name": "INH 24X7",
+        "cat": "News",
+        "languages": [
+            "English",
+            "Hindi"
+        ],
+        "company": "HARI BHOOMI COMMUNICATIONS PVT. LIMITED (EARLIER KNOWN AS LEGEND TRAVEL PVT LTD)"
+    },
+    {
+        "name": "JANTA TV",
+        "cat": "News",
+        "languages": [
+            "English",
+            "Hindi"
+        ],
+        "company": "HARI BHOOMI COMMUNICATIONS PVT. LIMITED (EARLIER KNOWN AS LEGEND TRAVEL PVT LTD)"
+    },
+    {
+        "name": "DA News Plus(earlier Y TV, Voice 24 Tripura/Horizon News 24x7)",
+        "aliases": [
+            "Y TV",
+            "Voice 24 Tripura",
+            "Horizon News 24x7"
+        ],
+        "cat": "News",
+        "languages": [
+            "English"
+        ],
+        "company": "HORIZON SATELLITE SERVICE PVT LTD"
+    },
+    {
+        "name": "Hornbill TV(Earlier Malai Murasu Jai Tamil TV Earlier known as HORIZON NEWS)",
+        "aliases": [
+            "Malai Murasu Jai Tamil TV Earlier known as HORIZON NEWS"
+        ],
+        "cat": "News",
+        "company": "HORIZON SATELLITE SERVICE PVT LTD"
+    },
+    {
+        "name": "BIG TV",
+        "cat": "News",
+        "languages": [
+            "Nagamis",
+            "English",
+            "Hindi"
+        ],
+        "company": "Hornbill Entertainment Private Limited"
+    },
+    {
+        "name": "HM TV",
+        "cat": "News",
+        "languages": [
+            "English",
+            "Hindi",
+            "Telugu"
+        ],
+        "company": "HYDERABAD MEDIA HOUSE LIMITED"
+    },
+    {
+        "name": "IBC TAMIL",
+        "cat": "Non-News",
+        "company": "IBCTAMIL Private Limited"
+    },
+    {
+        "name": "CVR Health",
+        "cat": "News",
+        "languages": [
+            "English",
+            "Hindi",
+            "Kannada",
+            "Malayalam",
+            "Tamil",
+            "Telugu"
+        ],
+        "company": "IMAGE BROADCASTING INDIA PRIVATE LIMITED"
+    },
+    {
+        "name": "CVR News",
+        "cat": "News",
+        "languages": [
+            "English",
+            "Hindi",
+            "Kannada",
+            "Malayalam",
+            "Tamil",
+            "Telugu"
+        ],
+        "company": "IMAGE BROADCASTING INDIA PRIVATE LIMITED"
+    },
+    {
+        "name": "CVR News English",
+        "cat": "News",
+        "languages": [
+            "English",
+            "Hindi"
+        ],
+        "company": "IMAGE BROADCASTING INDIA PRIVATE LIMITED"
+    },
+    {
+        "name": "CVR Spiritual Om",
+        "cat": "Non-News",
+        "languages": [
+            "English",
+            "Hindi"
+        ],
+        "company": "IMAGE BROADCASTING INDIA PRIVATE LIMITED"
+    },
+    {
+        "name": "Mercy TV ( EARLIER RM-RUJUMARGAM FROM DARKNESS TO LIGHT before that MU ODIA, KATHA TV)",
+        "aliases": [
+            "RM-RUJUMARGAM FROM DARKNESS TO LIGHT before that MU ODIA",
+            "KATHA TV"
+        ],
+        "cat": "Non-News",
+        "company": "IMPACT TELEVISION PRIVATE LIMITED"
+    },
+    {
+        "name": "EPIC HD",
+        "cat": "Non-News",
+        "languages": [
+            "Hindi",
+            "English"
+        ],
+        "company": "IN10 Media Pvt. Ltd. (earlier known as Epic Television Networks Pvt. Ltd.)"
+    },
+    {
+        "name": "Filamchi Bhojpuri (EARLIER Filamchi,Epic HD)",
+        "aliases": [
+            "Filamchi",
+            "Epic HD"
+        ],
+        "cat": "Non-News",
+        "languages": [
+            "English",
+            "Hindi"
+        ],
+        "company": "IN10 Media Pvt. Ltd. (earlier known as Epic Television Networks Pvt. Ltd.)"
+    },
+    {
+        "name": "LAMHE",
+        "cat": "Non-News",
+        "languages": [
+            "Hindi",
+            "English"
+        ],
+        "company": "IN10 Media Pvt. Ltd. (earlier known as Epic Television Networks Pvt. Ltd.)"
+    },
+    {
+        "name": "Nazara",
+        "cat": "Non-News",
+        "languages": [
+            "Hindi",
+            "English"
+        ],
+        "company": "IN10 Media Pvt. Ltd. (earlier known as Epic Television Networks Pvt. Ltd.)"
+    },
+    {
+        "name": "SHOWBOX",
+        "cat": "Non-News",
+        "languages": [
+            "English",
+            "Hindi"
+        ],
+        "company": "IN10 Media Pvt. Ltd. (earlier known as Epic Television Networks Pvt. Ltd.)"
+    },
+    {
+        "name": "INDIA TV",
+        "cat": "News",
+        "languages": [
+            "Hindi",
+            "English"
+        ],
+        "company": "INDEPENDENT NEWS SERVICE PVT. LTD"
+    },
+    {
+        "name": "Sakshi",
+        "cat": "News",
+        "languages": [
+            "English",
+            "Hindi"
+        ],
+        "company": "INDIRA TELEVISION LIMITED"
+    },
+    {
+        "name": "REPORTER",
+        "cat": "News",
+        "languages": [
+            "Malayalam"
+        ],
+        "company": "INDO ASIAN NEWS CHANNEL PVT LTD"
+    },
+    {
+        "name": "Bharat Update",
+        "cat": "News",
+        "languages": [
+            "English",
+            "Hindi"
+        ],
+        "company": "INFORMATION TV PRIVATE LIMITED"
+    },
+    {
+        "name": "Free TV India News Gujarat (earlier Free TV)",
+        "aliases": [
+            "Free TV"
+        ],
+        "cat": "News",
+        "languages": [
+            "English",
+            "Hindi"
+        ],
+        "company": "INFORMATION TV PRIVATE LIMITED"
+    },
+    {
+        "name": "India News Haryana",
+        "cat": "News",
+        "languages": [
+            "Hindi",
+            "Bojpuri"
+        ],
+        "company": "INFORMATION TV PRIVATE LIMITED"
+    },
+    {
+        "name": "India News Madhya Pradesh Chattisgarh",
+        "cat": "News",
+        "languages": [
+            "Hindi"
+        ],
+        "company": "INFORMATION TV PRIVATE LIMITED"
+    },
+    {
+        "name": "India News Punjab/ Himachal/ Jammu Kashmir (Earlier India News Punjab)",
+        "aliases": [
+            "India News Punjab"
+        ],
+        "cat": "News",
+        "languages": [
+            "English",
+            "Hindi"
+        ],
+        "company": "INFORMATION TV PRIVATE LIMITED"
+    },
+    {
+        "name": "India News Rajasthan",
+        "cat": "News",
+        "languages": [
+            "Hindi"
+        ],
+        "company": "INFORMATION TV PRIVATE LIMITED"
+    },
+    {
+        "name": "India News Uttar Pradesh-Uttarakhand",
+        "cat": "News",
+        "languages": [
+            "Hindi",
+            "English"
+        ],
+        "company": "INFORMATION TV PRIVATE LIMITED"
+    },
+    {
+        "name": "Sadhna Gold",
+        "cat": "Non-News",
+        "languages": [
+            "English",
+            "Hindi"
+        ],
+        "company": "Ishwar Media Private Limited"
+    },
+    {
+        "name": "Janam",
+        "cat": "News",
+        "languages": [
+            "English"
+        ],
+        "company": "Janam Multi Media Ltd."
+    },
+    {
+        "name": "TWENTY FOUR (Earlier JANAPRIYA)",
+        "aliases": [
+            "JANAPRIYA"
+        ],
+        "cat": "News",
+        "languages": [
+            "English",
+            "Malayalam"
+        ],
+        "company": "JANAPRIYA COMMUNICATION LTD."
+    },
+    {
+        "name": "JEEVAN TV",
+        "cat": "News",
+        "languages": [
+            "Malayalam"
+        ],
+        "company": "JEEVAN TELECASTING CORPORATION LIMITED"
+    },
+    {
+        "name": "Colors Cineplex Bollywood (earlier Rishtey Bhojpuri,Rishtey Leheriya, BDM)",
+        "aliases": [
+            "Rishtey Bhojpuri",
+            "Rishtey Leheriya",
+            "BDM"
+        ],
+        "cat": "Non-News",
+        "languages": [
+            "Hindi",
+            "English"
+        ],
+        "company": "JIOSTAR INDIA PRIVATE LIMITED"
+    },
+    {
+        "name": "Colors Cineplex Superhits (earlier Rishtey Cineplex/MTV INDIES/ COLORS INTERNATIONAL/ V.18 MOVIES)",
+        "aliases": [
+            "Rishtey Cineplex",
+            "MTV INDIES",
+            "COLORS INTERNATIONAL",
+            "V.18 MOVIES"
+        ],
+        "cat": "Non-News",
+        "languages": [
+            "English",
+            "Hindi"
+        ],
+        "company": "JIOSTAR INDIA PRIVATE LIMITED"
+    },
+    {
+        "name": "COLORS RISHTEY (EARLIER KNOWN RISHTEY before that MTV INDIA- INTERNATIONAL /EARLIER V.18 III)",
+        "aliases": [
+            "RISHTEY before that MTV INDIA- INTERNATIONAL",
+            "EARLIER V.18 III"
+        ],
+        "cat": "Non-News",
+        "languages": [
+            "English",
+            "Hindi"
+        ],
+        "company": "JIOSTAR INDIA PRIVATE LIMITED"
+    },
+    {
+        "name": "Sports18 2HD",
+        "cat": "Non-News",
+        "languages": [
+            "Hindi",
+            "English"
+        ],
+        "company": "JIOSTAR INDIA PRIVATE LIMITED"
+    },
+    {
+        "name": "Sports18 Hindi HD",
+        "cat": "Non-News",
+        "languages": [
+            "Hindi",
+            "English"
+        ],
+        "company": "JIOSTAR INDIA PRIVATE LIMITED"
+    },
+    {
+        "name": "STAR UTSAV",
+        "cat": "Non-News",
+        "languages": [
+            "Bengali",
+            "Bojpuri",
+            "Gujarati",
+            "Kannada",
+            "Konkani",
+            "Maithili",
+            "Malayalam",
+            "Marathi",
+            "Nepali",
+            "Odia",
+            "Punjabi",
+            "Tamil",
+            "Telugu",
+            "Assamese",
+            "Hindi"
+        ],
+        "company": "JIOSTAR INDIA PRIVATE LIMITED"
+    },
+    {
+        "name": "Star Utsav Movies (EARLIER:Star Gold Family, STAR UTSAV MOVIES, STAR GOLD ROMANCE",
+        "aliases": [
+            "Star Gold Family",
+            "STAR UTSAV MOVIES",
+            "STAR GOLD ROMANCE"
+        ],
+        "cat": "Non-News",
+        "languages": [
+            "Assamese",
+            "Bodo",
+            "Dogri",
+            "English",
+            "Gujarati",
+            "Hindi",
+            "Kannada",
+            "Kashmiri",
+            "Konkani",
+            "Maithili",
+            "Malayalam",
+            "Manipuri",
+            "Marathi",
+            "Nepali",
+            "Sanskrit",
+            "Santhali",
+            "Sindhi",
+            "Tamil",
+            "Urdu",
+            "Bengali",
+            "Telugu"
+        ],
+        "company": "JIOSTAR INDIA PRIVATE LIMITED"
+    },
+    {
+        "name": "Unchi Udann(Earlier known as Sports 18 Hindi)",
+        "aliases": [
+            "Sports 18 Hindi"
+        ],
+        "cat": "Non-News",
+        "languages": [
+            "Hindi",
+            "English"
+        ],
+        "company": "JIOSTAR INDIA PRIVATE LIMITED"
+    },
+    {
+        "name": "MBC TV (VON JANTA KI AWAAZ)",
+        "aliases": [
+            "VON JANTA KI AWAAZ"
+        ],
+        "cat": "News",
+        "languages": [
+            "Bengali",
+            "English",
+            "Hindi"
+        ],
+        "company": "JOSH MEDIA VISION PVT LTD"
+    },
+    {
+        "name": "TOP(EARLIER: OM BANGLA)",
+        "aliases": [
+            "OM BANGLA"
+        ],
+        "cat": "Non-News",
+        "languages": [
+            "Bengali",
+            "English",
+            "Hindi"
+        ],
+        "company": "K.K. MEDIA PRODUCTION PVT.LTD."
+    },
+    {
+        "name": "Kalinga TV",
+        "cat": "News",
+        "languages": [
+            "English",
+            "Odia",
+            "Hindi"
+        ],
+        "company": "Kalinga Media & Entertainment Pvt. Ltd."
+    },
+    {
+        "name": "Tribe Plus",
+        "cat": "Non-News",
+        "languages": [
+            "Hindi",
+            "English"
+        ],
+        "company": "Kalyani Solvex (P) Ltd"
+    },
+    {
+        "name": "TRIBE TV",
+        "cat": "News",
+        "languages": [
+            "English",
+            "Hindi"
+        ],
+        "company": "Kalyani Solvex (P) Ltd"
+    },
+    {
+        "name": "SRI SANKARA",
+        "cat": "Non-News",
+        "languages": [
+            "English",
+            "Kannada",
+            "Malayalam",
+            "Tamil",
+            "Telugu",
+            "Hindi"
+        ],
+        "company": "KAMADHENU TELEFILMS PRIVATE LIMITED"
+    },
+    {
+        "name": "ODISHA TIME (earlier KAMYAB TV)",
+        "aliases": [
+            "KAMYAB TV"
+        ],
+        "cat": "News",
+        "languages": [
+            "Odia"
+        ],
+        "company": "KAMYAB TELEVISION PRIVATE LIMITED"
+    },
+    {
+        "name": "KASHISH NEWS",
+        "cat": "News",
+        "languages": [
+            "English",
+            "Hindi"
+        ],
+        "company": "KASHISH DEVELOPERS LTD."
+    },
+    {
+        "name": "Kasthuri",
+        "cat": "News",
+        "languages": [
+            "Kannada"
+        ],
+        "company": "KASTHURI MEDIAS PRIVATE LIMITED"
+    },
+    {
+        "name": "Kasthuri Comedy",
+        "cat": "Non-News",
+        "languages": [
+            "Kannada"
+        ],
+        "company": "KASTHURI MEDIAS PRIVATE LIMITED"
+    },
+    {
+        "name": "Kasthuri Gold",
+        "cat": "Non-News",
+        "languages": [
+            "Kannada"
+        ],
+        "company": "KASTHURI MEDIAS PRIVATE LIMITED"
+    },
+    {
+        "name": "Kasthuri News 24",
+        "cat": "News",
+        "languages": [
+            "Kannada"
+        ],
+        "company": "KASTHURI MEDIAS PRIVATE LIMITED"
+    },
+    {
+        "name": "BVG",
+        "cat": "Non-News",
+        "languages": [
+            "Hindi"
+        ],
+        "company": "KCL Infra Projects Ltd."
+    },
+    {
+        "name": "Kerala Vision",
+        "cat": "Non-News",
+        "languages": [
+            "English",
+            "Punjabi",
+            "Malayalam"
+        ],
+        "company": "Kerala communicators cable ltd."
+    },
+    {
+        "name": "KAUMUDY",
+        "cat": "News",
+        "languages": [
+            "Malayalam"
+        ],
+        "company": "KERELA KAUMUDI PVT LTD"
+    },
+    {
+        "name": "KHUSBOO BANGLA",
+        "cat": "Non-News",
+        "languages": [
+            "Bengali",
+            "English",
+            "Odia",
+            "Hindi"
+        ],
+        "company": "KHUSBOO MULTIMEDIA PVT. LTD."
+    },
+    {
+        "name": "Popular TV",
+        "cat": "Non-News",
+        "languages": [
+            "English"
+        ],
+        "company": "KHUSBOO MULTIMEDIA PVT. LTD."
+    },
+    {
+        "name": "Rongeen TV (earlier Tamasha)",
+        "aliases": [
+            "Tamasha"
+        ],
+        "cat": "Non-News",
+        "languages": [
+            "English"
+        ],
+        "company": "KHUSBOO MULTIMEDIA PVT. LTD."
+    },
+    {
+        "name": "DILLAGIII",
+        "cat": "Non-News",
+        "languages": [
+            "Hindi"
+        ],
+        "company": "KRISHNA SHOWBIZ SERVICES PVT. LTD."
+    },
+    {
+        "name": "RUSSIA TODAY",
+        "cat": "News",
+        "languages": [
+            "English"
+        ],
+        "company": "LAMHAS SATELLITE SERVICES LIMITED"
+    },
+    {
+        "name": "Ashwa Vega News 24x7",
+        "cat": "News",
+        "company": "LANDMARK APARTMENTS PRIVATE LIMITED"
+    },
+    {
+        "name": "Hindi Khabar (Earlier I-Witness)",
+        "aliases": [
+            "I-Witness"
+        ],
+        "cat": "News",
+        "languages": [
+            "Hindi"
+        ],
+        "company": "LANDMARK APARTMENTS PRIVATE LIMITED"
+    },
+    {
+        "name": "KARMA TV",
+        "cat": "News",
+        "company": "LANDMARK APARTMENTS PRIVATE LIMITED"
+    },
+    {
+        "name": "Mnadu",
+        "cat": "News",
+        "languages": [
+            "Tamil"
+        ],
+        "company": "Landmark Infonet Pvt. Ltd."
+    },
+    {
+        "name": "Laxmi TV Gujarati",
+        "cat": "Non-News",
+        "languages": [
+            "Gujarati"
+        ],
+        "company": "LAXMI FILM LABORATORIES AND STUDIOS PRIVATE LIMITED"
+    },
+    {
+        "name": "6TV Telangana",
+        "cat": "News",
+        "languages": [
+            "Telugu"
+        ],
+        "company": "LCGC Broadcasting (India) Private Limited"
+    },
+    {
+        "name": "SACH BEDHADAK",
+        "cat": "News",
+        "languages": [
+            "Telugu"
+        ],
+        "company": "LCGC Broadcasting (India) Private Limited"
+    },
+    {
+        "name": "MANTRA TV",
+        "cat": "Non-News",
+        "languages": [
+            "English",
+            "Hindi"
+        ],
+        "company": "Live India Today Entertainment Pvt Ltd."
+    },
+    {
+        "name": "Bharat 24 vision of New India (Earlier known as Lotus News, NATION NEWS)",
+        "aliases": [
+            "Lotus News",
+            "NATION NEWS"
+        ],
+        "cat": "News",
+        "languages": [
+            "English",
+            "Hindi"
+        ],
+        "company": "LIVE NEWS INDIA NETWORK PVT LTD"
+    },
+    {
+        "name": "AM News-Spandan Maharashtrache (Earlier known as LIVE TODAY)",
+        "aliases": [
+            "LIVE TODAY"
+        ],
+        "cat": "News",
+        "languages": [
+            "English",
+            "Hindi",
+            "Marathi"
+        ],
+        "company": "Live Today TV & Web Private Limited (earlier Pavitar Entertainment Pvt Ltd)"
+    },
+    {
+        "name": "Living Foodz HD",
+        "cat": "Non-News",
+        "languages": [
+            "English",
+            "Hindi"
+        ],
+        "company": "Living Entertainment Enterprises Pvt. Ltd."
+    },
+    {
+        "name": "Love World",
+        "cat": "Non-News",
+        "languages": [
+            "English",
+            "Hindi"
+        ],
+        "company": "Love India Entertainment Private Limited"
+    },
+    {
+        "name": "MH 1",
+        "cat": "Non-News",
+        "languages": [
+            "Hindi"
+        ],
+        "company": "M.H.ONE TV NETWORK PRIVATE LIMITED"
+    },
+    {
+        "name": "MH One Dil Se (earlier MH one Bhojpuri, MH ONE SHRADDHA)",
+        "aliases": [
+            "MH one Bhojpuri",
+            "MH ONE SHRADDHA"
+        ],
+        "cat": "Non-News",
+        "languages": [
+            "Hindi"
+        ],
+        "company": "M.H.ONE TV NETWORK PRIVATE LIMITED"
+    },
+    {
+        "name": "MH ONE MOVIES",
+        "cat": "Non-News",
+        "languages": [
+            "Hindi"
+        ],
+        "company": "M.H.ONE TV NETWORK PRIVATE LIMITED"
+    },
+    {
+        "name": "MH ONE NEWS",
+        "cat": "News",
+        "languages": [
+            "Hindi"
+        ],
+        "company": "M.H.ONE TV NETWORK PRIVATE LIMITED"
+    },
+    {
+        "name": "Nandighosha TV (Earlier Known as Odisha News, Zonet)",
+        "aliases": [
+            "Odisha News",
+            "Zonet"
+        ],
+        "cat": "News",
+        "company": "Nandighosha Network Private Limited.(Permission transferred from group company M/s.Zonet Cable TV Private Limited)"
+    },
+    {
+        "name": "Madha TV (earlier KRISHANA TV)",
+        "aliases": [
+            "KRISHANA TV"
+        ],
+        "cat": "Non-News",
+        "languages": [
+            "English",
+            "Tamil"
+        ],
+        "company": "MADHA MEDIA RENAISSANCE PVT. LTD. (Earlier Krishnaswamy Associates Media Renaissance Pvt. Ltd. (Earlier known as KRISHNASWAMY ASSOCIATES MEDIA RENAISSANCE)"
+    },
+    {
+        "name": "MEDIA ONE TV",
+        "cat": "News",
+        "languages": [
+            "English",
+            "Malayalam"
+        ],
+        "company": "MADHYAMAM BROADCASTING LTD"
+    },
+    {
+        "name": "MK Six",
+        "cat": "Non-News",
+        "company": "MADURAI KRISHNA NETWORK PVT. LTD."
+    },
+    {
+        "name": "MK TELEVISION",
+        "cat": "Non-News",
+        "languages": [
+            "Tamil"
+        ],
+        "company": "MADURAI KRISHNA NETWORK PVT. LTD."
+    },
+    {
+        "name": "MK Tunes",
+        "cat": "Non-News",
+        "company": "MADURAI KRISHNA NETWORK PVT. LTD."
+    },
+    {
+        "name": "Jivan TV (with the tagline- Ke Har Modpar)",
+        "aliases": [
+            "with the tagline- Ke Har Modpar"
+        ],
+        "cat": "Non-News",
+        "languages": [
+            "English",
+            "Hindi"
+        ],
+        "company": "Mahesh Hardware & Pipes Pvt. Ltd"
+    },
+    {
+        "name": "MAKKAL TV",
+        "cat": "News",
+        "languages": [
+            "English",
+            "Tamil"
+        ],
+        "company": "MAKKAL THOLAI THODARPU KUZHUMAM LIMITED"
+    },
+    {
+        "name": "KAIRALI",
+        "cat": "Non-News",
+        "languages": [
+            "Malayalam"
+        ],
+        "company": "MALAYALAM COMMUNICATIONS LIMITED"
+    },
+    {
+        "name": "KAIRALI NEWS (Earlier known as PEOPLE, before that KALAIGNAR TV)",
+        "aliases": [
+            "PEOPLE",
+            "before that KALAIGNAR TV"
+        ],
+        "cat": "News",
+        "languages": [
+            "Malayalam"
+        ],
+        "company": "MALAYALAM COMMUNICATIONS LIMITED"
+    },
+    {
+        "name": "WE",
+        "cat": "Non-News",
+        "languages": [
+            "Malayalam"
+        ],
+        "company": "MALAYALAM COMMUNICATIONS LIMITED"
+    },
+    {
+        "name": "NEWS J (earlier News J2)",
+        "aliases": [
+            "News J2"
+        ],
+        "cat": "News",
+        "languages": [
+            "Tamil"
+        ],
+        "company": "Mantaro Network Pvt Ltd."
+    },
+    {
+        "name": "ENRICH TV",
+        "cat": "Non-News",
+        "languages": [
+            "English"
+        ],
+        "company": "Marwari Media Corparation Pvt Ltd."
+    },
+    {
+        "name": "THE Q (EARLIER MUBU TV, MT)",
+        "aliases": [
+            "MUBU TV",
+            "MT"
+        ],
+        "cat": "Non-News",
+        "languages": [
+            "Hindi",
+            "Punjabi",
+            "English"
+        ],
+        "company": "Mass Telecasting pvt. Ltd."
+    },
+    {
+        "name": "VAANAVIL TV (Earlier SPLASH TV)",
+        "aliases": [
+            "SPLASH TV"
+        ],
+        "cat": "Non-News",
+        "languages": [
+            "English"
+        ],
+        "company": "MAYAJAAL ENTERTAINMENT LIMITED"
+    },
+    {
+        "name": "CNA (earlier CHANNEL NEWS ASIA INTERNATIONAL)",
+        "aliases": [
+            "CHANNEL NEWS ASIA INTERNATIONAL"
+        ],
+        "cat": "News",
+        "languages": [
+            "English"
+        ],
+        "company": "MCN INTERNATIONAL INDIA PVT LTD."
+    },
+    {
+        "name": "EDU TV",
+        "cat": "Non-News",
+        "languages": [
+            "Hindi",
+            "English"
+        ],
+        "company": "MEDIA GURU BROADCASTING PVT LTD"
+    },
+    {
+        "name": "News 11 Bharat (Earlier known as News 30, NEWS GURU)",
+        "aliases": [
+            "News 30",
+            "NEWS GURU"
+        ],
+        "cat": "News",
+        "languages": [
+            "English",
+            "Hindi"
+        ],
+        "company": "MEDIA GURU NEWS PVT. LTD."
+    },
+    {
+        "name": "ALL TIME MOVIES",
+        "cat": "Non-News",
+        "languages": [
+            "Hindi",
+            "Punjabi",
+            "English"
+        ],
+        "company": "MEDIA NETWORK BROADCASTING PVT LTD"
+    },
+    {
+        "name": "BFLIX",
+        "cat": "Non-News",
+        "languages": [
+            "English",
+            "Hindi"
+        ],
+        "company": "MEDIA NETWORK BROADCASTING PVT LTD"
+    },
+    {
+        "name": "Hi-Dost! (earlier known as BONG)",
+        "aliases": [
+            "BONG"
+        ],
+        "cat": "Non-News",
+        "languages": [
+            "English",
+            "Hindi",
+            "Bengali"
+        ],
+        "company": "MEDIA WORLDWIDE LIMITED"
+    },
+    {
+        "name": "MUSIC INDIA",
+        "cat": "Non-News",
+        "languages": [
+            "Hindi"
+        ],
+        "company": "MEDIA WORLDWIDE LIMITED"
+    },
+    {
+        "name": "SANGEET BANGLA",
+        "cat": "Non-News",
+        "languages": [
+            "Bengali"
+        ],
+        "company": "MEDIA WORLDWIDE LIMITED"
+    },
+    {
+        "name": "SANGEET BHOJPURI",
+        "cat": "Non-News",
+        "company": "MEDIA WORLDWIDE LIMITED"
+    },
+    {
+        "name": "SANGEET MARATHI",
+        "cat": "Non-News",
+        "languages": [
+            "Marathi",
+            "English",
+            "Hindi"
+        ],
+        "company": "MEDIA WORLDWIDE LIMITED"
+    },
+    {
+        "name": "Meenakshi TV",
+        "cat": "Non-News",
+        "languages": [
+            "Tamil"
+        ],
+        "company": "Meenakshi Networks Pvt. Ltd."
+    },
+    {
+        "name": "Malar TV",
+        "cat": "Non-News",
+        "languages": [
+            "English",
+            "Tamil"
+        ],
+        "company": "METRONATION CHENNAI TELEVISION PVT LTD (Earlier METRONATION CHENNAI TELEVISION LTD)"
+    },
+    {
+        "name": "THANTHI TV (earlier NDTV HINDU CHENNAI)",
+        "aliases": [
+            "NDTV HINDU CHENNAI"
+        ],
+        "cat": "News",
+        "languages": [
+            "English"
+        ],
+        "company": "METRONATION CHENNAI TELEVISION PVT LTD (Earlier METRONATION CHENNAI TELEVISION LTD)"
+    },
+    {
+        "name": "FGN Channel",
+        "cat": "Non-News",
+        "languages": [
+            "English",
+            "Punjabi",
+            "Hindi"
+        ],
+        "company": "MGK Pritnting & Broadcasting Pvt Ltd"
+    },
+    {
+        "name": "SIRIKANNADA ALL TIME (Earlier ALL TIME, NAAPTOL BANGLA, MGK STAR)",
+        "aliases": [
+            "ALL TIME",
+            "NAAPTOL BANGLA",
+            "MGK STAR"
+        ],
+        "cat": "Non-News",
+        "languages": [
+            "Hindi",
+            "Punjabi",
+            "English"
+        ],
+        "company": "MGK Pritnting & Broadcasting Pvt Ltd"
+    },
+    {
+        "name": "Andy Haryana (Earlier KHUSHI)",
+        "aliases": [
+            "KHUSHI"
+        ],
+        "cat": "Non-News",
+        "languages": [
+            "English",
+            "Hindi"
+        ],
+        "company": "MITCON INFRAPROJECT PRIVATE LIMITED"
+    },
+    {
+        "name": "POWER TV (Earlier known as ABN Network, before that LOKSHAHI)",
+        "aliases": [
+            "ABN Network",
+            "before that LOKSHAHI"
+        ],
+        "cat": "News",
+        "languages": [
+            "English",
+            "Hindi"
+        ],
+        "company": "MITCON INFRAPROJECT PRIVATE LIMITED"
+    },
+    {
+        "name": "MANORAMA NEWS CENTRAL",
+        "cat": "News",
+        "languages": [
+            "Malayalam"
+        ],
+        "company": "MM TV LIMITED"
+    },
+    {
+        "name": "MANORAMA NEWS NORTH",
+        "cat": "News",
+        "languages": [
+            "Malayalam"
+        ],
+        "company": "MM TV LIMITED"
+    },
+    {
+        "name": "MAZHAVIL MANORAMA (MANORAMA VISION)",
+        "aliases": [
+            "MANORAMA VISION"
+        ],
+        "cat": "Non-News",
+        "languages": [
+            "Malayalam"
+        ],
+        "company": "MM TV LIMITED"
+    },
+    {
+        "name": "MAZHAVIL MANORAMA HD (Earlier MANORAMA NEWS SOUTH)",
+        "aliases": [
+            "MANORAMA NEWS SOUTH"
+        ],
+        "cat": "News",
+        "languages": [
+            "Malayalam"
+        ],
+        "company": "MM TV LIMITED"
+    },
+    {
+        "name": "MAZHAVIL MANORAMA INTERNATIONAL (earlier MANORAMA NEWS INTERNATIONAL)",
+        "aliases": [
+            "MANORAMA NEWS INTERNATIONAL"
+        ],
+        "cat": "News",
+        "languages": [
+            "Malayalam"
+        ],
+        "company": "MM TV LIMITED"
+    },
+    {
+        "name": "MAHAA BHAKTI",
+        "cat": "Non-News",
+        "company": "MONICA BROADCASTING PRIVATE LIMITED"
+    },
+    {
+        "name": "MAHAA MAX",
+        "cat": "News",
+        "languages": [
+            "Telugu"
+        ],
+        "company": "MONICA BROADCASTING PRIVATE LIMITED"
+    },
+    {
+        "name": "MAHAA NEWS (MAHAA TV)",
+        "aliases": [
+            "MAHAA TV"
+        ],
+        "cat": "News",
+        "languages": [
+            "Hindi",
+            "Telugu"
+        ],
+        "company": "MONICA BROADCASTING PRIVATE LIMITED"
+    },
+    {
+        "name": "MOON TV",
+        "cat": "News",
+        "languages": [
+            "English",
+            "Tamil"
+        ],
+        "company": "MOON VISION PRIVATE LIMITED"
+    },
+    {
+        "name": "TUNES 6 MUSIC",
+        "cat": "Non-News",
+        "languages": [
+            "English",
+            "Kannada",
+            "Tamil",
+            "Telugu",
+            "Hindi",
+            "Malayalam"
+        ],
+        "company": "Movements Digital India Pvt. Ltd."
+    },
+    {
+        "name": "THANTHI ONE",
+        "cat": "News",
+        "languages": [
+            "Tamil"
+        ],
+        "company": "MUKUNDHAA NETWORK PRIVATE LIMITED"
+    },
+    {
+        "name": "MAHAVIRA TV CHANNEL- Jinvani Darshan (Earlier known as Boom Music)",
+        "aliases": [
+            "Boom Music"
+        ],
+        "cat": "Non-News",
+        "languages": [
+            "English",
+            "Hindi",
+            "Punjabi"
+        ],
+        "company": "Munny Entertainments Pvt Ltd."
+    },
+    {
+        "name": "True Sports(earlier MANGAL KALASH, Oye Music)",
+        "aliases": [
+            "MANGAL KALASH",
+            "Oye Music"
+        ],
+        "cat": "Non-News",
+        "languages": [
+            "English",
+            "Hindi",
+            "Punjabi"
+        ],
+        "company": "Munny Entertainments Pvt Ltd."
+    },
+    {
+        "name": "NAXATRA NEWS JHARKHAND BIHAR (NAXTRA BARNALII)",
+        "aliases": [
+            "NAXTRA BARNALII"
+        ],
+        "cat": "News",
+        "languages": [
+            "Bengali"
+        ],
+        "company": "N K MEDIA VENTURES PVT LTD"
+    },
+    {
+        "name": "NAXATRA TV",
+        "cat": "News",
+        "languages": [
+            "Odia"
+        ],
+        "company": "N K MEDIA VENTURES PVT LTD"
+    },
+    {
+        "name": "PEPPERS",
+        "cat": "Non-News",
+        "languages": [
+            "Kannada",
+            "Malayalam",
+            "Tamil",
+            "Telugu",
+            "English"
+        ],
+        "company": "N&D COMMUNICATIONS PVT. LTD."
+    },
+    {
+        "name": "NKTV BANGLA",
+        "cat": "News",
+        "languages": [
+            "Hindi",
+            "English",
+            "Assamese",
+            "Bengali"
+        ],
+        "company": "N.K. Power and Infrastructure Pvt. Ltd."
+    },
+    {
+        "name": "NKTV PLUS",
+        "cat": "News",
+        "languages": [
+            "Hindi",
+            "English",
+            "Assamese",
+            "Bengali"
+        ],
+        "company": "N.K. Power and Infrastructure Pvt. Ltd."
+    },
+    {
+        "name": "SPONDON",
+        "cat": "Non-News",
+        "languages": [
+            "Hindi",
+            "English",
+            "Assamese",
+            "Bengali"
+        ],
+        "company": "N.K. Power and Infrastructure Pvt. Ltd."
+    },
+    {
+        "name": "ND 24- Newsdaily24.in (Earlier Live Today-Tez Najar Sahi Khabar, SADHANA NEWS, SADHANA ARYAN NEWS, 24X7 BTV NEWS , Prabhatam LIFELINE)",
+        "aliases": [
+            "Live Today-Tez Najar Sahi Khabar",
+            "SADHANA NEWS",
+            "SADHANA ARYAN NEWS",
+            "24X7 BTV NEWS",
+            "Prabhatam LIFELINE"
+        ],
+        "cat": "News",
+        "languages": [
+            "English",
+            "Hindi"
+        ],
+        "company": "NAMAN BROADCASTING AND TELECOMMUNICATIONS PVT. LTD."
+    },
+    {
+        "name": "STUDIO N NEWS (Earlier STUDIO N)",
+        "aliases": [
+            "STUDIO N"
+        ],
+        "cat": "News",
+        "languages": [
+            "English",
+            "Hindi",
+            "Telugu"
+        ],
+        "company": "NARNE NETWORKS PRIVATE LIMITED"
+    },
+    {
+        "name": "NC 360 BUSINESS",
+        "cat": "News",
+        "company": "NC 360 BROADCAST PRIVATE LIMITED"
+    },
+    {
+        "name": "NC 360 Hindi",
+        "cat": "News",
+        "company": "NC 360 BROADCAST PRIVATE LIMITED"
+    },
+    {
+        "name": "NC360",
+        "cat": "News",
+        "company": "NC 360 BROADCAST PRIVATE LIMITED"
+    },
+    {
+        "name": "FTV.COM INDIA",
+        "cat": "Non-News",
+        "languages": [
+            "English"
+        ],
+        "company": "NEON Solution Pvt. Ltd."
+    },
+    {
+        "name": "Desh News",
+        "cat": "News",
+        "languages": [
+            "English",
+            "Hindi"
+        ],
+        "company": "Netink Technologies Pcvt Ltd."
+    },
+    {
+        "name": "FIRSTPOST.",
+        "cat": "News",
+        "languages": [
+            "English",
+            "Hindi"
+        ],
+        "company": "NETWORK18 MEDIA & INVESTMENTS LIMITED"
+    },
+    {
+        "name": "News18 Bharat (earlier NEWS18 PUNJAB)",
+        "aliases": [
+            "NEWS18 PUNJAB"
+        ],
+        "cat": "News",
+        "languages": [
+            "English",
+            "Hindi"
+        ],
+        "company": "NETWORK18 MEDIA & INVESTMENTS LIMITED"
+    },
+    {
+        "name": "News18 India (earlier KHABAR 18, Earlier IBN 7 & JTV Channel-7)",
+        "aliases": [
+            "KHABAR 18",
+            "Earlier IBN 7 & JTV Channel-7"
+        ],
+        "cat": "News",
+        "languages": [
+            "English",
+            "Hindi"
+        ],
+        "company": "NETWORK18 MEDIA & INVESTMENTS LIMITED"
+    },
+    {
+        "name": "NDTV 24x7 HD",
+        "cat": "News",
+        "languages": [
+            "English"
+        ],
+        "company": "NEW DELHI TELEVISION LIMITED"
+    },
+    {
+        "name": "NDTV Gujarati",
+        "cat": "News",
+        "languages": [
+            "Gujarati"
+        ],
+        "company": "NEW DELHI TELEVISION LIMITED"
+    },
+    {
+        "name": "NDTV INDIA",
+        "cat": "News",
+        "languages": [
+            "Hindi",
+            "English"
+        ],
+        "company": "NEW DELHI TELEVISION LIMITED"
+    },
+    {
+        "name": "NDTV INDIA HD",
+        "cat": "News",
+        "languages": [
+            "Hindi"
+        ],
+        "company": "NEW DELHI TELEVISION LIMITED"
+    },
+    {
+        "name": "NDTV Madhya Pradesh | Chhattisgarh",
+        "cat": "News",
+        "languages": [
+            "Hindi"
+        ],
+        "company": "NEW DELHI TELEVISION LIMITED"
+    },
+    {
+        "name": "NDTV Marathi",
+        "cat": "News",
+        "languages": [
+            "Marathi"
+        ],
+        "company": "NEW DELHI TELEVISION LIMITED"
+    },
+    {
+        "name": "NDTV PROFIT HD",
+        "cat": "News",
+        "languages": [
+            "English",
+            "Hindi"
+        ],
+        "company": "NEW DELHI TELEVISION LIMITED"
+    },
+    {
+        "name": "NDTV Rajasthan",
+        "cat": "News",
+        "languages": [
+            "Hindi"
+        ],
+        "company": "NEW DELHI TELEVISION LIMITED"
+    },
+    {
+        "name": "Puthu Yugam (earlier KALAI SARAL)",
+        "aliases": [
+            "KALAI SARAL"
+        ],
+        "cat": "Non-News",
+        "languages": [
+            "Tamil"
+        ],
+        "company": "NEW ERA MEDIA CORPORATION CHENNAI PRIVATE LIMITED (earlier TRP MEDIA PRIVATE LIMITED)"
+    },
+    {
+        "name": "Puthiya Thalaimurai Express",
+        "cat": "News",
+        "languages": [
+            "Tamil"
+        ],
+        "company": "NEW GENERATION MEDIA CORPORATION PVT LTD (EARLIER KNOWN AS GENERATION NOW MEDIA PVT LTD)"
+    },
+    {
+        "name": "PUTHIYATHAILAIMURAI",
+        "cat": "News",
+        "languages": [
+            "Tamil"
+        ],
+        "company": "NEW GENERATION MEDIA CORPORATION PVT LTD (EARLIER KNOWN AS GENERATION NOW MEDIA PVT LTD)"
+    },
+    {
+        "name": "NEWS NATION (Earlier NATION TODAY, TULIP NEWS)",
+        "aliases": [
+            "NATION TODAY",
+            "TULIP NEWS"
+        ],
+        "cat": "News",
+        "company": "News Nation Network Pvt. Ltd (Earlier known as ALPHA DEALCOM PRIVATE LIMITED)"
+    },
+    {
+        "name": "News State Bihar/Jharkhand",
+        "cat": "News",
+        "company": "News Nation Network Pvt. Ltd (Earlier known as ALPHA DEALCOM PRIVATE LIMITED)"
+    },
+    {
+        "name": "News State Madhya Pradesh/Chhatttisgarh (Earlier National Today Jhalak)",
+        "aliases": [
+            "National Today Jhalak"
+        ],
+        "cat": "News",
+        "languages": [
+            "Hindi"
+        ],
+        "company": "News Nation Network Pvt. Ltd (Earlier known as ALPHA DEALCOM PRIVATE LIMITED)"
+    },
+    {
+        "name": "News State Maharashtra/Goa",
+        "cat": "News",
+        "company": "News Nation Network Pvt. Ltd (Earlier known as ALPHA DEALCOM PRIVATE LIMITED)"
+    },
+    {
+        "name": "News State Punjab Haryana Himachal",
+        "cat": "News",
+        "company": "News Nation Network Pvt. Ltd (Earlier known as ALPHA DEALCOM PRIVATE LIMITED)"
+    },
+    {
+        "name": "NEWS STATE UTTARAKHAND/UTTAR PRADESH (Earlier UPASANA)",
+        "aliases": [
+            "UPASANA"
+        ],
+        "cat": "News",
+        "company": "News Nation Network Pvt. Ltd (Earlier known as ALPHA DEALCOM PRIVATE LIMITED)"
+    },
+    {
+        "name": "News 24 Madhya Pradesh-Chattishgarh(earlier JK 24*7, JK CHANNEL , AAPNO 24 (BIZ 24)",
+        "aliases": [
+            "JK 24*7",
+            "JK CHANNEL",
+            "AAPNO 24",
+            "BIZ 24"
+        ],
+        "cat": "News",
+        "languages": [
+            "Hindi"
+        ],
+        "company": "News24 Broadcast India Ltd.(Earlier known as B.A.G. GLAMOUR LIMITED)"
+    },
+    {
+        "name": "NEWS24 THINK FIRST",
+        "cat": "News",
+        "languages": [
+            "Hindi"
+        ],
+        "company": "News24 Broadcast India Ltd.(Earlier known as B.A.G. GLAMOUR LIMITED)"
+    },
+    {
+        "name": "Fateh TV (Earlier Khalsa Channel)",
+        "aliases": [
+            "Khalsa Channel"
+        ],
+        "cat": "Non-News",
+        "languages": [
+            "Hindi"
+        ],
+        "company": "Nexgen Telelinks Pvt. Ltd"
+    },
+    {
+        "name": "OTV",
+        "cat": "News",
+        "languages": [
+            "English"
+        ],
+        "company": "ODISHA TELEVISION LIMITED"
+    },
+    {
+        "name": "News 1st Kannada",
+        "cat": "News",
+        "languages": [
+            "English",
+            "Hindi"
+        ],
+        "company": "Olecom Media Private Limited"
+    },
+    {
+        "name": "ANB News (earlier known as PRATINIDHI /4 REAL NEWS /DEV BHUMI)",
+        "aliases": [
+            "PRATINIDHI",
+            "4 REAL NEWS",
+            "DEV BHUMI"
+        ],
+        "cat": "News",
+        "languages": [
+            "English",
+            "Hindi"
+        ],
+        "company": "OMEGA BROADCAST PVT LTD"
+    },
+    {
+        "name": "Sarv Dharm Sangam (Earlier known as 4 Real Entertainment)",
+        "aliases": [
+            "4 Real Entertainment"
+        ],
+        "cat": "News",
+        "languages": [
+            "English",
+            "Hindi"
+        ],
+        "company": "OMEGA BROADCAST PVT LTD"
+    },
+    {
+        "name": "News India 24x7 (earlier UK NEWS)",
+        "aliases": [
+            "UK NEWS"
+        ],
+        "cat": "News",
+        "languages": [
+            "English",
+            "Hindi"
+        ],
+        "company": "OMEGA TV MEDIA PVT LTD"
+    },
+    {
+        "name": "ARIRANG KOREA",
+        "cat": "News",
+        "languages": [
+            "English"
+        ],
+        "company": "ONEOTT INTERTAINMENT LIMITED"
+    },
+    {
+        "name": "ONKAR ONLY TRUTH",
+        "cat": "News",
+        "languages": [
+            "English",
+            "Hindi",
+            "Bengali"
+        ],
+        "company": "ONKAR ENTERTAINMENT PRIVATE LIMITED"
+    },
+    {
+        "name": "Oscar Movies Bhojpuri (earlier MARATHI MUSIC)",
+        "aliases": [
+            "MARATHI MUSIC"
+        ],
+        "cat": "Non-News",
+        "languages": [
+            "Bojpuri",
+            "English",
+            "Marathi",
+            "Hindi"
+        ],
+        "company": "OSCAR MEDIA PRIVATE LIMITED"
+    },
+    {
+        "name": "Power of God TV",
+        "cat": "Non-News",
+        "company": "PAGE 3 ENTERTAINMENT INDIA PRIVATE LIMITED"
+    },
+    {
+        "name": "PRARTHANA BHAWAN TV (GATHA TV)",
+        "aliases": [
+            "GATHA TV"
+        ],
+        "cat": "Non-News",
+        "company": "PALM BROADCASTING PRIVATE LIMITED"
+    },
+    {
+        "name": "Paras Gold One (Earlier Dum TV Kannada, DANGAL KANNADA, JAI PARAS TV)",
+        "aliases": [
+            "Dum TV Kannada",
+            "DANGAL KANNADA",
+            "JAI PARAS TV"
+        ],
+        "cat": "Non-News",
+        "company": "PARSHAVNATH MEDIA PVT. LTD."
+    },
+    {
+        "name": "9X TASHAN (PURVAIYA)",
+        "aliases": [
+            "PURVAIYA"
+        ],
+        "cat": "Non-News",
+        "languages": [
+            "Punjabi"
+        ],
+        "company": "PAUL ENTERTAINMENT PRIVATE LIMITED"
+    },
+    {
+        "name": "IN- SYNC",
+        "cat": "Non-News",
+        "languages": [
+            "English",
+            "Hindi"
+        ],
+        "company": "PERFECT-OCTAVE MEDIA PROJECTS LIMITED"
+    },
+    {
+        "name": "B News (earlier PRABHATAM NEWS MAHARASHTRA)",
+        "aliases": [
+            "PRABHATAM NEWS MAHARASHTRA"
+        ],
+        "cat": "News",
+        "languages": [
+            "English",
+            "Hindi"
+        ],
+        "company": "PG ADVERTISING PVT LTD"
+    },
+    {
+        "name": "HNN",
+        "cat": "News",
+        "languages": [
+            "English",
+            "Gujarati"
+        ],
+        "company": "PG ADVERTISING PVT LTD"
+    },
+    {
+        "name": "PRAJAA KANNADA TV (Earlier PRABHATAM NEWS RAJASTHAN)",
+        "aliases": [
+            "PRABHATAM NEWS RAJASTHAN"
+        ],
+        "cat": "News",
+        "languages": [
+            "English",
+            "Hindi"
+        ],
+        "company": "PG ADVERTISING PVT LTD"
+    },
+    {
+        "name": "PUBLIC FIRST",
+        "cat": "News",
+        "languages": [
+            "English",
+            "Punjabi"
+        ],
+        "company": "PG ADVERTISING PVT LTD"
+    },
+    {
+        "name": "Sadhna Bhakti (earlier RT & PRABHATAM NEWS)",
+        "aliases": [
+            "RT & PRABHATAM NEWS"
+        ],
+        "cat": "Non-News",
+        "languages": [
+            "English",
+            "Hindi"
+        ],
+        "company": "PG ADVERTISING PVT LTD"
+    },
+    {
+        "name": "MOJO TV (earlier K News 24*7 (earlier NEWS & VIEWS)",
+        "aliases": [
+            "K News 24*7",
+            "NEWS & VIEWS"
+        ],
+        "cat": "News",
+        "company": "PIGEON INFORMATION TECHNOLOGY PRIVATE LIMITED"
+    },
+    {
+        "name": "PITAARA MOVIES (Earlier PITAARA)",
+        "aliases": [
+            "PITAARA"
+        ],
+        "cat": "Non-News",
+        "company": "Pitaara Entertainment Pvt. Ltd."
+    },
+    {
+        "name": "POLIMER",
+        "cat": "News",
+        "languages": [
+            "Tamil"
+        ],
+        "company": "POLIMER MEDIA PRIVATE LIMITED"
+    },
+    {
+        "name": "POLIMER NEWS",
+        "cat": "News",
+        "languages": [
+            "Tamil"
+        ],
+        "company": "POLIMER MEDIA PRIVATE LIMITED"
+    },
+    {
+        "name": "Tamil Janam",
+        "cat": "News",
+        "company": "POLIMER MEDIA PRIVATE LIMITED"
+    },
+    {
+        "name": "NEWS LIVE",
+        "cat": "News",
+        "languages": [
+            "Hindi",
+            "English"
+        ],
+        "company": "PRIDE EAST ENTERTAINMENTS PRIVATE LIMITED"
+    },
+    {
+        "name": "News Live Bangla",
+        "cat": "Non-News",
+        "languages": [
+            "English",
+            "Hindi"
+        ],
+        "company": "PRIDE EAST ENTERTAINMENTS PRIVATE LIMITED"
+    },
+    {
+        "name": "NORTH EAST LIVE (Earlier NEWS LIVE ODISHA)",
+        "aliases": [
+            "NEWS LIVE ODISHA"
+        ],
+        "cat": "News",
+        "languages": [
+            "English",
+            "Hindi"
+        ],
+        "company": "PRIDE EAST ENTERTAINMENTS PRIVATE LIMITED"
+    },
+    {
+        "name": "RAMDHENU",
+        "cat": "Non-News",
+        "languages": [
+            "Bengali",
+            "English",
+            "Hindi",
+            "Assamese"
+        ],
+        "company": "PRIDE EAST ENTERTAINMENTS PRIVATE LIMITED"
+    },
+    {
+        "name": "RANG",
+        "cat": "Non-News",
+        "languages": [
+            "Assamese",
+            "English",
+            "Hindi"
+        ],
+        "company": "PRIDE EAST ENTERTAINMENTS PRIVATE LIMITED"
+    },
+    {
+        "name": "Pyramid Meditation Chanel",
+        "cat": "Non-News",
+        "languages": [
+            "Telugu"
+        ],
+        "company": "PSSM MEDIA LIMITED"
+    },
+    {
+        "name": "Sanskriti 24X7",
+        "cat": "Non-News",
+        "languages": [
+            "English",
+            "Hindi"
+        ],
+        "company": "PTLD Broadcasting Pvt. Ltd."
+    },
+    {
+        "name": "PUDHARI NEWS",
+        "cat": "News",
+        "languages": [
+            "Marathi"
+        ],
+        "company": "PUDHARI PUBLICATIONS PRIVATE LIMITED"
+    },
+    {
+        "name": "BHAKTHI",
+        "cat": "Non-News",
+        "languages": [
+            "Telugu"
+        ],
+        "company": "RACHANA TELEVISION PRIVATE LIMITED"
+    },
+    {
+        "name": "NTV",
+        "cat": "News",
+        "languages": [
+            "Telugu"
+        ],
+        "company": "RACHANA TELEVISION PRIVATE LIMITED"
+    },
+    {
+        "name": "VANITHA TV",
+        "cat": "Non-News",
+        "languages": [
+            "Telugu"
+        ],
+        "company": "RACHANA TELEVISION PRIVATE LIMITED"
+    },
+    {
+        "name": "RAFTAAR MEDIA",
+        "cat": "News",
+        "languages": [
+            "Hindi"
+        ],
+        "company": "RAFTAAR MEDIA PRIVATE LIMITED"
+    },
+    {
+        "name": "R PLUS",
+        "cat": "News",
+        "languages": [
+            "Bengali"
+        ],
+        "company": "RAHUL SPRINGS PVT LTD"
+    },
+    {
+        "name": "R PLUS GOLD (earlier R PLUS NEWS)",
+        "aliases": [
+            "R PLUS NEWS"
+        ],
+        "cat": "News",
+        "languages": [
+            "Bengali"
+        ],
+        "company": "RAHUL SPRINGS PVT LTD"
+    },
+    {
+        "name": "RAJ MUSIX KANNADA",
+        "cat": "Non-News",
+        "languages": [
+            "Kannada"
+        ],
+        "company": "RAJ TELEVISION NETWORK LIMITED"
+    },
+    {
+        "name": "RAJ MUSIX MALAYALAM",
+        "cat": "Non-News",
+        "languages": [
+            "Malayalam"
+        ],
+        "company": "RAJ TELEVISION NETWORK LIMITED"
+    },
+    {
+        "name": "RAJ MUSIX TELUGU",
+        "cat": "Non-News",
+        "languages": [
+            "Telugu"
+        ],
+        "company": "RAJ TELEVISION NETWORK LIMITED"
+    },
+    {
+        "name": "RAJ NEWS KANNADA",
+        "cat": "News",
+        "languages": [
+            "Kannada"
+        ],
+        "company": "RAJ TELEVISION NETWORK LIMITED"
+    },
+    {
+        "name": "RAJ NEWS MALAYALAM",
+        "cat": "News",
+        "languages": [
+            "Malayalam"
+        ],
+        "company": "RAJ TELEVISION NETWORK LIMITED"
+    },
+    {
+        "name": "RAJ NEWS TELUGU",
+        "cat": "News",
+        "languages": [
+            "Tamil"
+        ],
+        "company": "RAJ TELEVISION NETWORK LIMITED"
+    },
+    {
+        "name": "VISSA",
+        "cat": "News",
+        "languages": [
+            "Tamil"
+        ],
+        "company": "RAJ TELEVISION NETWORK LIMITED"
+    },
+    {
+        "name": "Prime9 News",
+        "cat": "News",
+        "languages": [
+            "English",
+            "Telugu"
+        ],
+        "company": "Rayudu Vision Media Ltd."
+    },
+    {
+        "name": "ASSAM TALKS (Earlier PRIME NEWS (ARYAN TV)",
+        "aliases": [
+            "PRIME NEWS",
+            "ARYAN TV"
+        ],
+        "cat": "News",
+        "languages": [
+            "English",
+            "Hindi"
+        ],
+        "company": "ROCKLAND MEDIA AND COMMUNICATION PRIVATE LIMITED"
+    },
+    {
+        "name": "KOLKATTA 24*7",
+        "cat": "News",
+        "languages": [
+            "Bengali",
+            "English",
+            "Hindi"
+        ],
+        "company": "RP TECHVISION INDIA PRIVATE LIMITED"
+    },
+    {
+        "name": "KOLKATTA TV",
+        "cat": "News",
+        "languages": [
+            "Bengali"
+        ],
+        "company": "RP TECHVISION INDIA PRIVATE LIMITED"
+    },
+    {
+        "name": "IBC 24 (earlier ZEE 24 GHANTE-CHATTISGARH)",
+        "aliases": [
+            "ZEE 24 GHANTE-CHATTISGARH"
+        ],
+        "cat": "News",
+        "languages": [
+            "Hindi"
+        ],
+        "company": "S.B.MULTIMEDIA PVT. LTD."
+    },
+    {
+        "name": "BANSAL NEWS",
+        "cat": "News",
+        "languages": [
+            "English",
+            "Hindi"
+        ],
+        "company": "S.D.BANSAL IRON AND STEEL PVT. LTD."
+    },
+    {
+        "name": "STV HARYANA NEWS",
+        "cat": "News",
+        "languages": [
+            "Hindi"
+        ],
+        "company": "S.T.V. ENTERPRISES LTD"
+    },
+    {
+        "name": "Dheeran TV",
+        "cat": "Non-News",
+        "languages": [
+            "Hindi"
+        ],
+        "company": "Saanvi Studioz Limited"
+    },
+    {
+        "name": "DHAMMAL GUJJUU",
+        "cat": "Non-News",
+        "languages": [
+            "Gujarati"
+        ],
+        "company": "SAB GLOBAL ENTERTAINMENT MEDIA PVT. LTD."
+    },
+    {
+        "name": "Seven (earlier SEVEN SISTERS RAINBOW)",
+        "aliases": [
+            "SEVEN SISTERS RAINBOW"
+        ],
+        "cat": "Non-News",
+        "company": "SAB GLOBAL ENTERTAINMENT MEDIA PVT. LTD."
+    },
+    {
+        "name": "SADHNA PRIME NEWS (EARLIER: POSITIVE HEALTH)",
+        "aliases": [
+            "POSITIVE HEALTH"
+        ],
+        "cat": "News",
+        "languages": [
+            "English",
+            "Hindi"
+        ],
+        "company": "SADHNA MEDIA NETWORK PVT. LTD."
+    },
+    {
+        "name": "Aryan TV National (earlier SADHNA ORISSA)",
+        "aliases": [
+            "SADHNA ORISSA"
+        ],
+        "cat": "News",
+        "languages": [
+            "Hindi"
+        ],
+        "company": "SADHNA MEDIA PRIVATE LIMITED"
+    },
+    {
+        "name": "SAFARI",
+        "cat": "Non-News",
+        "company": "SAFARI MULTIMEDIA PRIVATE LIMITED"
+    },
+    {
+        "name": "JAI MAHARASHTRA",
+        "cat": "News",
+        "languages": [
+            "English",
+            "Marathi"
+        ],
+        "company": "SAHANA FILMS PRIVATE LIMITED"
+    },
+    {
+        "name": "SAHANA NEWS",
+        "cat": "News",
+        "languages": [
+            "Hindi",
+            "English"
+        ],
+        "company": "SAHANA FILMS PRIVATE LIMITED"
+    },
+    {
+        "name": "AALAMI SAHARA",
+        "cat": "News",
+        "languages": [
+            "Hindi"
+        ],
+        "company": "Sahara India Commercial Corporation Ltd."
+    },
+    {
+        "name": "SAHARA FILMY",
+        "cat": "Non-News",
+        "languages": [
+            "Hindi"
+        ],
+        "company": "Sahara India Commercial Corporation Ltd."
+    },
+    {
+        "name": "SAHARA FIRANGI",
+        "cat": "Non-News",
+        "languages": [
+            "Hindi"
+        ],
+        "company": "Sahara India Commercial Corporation Ltd."
+    },
+    {
+        "name": "SAHARA ONE",
+        "cat": "Non-News",
+        "languages": [
+            "English",
+            "Hindi"
+        ],
+        "company": "Sahara India Commercial Corporation Ltd."
+    },
+    {
+        "name": "SAHARA SAMAY BIHAR",
+        "cat": "News",
+        "languages": [
+            "Hindi"
+        ],
+        "company": "Sahara India Commercial Corporation Ltd."
+    },
+    {
+        "name": "SAHARA SAMAY MP",
+        "cat": "News",
+        "languages": [
+            "Hindi"
+        ],
+        "company": "Sahara India Commercial Corporation Ltd."
+    },
+    {
+        "name": "SAHARA SAMAY MUMBAI",
+        "cat": "News",
+        "languages": [
+            "Hindi"
+        ],
+        "company": "Sahara India Commercial Corporation Ltd."
+    },
+    {
+        "name": "SAHARA SAMAY NCR",
+        "cat": "News",
+        "languages": [
+            "Hindi"
+        ],
+        "company": "Sahara India Commercial Corporation Ltd."
+    },
+    {
+        "name": "SAHARA SAMAY UP",
+        "cat": "News",
+        "languages": [
+            "Hindi"
+        ],
+        "company": "Sahara India Commercial Corporation Ltd."
+    },
+    {
+        "name": "SAMAY",
+        "cat": "News",
+        "languages": [
+            "Hindi"
+        ],
+        "company": "Sahara India Commercial Corporation Ltd."
+    },
+    {
+        "name": "BHARAT TODAY",
+        "cat": "News",
+        "languages": [
+            "Telugu"
+        ],
+        "company": "Sahasra Television Pvt. Ltd."
+    },
+    {
+        "name": "Sai TV",
+        "cat": "Non-News",
+        "languages": [
+            "English",
+            "Hindi",
+            "Kannada",
+            "Telugu",
+            "Tamil",
+            "Malayalam"
+        ],
+        "company": "Sai Babha Network Pvt. Ltd"
+    },
+    {
+        "name": "SAIRAM TV",
+        "cat": "Non-News",
+        "company": "SAIRAM MEDIA NETWORK PRIVATE LIMITED"
+    },
+    {
+        "name": "SAAM TV",
+        "cat": "News",
+        "languages": [
+            "Marathi"
+        ],
+        "company": "SAKAL MEDIA PRIVATE LIMITED"
+    },
+    {
+        "name": "SANATAN TV",
+        "cat": "Non-News",
+        "languages": [
+            "English",
+            "Hindi"
+        ],
+        "company": "SANATAN INDIA NETWORKING PRIVATE LIMITED"
+    },
+    {
+        "name": "Jan-Tantra TV (earlier A1 TEHELKA HIMACHAL-HARYANA (Earlier known as HINDUSTAN LIVE /NEWS 17)",
+        "aliases": [
+            "A1 TEHELKA HIMACHAL-HARYANA",
+            "HINDUSTAN LIVE",
+            "NEWS 17"
+        ],
+        "cat": "News",
+        "languages": [
+            "English",
+            "Hindi"
+        ],
+        "company": "SANGEET AUDIO INDIA PRIVATE LIMITED"
+    },
+    {
+        "name": "Bhaktisagar (Initially granted as Bhaktisagar2 then Hastey Raho then changed to iConcerts)",
+        "aliases": [
+            "Initially granted as Bhaktisagar2 then Hastey Raho then changed to iConcerts"
+        ],
+        "cat": "Non-News",
+        "languages": [
+            "English",
+            "Hindi"
+        ],
+        "company": "Sangeet Television Network Pvt. Ltd."
+    },
+    {
+        "name": "Sanskar (Initially known as Sanskar then changed to Sanskar HD)",
+        "aliases": [
+            "Initially known as Sanskar then changed to Sanskar HD"
+        ],
+        "cat": "Non-News",
+        "languages": [
+            "Hindi"
+        ],
+        "company": "SANSKAR INFO TV PRIVATE LIMITED"
+    },
+    {
+        "name": "Satsang (earlier SANSKAR SATSANG (EARLIER: SATSANG)",
+        "aliases": [
+            "SANSKAR SATSANG",
+            "SATSANG"
+        ],
+        "cat": "Non-News",
+        "languages": [
+            "Hindi"
+        ],
+        "company": "SANSKAR INFO TV PRIVATE LIMITED"
+    },
+    {
+        "name": "India Daily 24x7",
+        "cat": "News",
+        "languages": [
+            "English",
+            "Hindi"
+        ],
+        "company": "SAPPHIRE MEDIA LIMITED"
+    },
+    {
+        "name": "BALLE BALLE Non Stop Music (earlier Andy Haryana)",
+        "aliases": [
+            "Andy Haryana"
+        ],
+        "cat": "Non-News",
+        "languages": [
+            "English",
+            "Hindi"
+        ],
+        "company": "Satcom Media Broadcast Pvt. Ltd"
+    },
+    {
+        "name": "SATHIYAM",
+        "cat": "News",
+        "languages": [
+            "English",
+            "Tamil"
+        ],
+        "company": "SATHIYAM MEDIA VISION PRIVATE LIMITED"
+    },
+    {
+        "name": "DARSHANA",
+        "cat": "Non-News",
+        "languages": [
+            "Malayalam"
+        ],
+        "company": "SATHYA DHARA COMMUNICATION PVT LTD"
+    },
+    {
+        "name": "I NEWS",
+        "cat": "News",
+        "languages": [
+            "English",
+            "Hindi",
+            "Telugu"
+        ],
+        "company": "SAURABH INTERNATIONAL PRIVATE LIMITED"
+    },
+    {
+        "name": "JINVANI",
+        "cat": "Non-News",
+        "languages": [
+            "English",
+            "Hindi"
+        ],
+        "company": "SEA TV NETWORK LIMITED"
+    },
+    {
+        "name": "Non-Stop Bharat(Initially Sea News then changed to Sea News Uttar Pradesh & Uttrakhand then changed to Non-Stop Samachar India)",
+        "aliases": [
+            "Initially Sea News then changed to Sea News Uttar Pradesh & Uttrakhand then changed to Non-Stop Samachar India"
+        ],
+        "cat": "News",
+        "languages": [
+            "English",
+            "Hindi"
+        ],
+        "company": "SEA TV NETWORK LIMITED"
+    },
+    {
+        "name": "News 360",
+        "cat": "News",
+        "languages": [
+            "Telugu"
+        ],
+        "company": "SEE MEDIA SERVICES PVT LTD"
+    },
+    {
+        "name": "Swaraj Express SMBC (earlier SMBC Insight (earlier VOICE OF CENTRAL INDIA VOICE)",
+        "aliases": [
+            "SMBC Insight",
+            "VOICE OF CENTRAL INDIA VOICE"
+        ],
+        "cat": "News",
+        "languages": [
+            "English",
+            "Hindi",
+            "Telugu",
+            "Urdu"
+        ],
+        "company": "SEE MEDIA SERVICES PVT LTD"
+    },
+    {
+        "name": "India Voice (Earlier SENTINEL NEWS)",
+        "aliases": [
+            "SENTINEL NEWS"
+        ],
+        "cat": "News",
+        "languages": [
+            "Assamese",
+            "Bengali",
+            "Bodo",
+            "Hindi",
+            "Khasi",
+            "Manipuri",
+            "Nagamis",
+            "English"
+        ],
+        "company": "SENTINEL BROADCASTING PVT LTD"
+    },
+    {
+        "name": "CARE WORLD",
+        "cat": "Non-News",
+        "languages": [
+            "Hindi"
+        ],
+        "company": "SEVEN STAR SATELLITE PRIVATE LIMITED"
+    },
+    {
+        "name": "Shalini TV",
+        "cat": "Non-News",
+        "company": "Shalini Television Network Pvt Ltd."
+    },
+    {
+        "name": "SHALOM TELEVISION",
+        "cat": "Non-News",
+        "languages": [
+            "English",
+            "Malayalam"
+        ],
+        "company": "SHALOM COMMUNICATIONS LIMITED"
+    },
+    {
+        "name": "SHRADDHA MH ONE",
+        "cat": "Non-News",
+        "languages": [
+            "Bengali",
+            "Bodo",
+            "Dogri",
+            "English",
+            "Gujarati",
+            "Hindi",
+            "Kannada",
+            "Kashmiri",
+            "Konkani",
+            "Maithili",
+            "Malayalam",
+            "Manipuri",
+            "Marathi",
+            "Nepali",
+            "Odia",
+            "Punjabi",
+            "Sanskrit",
+            "Santhali",
+            "Sindhi",
+            "Tamil",
+            "Telugu",
+            "Urdu",
+            "Assamese"
+        ],
+        "company": "Shardha M.H One TV Network Pvt Ltd."
+    },
+    {
+        "name": "Sadhna News Madhya Pradesh/ Chhatisgarh/ Rajasthan (earlier SADHNA NEWS BIHAR)",
+        "aliases": [
+            "SADHNA NEWS BIHAR"
+        ],
+        "cat": "News",
+        "languages": [
+            "Hindi"
+        ],
+        "company": "SHARP EYE ADVERTISING PRIVATE LIMITED"
+    },
+    {
+        "name": "SADHNA PLUS NEWS (Earlier SADHANA MADHYA PRADESH)",
+        "aliases": [
+            "SADHANA MADHYA PRADESH"
+        ],
+        "cat": "News",
+        "languages": [
+            "Hindi"
+        ],
+        "company": "SHARP EYE ADVERTISING PRIVATE LIMITED"
+    },
+    {
+        "name": "WPN World Punjabi (EARLIER Sadhna National,R.K.NEWS, KATYAYANI)",
+        "aliases": [
+            "Sadhna National",
+            "R.K.NEWS",
+            "KATYAYANI"
+        ],
+        "cat": "News",
+        "languages": [
+            "English",
+            "Hindi"
+        ],
+        "company": "SHARP EYE ADVERTISING PRIVATE LIMITED"
+    },
+    {
+        "name": "AMV Network",
+        "cat": "News",
+        "company": "Sharpline Network Privated Limited"
+    },
+    {
+        "name": "NB TV",
+        "cat": "News",
+        "company": "Sharpline Network Privated Limited"
+    },
+    {
+        "name": "TV 27 News",
+        "cat": "News",
+        "company": "Sharpline Network Privated Limited"
+    },
+    {
+        "name": "VIP News (Earlier known as Prabhatam HSB)",
+        "aliases": [
+            "Prabhatam HSB"
+        ],
+        "cat": "News",
+        "languages": [
+            "English",
+            "Hindi"
+        ],
+        "company": "Sharpline Network Privated Limited"
+    },
+    {
+        "name": "Shemaroo Bhakti",
+        "cat": "Non-News",
+        "languages": [
+            "Hindi"
+        ],
+        "company": "SHEMAROO ENTERTAINMENT LIMITED"
+    },
+    {
+        "name": "Shemaroo Bollywood",
+        "cat": "Non-News",
+        "languages": [
+            "Hindi"
+        ],
+        "company": "SHEMAROO ENTERTAINMENT LIMITED"
+    },
+    {
+        "name": "Shemaroo Classic",
+        "cat": "Non-News",
+        "languages": [
+            "Hindi"
+        ],
+        "company": "SHEMAROO ENTERTAINMENT LIMITED"
+    },
+    {
+        "name": "Shemaroo Comedy",
+        "cat": "Non-News",
+        "languages": [
+            "Hindi"
+        ],
+        "company": "SHEMAROO ENTERTAINMENT LIMITED"
+    },
+    {
+        "name": "Nireekshana TV",
+        "cat": "Non-News",
+        "company": "Shopping Zone India TV Pvt. Ltd"
+    },
+    {
+        "name": "Gujarat FIrst",
+        "cat": "News",
+        "languages": [
+            "Hindi",
+            "English",
+            "Gujarati"
+        ],
+        "company": "Shree Siddhi Media Pvt Ltd."
+    },
+    {
+        "name": "Hindu Dharmam",
+        "cat": "Non-News",
+        "languages": [
+            "Telugu"
+        ],
+        "company": "Shreya Broadcasting Pvt. Ltd"
+    },
+    {
+        "name": "TV 5",
+        "cat": "News",
+        "languages": [
+            "Telugu",
+            "English"
+        ],
+        "company": "Shreya Broadcasting Pvt. Ltd"
+    },
+    {
+        "name": "TV 5 Kannada",
+        "cat": "News",
+        "languages": [
+            "Kannada"
+        ],
+        "company": "Shreya Broadcasting Pvt. Ltd"
+    },
+    {
+        "name": "GSTV (Earier AASPAS TV)",
+        "aliases": [
+            "Earier AASPAS TV"
+        ],
+        "cat": "News",
+        "languages": [
+            "English",
+            "Hindi",
+            "Marathi",
+            "Gujarati"
+        ],
+        "company": "Shreyarth Aaspas Limited (earlier Aaspas Multimedia Ltd.)"
+    },
+    {
+        "name": "Shubh Cinema",
+        "cat": "Non-News",
+        "languages": [
+            "English",
+            "Hindi"
+        ],
+        "company": "SHUBH MEDIA PVT. LTD."
+    },
+    {
+        "name": "SHUBH TV",
+        "cat": "Non-News",
+        "languages": [
+            "English",
+            "Hindi"
+        ],
+        "company": "SHUBH MEDIA PVT. LTD."
+    },
+    {
+        "name": "AP 24x7 (earlier AP Times the News HQ, KHOJ INDIA)",
+        "aliases": [
+            "AP Times the News HQ",
+            "KHOJ INDIA"
+        ],
+        "cat": "News",
+        "company": "SIGNET COMMUNICATIONS PRIVATE LIMITED"
+    },
+    {
+        "name": "Bharatika TV",
+        "cat": "News",
+        "languages": [
+            "English",
+            "Hindi"
+        ],
+        "company": "SJM INVESTMENTS (DELHI) PRIVATE LIMITED"
+    },
+    {
+        "name": "FW FASTWAY",
+        "cat": "News",
+        "company": "SKY AMA INFRA PRIVATE LIMITED"
+    },
+    {
+        "name": "AKASH B",
+        "cat": "News",
+        "languages": [
+            "Bengali"
+        ],
+        "company": "SKY B (BANGLA) PRIVATE LIMITED"
+    },
+    {
+        "name": "99 TV (earlier 99 Percent, CHANNEL NO.3)",
+        "aliases": [
+            "99 Percent",
+            "CHANNEL NO.3"
+        ],
+        "cat": "News",
+        "languages": [
+            "English",
+            "Hindi",
+            "Punjabi"
+        ],
+        "company": "SKY NEWS MEDIA PRIVATE LIMITED"
+    },
+    {
+        "name": "ABZY COOL (earlier known as Skystar Bangla)",
+        "aliases": [
+            "Skystar Bangla"
+        ],
+        "cat": "Non-News",
+        "languages": [
+            "English",
+            "Hindi"
+        ],
+        "company": "Skystar Entertainment Private Limited"
+    },
+    {
+        "name": "ABZY DHAKAD (earlier known as Skystar Telugu)",
+        "aliases": [
+            "Skystar Telugu"
+        ],
+        "cat": "Non-News",
+        "languages": [
+            "English",
+            "Hindi"
+        ],
+        "company": "Skystar Entertainment Private Limited"
+    },
+    {
+        "name": "ABZY MOVIES (earlier known as Skystar Movies)",
+        "aliases": [
+            "Skystar Movies"
+        ],
+        "cat": "Non-News",
+        "languages": [
+            "English",
+            "Hindi"
+        ],
+        "company": "Skystar Entertainment Private Limited"
+    },
+    {
+        "name": "APN (Axis Press Network ) [Earlier known as SOBHAGYA MITHILA/ SOBHAGYA TV]",
+        "aliases": [
+            "Axis Press Network [Earlier known as SOBHAGYA MITHILA",
+            "SOBHAGYA TV]"
+        ],
+        "cat": "News",
+        "languages": [
+            "English",
+            "Hindi"
+        ],
+        "company": "SOBHAGAYA MEDIA PRIVATE LIMITED"
+    },
+    {
+        "name": "MKN News (earlier MKN )",
+        "aliases": [
+            "MKN"
+        ],
+        "cat": "News",
+        "languages": [
+            "Marathi",
+            "Hindi"
+        ],
+        "company": "SOFIYA ENTERTAINMENT PRIVATE LIMITED"
+    },
+    {
+        "name": "VILLAGE TV",
+        "cat": "Non-News",
+        "languages": [
+            "Assamese",
+            "Bengali",
+            "Bodo",
+            "Dogri",
+            "English",
+            "Gujarati",
+            "Hindi",
+            "Kannada",
+            "Kashmiri",
+            "Konkani",
+            "Malayalam",
+            "Marathi",
+            "Nepali",
+            "Odia",
+            "Punjabi",
+            "Sanskrit",
+            "Santhali",
+            "Sindhi",
+            "Tamil",
+            "Telugu",
+            "Urdu",
+            "Bojpuri",
+            "Manipuri",
+            "Maithili",
+            "Other"
+        ],
+        "company": "SOFTLINE CREATION PRIVATE LIMITED"
+    },
+    {
+        "name": "Madhya Bharat News",
+        "cat": "Non-News",
+        "languages": [
+            "English",
+            "Hindi"
+        ],
+        "company": "Softline Media Network Private Limited"
+    },
+    {
+        "name": "VELICHAM PLUS (Earlier FAST 24*7)",
+        "aliases": [
+            "FAST 24*7"
+        ],
+        "cat": "News",
+        "languages": [
+            "English",
+            "Hindi"
+        ],
+        "company": "SOUND TELENETWORKS PRIVATE LIMITED"
+    },
+    {
+        "name": "NEWS MALAYALAM 24X7",
+        "cat": "News",
+        "languages": [
+            "Malayalam"
+        ],
+        "company": "Splus Media Ltd"
+    },
+    {
+        "name": "News Tamil 24*7 Meiporul Kanbathu Arivu",
+        "cat": "News",
+        "languages": [
+            "Tamil"
+        ],
+        "company": "Splus Media Ltd"
+    },
+    {
+        "name": "OM TV",
+        "cat": "Non-News",
+        "languages": [
+            "English",
+            "Hindi",
+            "Tamil",
+            "Odia",
+            "Telugu",
+            "Bengali",
+            "Kannada",
+            "Maithili",
+            "Punjabi",
+            "Gujarati",
+            "Malayalam",
+            "Marathi",
+            "Bojpuri"
+        ],
+        "company": "Splus Media Ltd"
+    },
+    {
+        "name": "10 TV",
+        "cat": "News",
+        "languages": [
+            "English",
+            "Telugu"
+        ],
+        "company": "Spoorthi Communication Pvt. Ltd."
+    },
+    {
+        "name": "SWADESH NEWS",
+        "cat": "News",
+        "languages": [
+            "English",
+            "Hindi"
+        ],
+        "company": "SRI SAI MEDIA PVT. LTD."
+    },
+    {
+        "name": "Sri Venkateswara Bhakti channel (Earlier SRI VENKATESWARA)",
+        "aliases": [
+            "SRI VENKATESWARA"
+        ],
+        "cat": "Non-News",
+        "languages": [
+            "Telugu"
+        ],
+        "company": "SRI VENKATESWARA BHAKTI CHANNEL PRIVATE LIMITED"
+    },
+    {
+        "name": "Sri Venkateswara Bhakti Channel-3 (SVBC-3, Kannada)",
+        "aliases": [
+            "SVBC-3",
+            "Kannada"
+        ],
+        "cat": "Non-News",
+        "languages": [
+            "Kannada"
+        ],
+        "company": "SRI VENKATESWARA BHAKTI CHANNEL PRIVATE LIMITED"
+    },
+    {
+        "name": "Sri Venkateswara Bhakti Channel-4 (SVBC-4, Hindi)",
+        "aliases": [
+            "SVBC-4",
+            "Hindi"
+        ],
+        "cat": "Non-News",
+        "languages": [
+            "Hindi"
+        ],
+        "company": "SRI VENKATESWARA BHAKTI CHANNEL PRIVATE LIMITED"
+    },
+    {
+        "name": "SVBC-2",
+        "cat": "Non-News",
+        "languages": [
+            "English",
+            "Kannada",
+            "Tamil",
+            "Telugu",
+            "Hindi"
+        ],
+        "company": "SRI VENKATESWARA BHAKTI CHANNEL PRIVATE LIMITED"
+    },
+    {
+        "name": "A1 News",
+        "cat": "News",
+        "languages": [
+            "English",
+            "Hindi"
+        ],
+        "company": "STANDARD CORPORATION INDIA LIMITED"
+    },
+    {
+        "name": "SUBHARTI",
+        "cat": "Non-News",
+        "languages": [
+            "Hindi"
+        ],
+        "company": "SUBHARTI MEDIA LIMITED"
+    },
+    {
+        "name": "A TO Z",
+        "cat": "News",
+        "languages": [
+            "Hindi"
+        ],
+        "company": "Sudarshan TV Channel Ltd."
+    },
+    {
+        "name": "A TO Z Documentary and Telefilms",
+        "cat": "Non-News",
+        "languages": [
+            "Hindi"
+        ],
+        "company": "Sudarshan TV Channel Ltd."
+    },
+    {
+        "name": "SAI TV (Dharma)",
+        "aliases": [
+            "Dharma"
+        ],
+        "cat": "Non-News",
+        "languages": [
+            "Hindi"
+        ],
+        "company": "Sudarshan TV Channel Ltd."
+    },
+    {
+        "name": "Sudarshan",
+        "cat": "News",
+        "languages": [
+            "Hindi"
+        ],
+        "company": "Sudarshan TV Channel Ltd."
+    },
+    {
+        "name": "NEWS 7 (PRAMEYA NEWS)",
+        "aliases": [
+            "PRAMEYA NEWS"
+        ],
+        "cat": "News",
+        "languages": [
+            "Odia"
+        ],
+        "company": "SUMMA REAL MEDIA PRIVATE LIMITED"
+    },
+    {
+        "name": "SUN BANGLA (Earlier GEMINI NEWS)",
+        "aliases": [
+            "GEMINI NEWS"
+        ],
+        "cat": "News",
+        "languages": [
+            "English"
+        ],
+        "company": "SUN TV NETWORK LIMITED"
+    },
+    {
+        "name": "SUN BANGLA HD",
+        "cat": "Non-News",
+        "company": "SUN TV NETWORK LIMITED"
+    },
+    {
+        "name": "SUN MARATHI (Earlier UDAYA NEWS UDAYA VARTHEGALU)",
+        "aliases": [
+            "UDAYA NEWS UDAYA VARTHEGALU"
+        ],
+        "cat": "News",
+        "languages": [
+            "English"
+        ],
+        "company": "SUN TV NETWORK LIMITED"
+    },
+    {
+        "name": "SUN MARATHI HD",
+        "cat": "Non-News",
+        "company": "SUN TV NETWORK LIMITED"
+    },
+    {
+        "name": "SUN NEO",
+        "cat": "Non-News",
+        "company": "SUN TV NETWORK LIMITED"
+    },
+    {
+        "name": "SUN NEO HD",
+        "cat": "Non-News",
+        "company": "SUN TV NETWORK LIMITED"
+    },
+    {
+        "name": "Harvest TV 24x7 Christian Channel (earlier Shri Navgrah Channel, Harvest TV 24x7 Christian Channel (earlier Gnext)",
+        "aliases": [
+            "Shri Navgrah Channel",
+            "Harvest TV 24x7 Christian Channel",
+            "Gnext"
+        ],
+        "cat": "Non-News",
+        "languages": [
+            "English",
+            "Punjabi"
+        ],
+        "company": "SUNNY ENTERTAINMENT PRIVATE LIMITED"
+    },
+    {
+        "name": "Harvest TV Keralam (earlier Naaptol Kannada, Gnext Discovery)",
+        "aliases": [
+            "Naaptol Kannada",
+            "Gnext Discovery"
+        ],
+        "cat": "Non-News",
+        "languages": [
+            "English",
+            "Punjabi"
+        ],
+        "company": "SUNNY ENTERTAINMENT PRIVATE LIMITED"
+    },
+    {
+        "name": "Surya Samachar",
+        "cat": "News",
+        "languages": [
+            "English",
+            "Hindi"
+        ],
+        "company": "Surya Sagar Communication Pvt. Ltd"
+    },
+    {
+        "name": "MOVIEPLEX",
+        "cat": "Non-News",
+        "company": "SWAMI FILMS STUDIO LIMITED"
+    },
+    {
+        "name": "Orange Bangla (earlier known as ORANGE TV)",
+        "aliases": [
+            "ORANGE TV"
+        ],
+        "cat": "Non-News",
+        "languages": [
+            "Bengali"
+        ],
+        "company": "T. SARKAR PVT. LTD."
+    },
+    {
+        "name": "TAAZA TV",
+        "cat": "News",
+        "languages": [
+            "Hindi"
+        ],
+        "company": "TAAZA INFOTAINMENT PRIVATE LIMITED"
+    },
+    {
+        "name": "TAMILAN TELEVISION",
+        "cat": "News",
+        "languages": [
+            "Tamil"
+        ],
+        "company": "TAMILAN KALAI KOODAM PRIVATE LIMITED"
+    },
+    {
+        "name": "Prime 9 Plus",
+        "cat": "News",
+        "languages": [
+            "English",
+            "Hindi"
+        ],
+        "company": "TEKTREE SOFTWARE SERVICES PRIVATE LIMITED"
+    },
+    {
+        "name": "T NEWS",
+        "cat": "News",
+        "languages": [
+            "Telugu"
+        ],
+        "company": "TELANGANA BROADCASTING PRIVATE LIMITED"
+    },
+    {
+        "name": "MAHA MOVIE",
+        "cat": "Non-News",
+        "languages": [
+            "English",
+            "Hindi"
+        ],
+        "company": "TELEONE CONSUMERS PRODUCT PVT. LTD."
+    },
+    {
+        "name": "Tabbar Hits (earlier Maha Punjabi,T TV before that Maha Mazza)",
+        "aliases": [
+            "Maha Punjabi",
+            "T TV before that Maha Mazza"
+        ],
+        "cat": "Non-News",
+        "languages": [
+            "English",
+            "Hindi"
+        ],
+        "company": "TELEONE CONSUMERS PRODUCT PVT. LTD."
+    },
+    {
+        "name": "Kappa TV (earlier MATHRUBHUMI NEWS CENTRAL)",
+        "aliases": [
+            "MATHRUBHUMI NEWS CENTRAL"
+        ],
+        "cat": "News",
+        "languages": [
+            "Malayalam"
+        ],
+        "company": "THE MATHRUBHUMI PRINTING AND PUBLISHING COMPANY LIMITED"
+    },
+    {
+        "name": "MATHRUBHUMI NEWS",
+        "cat": "News",
+        "languages": [
+            "Malayalam"
+        ],
+        "company": "THE MATHRUBHUMI PRINTING AND PUBLISHING COMPANY LIMITED"
+    },
+    {
+        "name": "SANDESH NEWS",
+        "cat": "News",
+        "languages": [
+            "English",
+            "Gujarati",
+            "Hindi"
+        ],
+        "company": "THE SANDESH LIMITED"
+    },
+    {
+        "name": "BHARAT SAMACHAR",
+        "cat": "News",
+        "languages": [
+            "English",
+            "Hindi"
+        ],
+        "company": "TIME TODAY MEDIA NETWORK PRIVATE LIMITED"
+    },
+    {
+        "name": "1S News",
+        "cat": "News",
+        "company": "Total Telefilms Pvt. Ltd"
+    },
+    {
+        "name": "BRK NEWS",
+        "cat": "News",
+        "company": "Total Telefilms Pvt. Ltd"
+    },
+    {
+        "name": "TOTAL TV",
+        "cat": "News",
+        "languages": [
+            "Hindi"
+        ],
+        "company": "Total Telefilms Pvt. Ltd"
+    },
+    {
+        "name": "Paras Gold (earlier TRAVEL TRENDZ TV)",
+        "aliases": [
+            "TRAVEL TRENDZ TV"
+        ],
+        "cat": "Non-News",
+        "languages": [
+            "Hindi"
+        ],
+        "company": "TOURISM AND TRAVEL MEDIA ENTERTAINMENT PRIVATE LIMITED"
+    },
+    {
+        "name": "VENDHAR TV (NEWS 4U)",
+        "aliases": [
+            "NEWS 4U"
+        ],
+        "cat": "News",
+        "company": "TRAC MEDIA PVT LTD"
+    },
+    {
+        "name": "1st India Rajasthan (earlier TRANSMEDIA NEWS)",
+        "aliases": [
+            "TRANSMEDIA NEWS"
+        ],
+        "cat": "News",
+        "languages": [
+            "Gujarati",
+            "Hindi",
+            "Marathi"
+        ],
+        "company": "TRANSMEDIA SOFTWARE LIMITED"
+    },
+    {
+        "name": "AAMAR CINEMA (EARLIER TRANSMEDIA GUJARAT)",
+        "aliases": [
+            "TRANSMEDIA GUJARAT"
+        ],
+        "cat": "Non-News",
+        "languages": [
+            "Gujarati",
+            "Hindi",
+            "Marathi"
+        ],
+        "company": "TRANSMEDIA SOFTWARE LIMITED"
+    },
+    {
+        "name": "TRANSMEDIA SOHAM",
+        "cat": "Non-News",
+        "languages": [
+            "Gujarati",
+            "Hindi",
+            "Marathi"
+        ],
+        "company": "TRANSMEDIA SOFTWARE LIMITED"
+    },
+    {
+        "name": "TV45",
+        "cat": "News",
+        "languages": [
+            "Hindi",
+            "English"
+        ],
+        "company": "Tulasi Broadcasting Network Ltd"
+    },
+    {
+        "name": "TVN News",
+        "cat": "News",
+        "company": "Tulsi Communication Pvt Ltd."
+    },
+    {
+        "name": "FOOD FOOD TV",
+        "cat": "Non-News",
+        "languages": [
+            "English",
+            "Hindi"
+        ],
+        "company": "TURMERIC VISION PRIVATE LIMITED"
+    },
+    {
+        "name": "NEPAL 1 (EARLIER KNOWN AS TV LIVE)",
+        "aliases": [
+            "TV LIVE"
+        ],
+        "cat": "News",
+        "languages": [
+            "Bojpuri",
+            "English",
+            "Nepali",
+            "Hindi"
+        ],
+        "company": "TV LIVE INDIA PRIVATE LIMITED"
+    },
+    {
+        "name": "AAJ TAK",
+        "cat": "News",
+        "languages": [
+            "English"
+        ],
+        "company": "TV TODAY NETWORK LIMITED"
+    },
+    {
+        "name": "Good News Today (earlier AAJ TAK TEZ, Mumbai Aaj Tak)",
+        "aliases": [
+            "AAJ TAK TEZ",
+            "Mumbai Aaj Tak"
+        ],
+        "cat": "News",
+        "languages": [
+            "English"
+        ],
+        "company": "TV TODAY NETWORK LIMITED"
+    },
+    {
+        "name": "DABANGG",
+        "cat": "Non-News",
+        "languages": [
+            "Hindi"
+        ],
+        "company": "TV VISION LIMITED"
+    },
+    {
+        "name": "DHAMAAL (earlier Manoranjan, Comedy Times)",
+        "aliases": [
+            "Manoranjan",
+            "Comedy Times"
+        ],
+        "cat": "Non-News",
+        "languages": [
+            "Hindi"
+        ],
+        "company": "TV VISION LIMITED"
+    },
+    {
+        "name": "Maiboli (earlier DHAMAKAA /APNA TV)",
+        "aliases": [
+            "DHAMAKAA",
+            "APNA TV"
+        ],
+        "cat": "Non-News",
+        "languages": [
+            "Hindi"
+        ],
+        "company": "TV VISION LIMITED"
+    },
+    {
+        "name": "MASTIII",
+        "cat": "Non-News",
+        "languages": [
+            "Hindi"
+        ],
+        "company": "TV VISION LIMITED"
+    },
+    {
+        "name": "Live Times",
+        "cat": "News",
+        "languages": [
+            "English",
+            "Hindi",
+            "Punjabi"
+        ],
+        "company": "TWO STAR MEDIA PVT.LTD."
+    },
+    {
+        "name": "Tirupathi",
+        "cat": "Non-News",
+        "languages": [
+            "Hindi"
+        ],
+        "company": "UNISSION NETWORK MEDIA PVT.LTD."
+    },
+    {
+        "name": "Argus",
+        "cat": "News",
+        "languages": [
+            "Odia"
+        ],
+        "company": "US Broadcast India Pvt. Ltd"
+    },
+    {
+        "name": "Mathimugam Tholaikatchi (EARLIER NO.1 NEWS, VAARTHA)",
+        "aliases": [
+            "NO.1 NEWS",
+            "VAARTHA"
+        ],
+        "cat": "News",
+        "languages": [
+            "Telugu"
+        ],
+        "company": "VAARTHA BROADCASTING LTD"
+    },
+    {
+        "name": "POWER VISION",
+        "cat": "Non-News",
+        "languages": [
+            "English",
+            "Hindi",
+            "Malayalam"
+        ],
+        "company": "VALUE VISION BROADCASTING PRIVATE LIMITED"
+    },
+    {
+        "name": "ISHWAR BHAKTI (EARLIER SUKH SAGAR)",
+        "aliases": [
+            "SUKH SAGAR"
+        ],
+        "cat": "Non-News",
+        "languages": [
+            "English",
+            "Hindi"
+        ],
+        "company": "VARUN MEDIA PRIVATE LIMITED"
+    },
+    {
+        "name": "VASANTH",
+        "cat": "News",
+        "languages": [
+            "Tamil"
+        ],
+        "company": "VASANTH AND CO MEDIA NETWORK PRIVATE LIMITED"
+    },
+    {
+        "name": "AASTHA",
+        "cat": "Non-News",
+        "languages": [
+            "Hindi"
+        ],
+        "company": "VEDIC BROADCASTINGS LIMITED"
+    },
+    {
+        "name": "AASTHA BHAJAN",
+        "cat": "Non-News",
+        "languages": [
+            "English",
+            "Hindi"
+        ],
+        "company": "VEDIC BROADCASTINGS LIMITED"
+    },
+    {
+        "name": "Aastha Gujarati",
+        "cat": "Non-News",
+        "languages": [
+            "English",
+            "Hindi",
+            "Gujarati"
+        ],
+        "company": "VEDIC BROADCASTINGS LIMITED"
+    },
+    {
+        "name": "Aastha Kannada",
+        "cat": "Non-News",
+        "languages": [
+            "English",
+            "Hindi"
+        ],
+        "company": "VEDIC BROADCASTINGS LIMITED"
+    },
+    {
+        "name": "Aastha Telugu",
+        "cat": "Non-News",
+        "languages": [
+            "English",
+            "Hindi"
+        ],
+        "company": "VEDIC BROADCASTINGS LIMITED"
+    },
+    {
+        "name": "VEDIC",
+        "cat": "Non-News",
+        "languages": [
+            "English",
+            "Gujarati",
+            "Hindi"
+        ],
+        "company": "VEDIC BROADCASTINGS LIMITED"
+    },
+    {
+        "name": "INDIA DAILY LIVE",
+        "cat": "News",
+        "languages": [
+            "English",
+            "Hindi"
+        ],
+        "company": "VEECON MEDIA AND BROADCASTING PVT LTD"
+    },
+    {
+        "name": "Vertent Samachar Plus 24x7",
+        "cat": "News",
+        "languages": [
+            "English",
+            "Hindi"
+        ],
+        "company": "VEECON MEDIA AND BROADCASTING PVT LTD"
+    },
+    {
+        "name": "Fast1",
+        "cat": "News",
+        "company": "VERSATILE STRATEGICS PRIVATE LIMITED"
+    },
+    {
+        "name": "Swatantra",
+        "cat": "News",
+        "languages": [
+            "English",
+            "Hindi"
+        ],
+        "company": "VERTENT MEDIA SOFT PRIVATE LIMITED"
+    },
+    {
+        "name": "NIRMANA",
+        "cat": "News",
+        "languages": [
+            "English",
+            "Gujarati",
+            "Hindi"
+        ],
+        "company": "VIKAAS TV ALLIANCE PVT LTD"
+    },
+    {
+        "name": "VIKAAS TV",
+        "cat": "News",
+        "languages": [
+            "English",
+            "Hindi",
+            "Gujarati"
+        ],
+        "company": "VIKAAS TV ALLIANCE PVT LTD"
+    },
+    {
+        "name": "V6",
+        "cat": "News",
+        "languages": [
+            "Telugu"
+        ],
+        "company": "VIL MEDIA PVT. LTD. (EARLIER NIKIT INVESTMENT PRIVATE LIMITED)"
+    },
+    {
+        "name": "KHABRAIN ABHI TAK(ABHI TAK)",
+        "aliases": [
+            "ABHI TAK"
+        ],
+        "cat": "News",
+        "languages": [
+            "Hindi"
+        ],
+        "company": "VINMEHTA FILMS PRIVATE LIMITED (Earlier known as PPALTECH COOLING TOWERS AND EQUIPMENTS LIMITED)"
+    },
+    {
+        "name": "FM NEWS (EARLIER LIVING INDIA AYUR LIVING INDIA)",
+        "aliases": [
+            "LIVING INDIA AYUR LIVING INDIA"
+        ],
+        "cat": "News",
+        "languages": [
+            "English",
+            "Hindi"
+        ],
+        "company": "VINTAGE STUDIO PVT LTD"
+    },
+    {
+        "name": "Movie Plus (Earlier Indian fashion TV)",
+        "aliases": [
+            "Indian fashion TV"
+        ],
+        "cat": "Non-News",
+        "languages": [
+            "Hindi",
+            "Bengali",
+            "Punjabi",
+            "Marathi",
+            "Bojpuri"
+        ],
+        "company": "VISION CORPORATION LIMITED"
+    },
+    {
+        "name": "RUDRAKSH",
+        "cat": "Non-News",
+        "languages": [
+            "Hindi"
+        ],
+        "company": "VISTAAR MULTIMEDIA SERVICES PRIVATE LIMITED"
+    },
+    {
+        "name": "VISHWAS",
+        "cat": "Non-News",
+        "languages": [
+            "Hindi"
+        ],
+        "company": "VISTAAR MULTIMEDIA SERVICES PRIVATE LIMITED"
+    },
+    {
+        "name": "VISTAAR NEWS",
+        "cat": "News",
+        "languages": [
+            "Hindi"
+        ],
+        "company": "VISTAAR MULTIMEDIA SERVICES PRIVATE LIMITED"
+    },
+    {
+        "name": "Vistara News",
+        "cat": "News",
+        "languages": [
+            "English",
+            "Hindi",
+            "Kannada"
+        ],
+        "company": "VISTARA MEDIA PRIVATE LIMITED"
+    },
+    {
+        "name": "NEWS 22SCOPE",
+        "cat": "News",
+        "languages": [
+            "Hindi"
+        ],
+        "company": "WESTWELL CREATIVES PRIVATE LIMITED"
+    },
+    {
+        "name": "Channel win",
+        "cat": "Non-News",
+        "languages": [
+            "English",
+            "Hindi"
+        ],
+        "company": "WIN TV PRIVATE LIMITED"
+    },
+    {
+        "name": "Public Movies (earlier Public Comedy)",
+        "aliases": [
+            "Public Comedy"
+        ],
+        "cat": "Non-News",
+        "languages": [
+            "Kannada"
+        ],
+        "company": "WRITEMEN MEDIA PRIVATE LIMITED"
+    },
+    {
+        "name": "Public Music",
+        "cat": "Non-News",
+        "languages": [
+            "Kannada"
+        ],
+        "company": "WRITEMEN MEDIA PRIVATE LIMITED"
+    },
+    {
+        "name": "Public TV(TOP TV /KARNATAKA NEWS 24X7)",
+        "aliases": [
+            "TOP TV",
+            "KARNATAKA NEWS 24X7"
+        ],
+        "cat": "News",
+        "languages": [
+            "Kannada"
+        ],
+        "company": "WRITEMEN MEDIA PRIVATE LIMITED"
+    },
+    {
+        "name": "Asian News",
+        "cat": "News",
+        "languages": [
+            "English",
+            "Marathi",
+            "Hindi"
+        ],
+        "company": "YASH SATELLITE INDUSTRIES PRIVATE LIMITED"
+    },
+    {
+        "name": "India Superfast (earlier Lokshahi,TTC,JANADESH)",
+        "aliases": [
+            "Lokshahi",
+            "TTC",
+            "JANADESH"
+        ],
+        "cat": "News",
+        "languages": [
+            "English",
+            "Hindi"
+        ],
+        "company": "YASH SATELLITE INDUSTRIES PRIVATE LIMITED"
+    },
+    {
+        "name": "NEWS CAPITAL GUJARAT",
+        "cat": "News",
+        "languages": [
+            "English",
+            "Punjabi",
+            "Hindi"
+        ],
+        "company": "YASH SATELLITE INDUSTRIES PRIVATE LIMITED"
+    },
+    {
+        "name": "Swaraj Express (Earlier NEWS TIME 24X7, JANSANDESH PLUS, FAST NEWS)",
+        "aliases": [
+            "NEWS TIME 24X7",
+            "JANSANDESH PLUS",
+            "FAST NEWS"
+        ],
+        "cat": "News",
+        "languages": [
+            "English",
+            "Hindi"
+        ],
+        "company": "YASH SATELLITE INDUSTRIES PRIVATE LIMITED"
+    },
+    {
+        "name": "PROTIDIN TIME (EARLIER KHABAR 365 DIN, REPORTER HARYANA)",
+        "aliases": [
+            "KHABAR 365 DIN",
+            "REPORTER HARYANA"
+        ],
+        "cat": "News",
+        "languages": [
+            "English",
+            "Hindi"
+        ],
+        "company": "YASH TV ENTERTAINEMENT PVT.LTD."
+    },
+    {
+        "name": "ACTION CINEMA",
+        "cat": "Non-News",
+        "languages": [
+            "English",
+            "Hindi"
+        ],
+        "company": "ZEE ENTERTAINMENT ENTERPRISES LIMITED"
+    },
+    {
+        "name": "Anmol Cinema",
+        "cat": "Non-News",
+        "languages": [
+            "Hindi"
+        ],
+        "company": "ZEE ENTERTAINMENT ENTERPRISES LIMITED"
+    },
+    {
+        "name": "Anmol Cinema 2",
+        "cat": "Non-News",
+        "languages": [
+            "Hindi"
+        ],
+        "company": "ZEE ENTERTAINMENT ENTERPRISES LIMITED"
+    },
+    {
+        "name": "Anmol TV",
+        "cat": "Non-News",
+        "languages": [
+            "English"
+        ],
+        "company": "ZEE ENTERTAINMENT ENTERPRISES LIMITED"
+    },
+    {
+        "name": "Big Magic (earlier Zee Josh, Big Magic, Zee Magic)",
+        "aliases": [
+            "Zee Josh",
+            "Big Magic",
+            "Zee Magic"
+        ],
+        "cat": "Non-News",
+        "languages": [
+            "Hindi"
+        ],
+        "company": "ZEE ENTERTAINMENT ENTERPRISES LIMITED"
+    },
+    {
+        "name": "Zee Bangla Sonar",
+        "cat": "Non-News",
+        "languages": [
+            "Bengali"
+        ],
+        "company": "ZEE ENTERTAINMENT ENTERPRISES LIMITED"
+    },
+    {
+        "name": "Zee Biskope (earlier Ganga Biskope, Zee Bhojpuri Cinema)",
+        "aliases": [
+            "Ganga Biskope",
+            "Zee Bhojpuri Cinema"
+        ],
+        "cat": "Non-News",
+        "languages": [
+            "Hindi",
+            "Bojpuri"
+        ],
+        "company": "ZEE ENTERTAINMENT ENTERPRISES LIMITED"
+    },
+    {
+        "name": "Zee Chitramandir (earlier Zee Zabardast)",
+        "aliases": [
+            "Zee Zabardast"
+        ],
+        "cat": "Non-News",
+        "languages": [
+            "Marathi"
+        ],
+        "company": "ZEE ENTERTAINMENT ENTERPRISES LIMITED"
+    },
+    {
+        "name": "Zee Power",
+        "cat": "Non-News",
+        "languages": [
+            "Hindi",
+            "Malayalam"
+        ],
+        "company": "ZEE ENTERTAINMENT ENTERPRISES LIMITED"
+    },
+    {
+        "name": "Zee Power HD",
+        "cat": "Non-News",
+        "languages": [
+            "Kannada"
+        ],
+        "company": "ZEE ENTERTAINMENT ENTERPRISES LIMITED"
+    },
+    {
+        "name": "MYLORD",
+        "cat": "News",
+        "languages": [
+            "Hindi",
+            "English"
+        ],
+        "company": "Zee Media Corporation Ltd. (Earlier known as ZEE NEWS LTD.)"
+    },
+    {
+        "name": "ZEE 24 Kalak (Earlier ZEE BIHAR JHARKHAND)",
+        "aliases": [
+            "ZEE BIHAR JHARKHAND"
+        ],
+        "cat": "News",
+        "languages": [
+            "Gujarati"
+        ],
+        "company": "Zee Media Corporation Ltd. (Earlier known as ZEE NEWS LTD.)"
+    },
+    {
+        "name": "ZEE NEWS (Zee National)",
+        "aliases": [
+            "Zee National"
+        ],
+        "cat": "News",
+        "languages": [
+            "Hindi"
+        ],
+        "company": "Zee Media Corporation Ltd. (Earlier known as ZEE NEWS LTD.)"
+    },
+    {
+        "name": "Bada Khabar",
+        "cat": "News",
+        "company": "ZEUS NETWORKING PRIVATE LIMITED"
+    },
+    {
+        "name": "Lokshahi Marathi",
+        "cat": "News",
+        "company": "Zora Traders Limited"
+    }
+]

@@ -12,3 +12,4 @@ dependencies {
 
 application { mainClass.set("tv.cypher.tools.MainKt") }
 tasks.test { useJUnitPlatform() }
+tasks.named<JavaExec>("run") { workingDir = rootProject.projectDir }

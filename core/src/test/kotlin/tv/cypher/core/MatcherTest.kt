@@ -75,4 +75,17 @@ class MatcherTest {
         val mm = Matcher(pool, Overrides(exclude = listOf("Aaj Tak")))
         assertEquals(MatchKind.EXCLUDED, mm.match(fta("Aaj Tak")).kind)
     }
+
+    @Test fun tvSuffixDifferenceIsAFlaggedMatch() {
+        val mm = Matcher(cands("AmritaTV.in" to "Amrita TV", "Captain.in" to "Captain", "KairaliTV.in" to "Kairali TV", "KairaliNews.in" to "Kairali News"), Overrides())
+        assertEquals("AmritaTV.in", mm.match(fta("AMRITA")).candidate?.id)
+        assertEquals(MatchKind.FUZZY, mm.match(fta("AMRITA")).kind)
+        assertEquals("Captain.in", mm.match(fta("CAPTAIN TV")).candidate?.id)
+        assertEquals("KairaliTV.in", mm.match(fta("KAIRALI")).candidate?.id)
+    }
+
+    @Test fun tvSuffixDoesNotBridgeDifferentWords() {
+        val mm = Matcher(cands("Captain.in" to "Captain"), Overrides())
+        assertEquals(MatchKind.NONE, mm.match(fta("CAPTAIN NEWS")).kind)
+    }
 }
