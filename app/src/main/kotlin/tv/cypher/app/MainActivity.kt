@@ -253,7 +253,7 @@ class MainActivity : Activity(), PlayerController.Listener {
     }
 
     override fun onFailed(channel: Channel) {
-        showMessage("Channel unavailable", 0, MSG_STATUS)
+        showMessage("This channel is not playable", 0, MSG_STATUS)
     }
 
     // ---------------------------------------------------------------- banner and messages

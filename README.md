@@ -26,7 +26,7 @@ starts on its best stream. If playback rebuffers (for more than 4 s, or 3 times 
 the next lower-quality stream and says "Switching to 720p…"; it never steps back up on its own mid-stream.
 The step-down is remembered for 30 minutes so zapping back doesn't repeat the stall; after that the best
 stream is tried again. A stream that errors, ends, or does not start within 10 s moves on to the next one too;
-if all fail you see "Channel unavailable".
+if all fail you see "This channel is not playable".
 
 ## How it fits together
 
@@ -40,7 +40,7 @@ iptv-org/epg grabber ─> XMLTV ─> tools:build-epg ─> epg.json.gz ───�
 * `core/` pure Kotlin: models, JSON formats, name normalisation and matching, numbering, the logic the app
   uses (favourites, zapping, number entry, Now/Next, stream failover). Fully unit-tested on the JVM.
 * `tools/` command-line tools run locally and in CI (`./gradlew :tools:run --args="..."`):
-  `extract-fta`, `build-channels`, `epg-channels`, `build-epg`, `epg-missing`, `make-config`.
+  `extract-fta`, `build-channels`, `epg-channels`, `build-epg`, `make-config`.
 * `app/` the Android app.
 * `data/` `fta.json` (the 572 MIB FTA channels), `overrides.json` (manual fixes), `numbers.json`
   (channel numbers, append-only, never reused). `numbers.json` does not exist until the first daily run

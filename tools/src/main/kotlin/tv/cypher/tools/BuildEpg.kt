@@ -25,5 +25,4 @@ object BuildEpg {
         return data.size
     }
 
-    fun idsWithProgrammes(xmltv: InputStream): Set<String> = Xmltv.ids(xmltv)
 }

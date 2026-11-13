@@ -36,12 +36,4 @@ class EpgChannelsTest {
         assertTrue(r.covered.isEmpty())
         assertTrue("<channel " !in r.xml)
     }
-
-    @Test fun withoutKeepsOnlyChannelsWithNoGuideYet() {
-        val xml = EpgChannels.build(listOf("tataplay.com" to tata, "dishtv.in" to dish), setOf("AajTak.in", "ABPNews.in")).xml
-        val rest = EpgChannels.without(xml, covered = setOf("AajTak.in"))
-        assertTrue("xmltv_id=\"ABPNews.in\"" in rest)
-        assertTrue("AajTak.in" !in rest)
-        assertEquals(0, EpgChannels.without(xml, setOf("AajTak.in", "ABPNews.in")).split("<channel ").size - 1)
-    }
 }
