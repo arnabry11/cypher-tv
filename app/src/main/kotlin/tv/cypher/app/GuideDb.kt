@@ -12,6 +12,11 @@ import java.util.zip.GZIPInputStream
 
 /** Programme guide in a plain SQLite table, imported by streaming the JSON so it is never held in memory. */
 class GuideDb(ctx: Context) : SQLiteOpenHelper(ctx, "guide.db", null, 1) {
+    init {
+        // Readers (list rows, banner) must not wait for the daily import's long write transaction.
+        setWriteAheadLoggingEnabled(true)
+    }
+
     override fun onCreate(db: SQLiteDatabase) {
         db.execSQL("CREATE TABLE epg (channel_id TEXT NOT NULL, start INTEGER NOT NULL, stop INTEGER NOT NULL, title TEXT NOT NULL)")
         db.execSQL("CREATE INDEX epg_channel_start ON epg (channel_id, start)")

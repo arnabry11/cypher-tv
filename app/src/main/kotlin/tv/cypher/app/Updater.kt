@@ -26,9 +26,12 @@ object Updater {
         return apk
     }
 
+    fun canInstall(ctx: Context): Boolean =
+        Build.VERSION.SDK_INT < 26 || ctx.packageManager.canRequestPackageInstalls()
+
     /** Returns false when Android first needs the user to allow installs from this app. */
     fun install(activity: Activity, apk: File): Boolean {
-        if (Build.VERSION.SDK_INT >= 26 && !activity.packageManager.canRequestPackageInstalls()) {
+        if (!canInstall(activity)) {
             activity.startActivity(
                 Intent(Settings.ACTION_MANAGE_UNKNOWN_APP_SOURCES, Uri.parse("package:${activity.packageName}")),
             )

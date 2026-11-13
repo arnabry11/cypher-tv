@@ -81,4 +81,34 @@ class LogicTest {
         assertEquals(0, StreamFailover(count = 2, lastGood = 9).current)
         assertEquals(0, StreamFailover(count = 2, lastGood = -1).current)
     }
+
+    @Test fun failureAfterLongHealthyPlayRetriesTheSameStreamFirst() {
+        val f = StreamFailover(count = 3, lastGood = 1)
+        assertEquals(1, f.failed(playedMs = 60_000))
+        assertEquals(1, f.current)
+        assertEquals(0, f.failed(playedMs = 1_000)) // now it moves on
+    }
+
+    @Test fun streamThatDiesQuicklyAlwaysMovesOnAndEventuallyGivesUp() {
+        val f = StreamFailover(count = 3, lastGood = 0)
+        assertEquals(1, f.failed(5_000)); assertEquals(2, f.failed(5_000)); assertNull(f.failed(5_000))
+    }
+
+    @Test fun flappingStreamCannotLoopForever() {
+        val f = StreamFailover(count = 2, lastGood = 0)
+        assertEquals(0, f.failed(60_000))      // healthy then broke: retry once
+        assertEquals(1, f.failed(4_000))       // retried stream died quickly: try the backup
+        assertNull(f.failed(4_000))            // backup died quickly too
+    }
+
+    @Test fun backoffRetriesSoonAfterFailureAndResetsOnSuccess() {
+        val b = RetryBackoff(firstMs = 60_000, maxMs = 240_000)
+        assertEquals(10_000_000L, b.next(success = true, normalMs = 10_000_000L))
+        assertEquals(60_000L, b.next(false, 10_000_000L))
+        assertEquals(120_000L, b.next(false, 10_000_000L))
+        assertEquals(240_000L, b.next(false, 10_000_000L))
+        assertEquals(240_000L, b.next(false, 10_000_000L))
+        assertEquals(10_000_000L, b.next(true, 10_000_000L))
+        assertEquals(60_000L, b.next(false, 10_000_000L))
+    }
 }

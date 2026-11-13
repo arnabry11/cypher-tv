@@ -20,6 +20,7 @@ import tv.cypher.core.Favourites
 import tv.cypher.core.Numbering
 import tv.cypher.core.NumberEntry
 import tv.cypher.core.Programme
+import tv.cypher.core.RetryBackoff
 import tv.cypher.core.Zap
 import java.text.DateFormat
 import java.util.Calendar
@@ -77,9 +78,8 @@ class MainActivity : Activity(), PlayerController.Listener {
     private val hideBanner = Runnable { banner.visibility = View.GONE }
     private val commitNumber = Runnable { commitNumberEntry() }
     private val hideMessage = Runnable { messageView.visibility = View.GONE }
-    private val refreshLoop = object : Runnable {
-        override fun run() { refreshAsync(); ui.postDelayed(this, REFRESH_EVERY_MS) }
-    }
+    private val backoff = RetryBackoff()
+    private val refreshLoop = Runnable { refreshAsync() }
 
     // ---------------------------------------------------------------- lifecycle
 
@@ -132,7 +132,12 @@ class MainActivity : Activity(), PlayerController.Listener {
         super.onResume()
         pendingApk?.let { apk ->
             pendingApk = null
-            if (!Updater.install(this, apk)) pendingApk = apk
+            if (Updater.canInstall(this)) Updater.install(this, apk)
+            else {
+                // The user came back without allowing it: don't send them to Settings again.
+                updateOffered = false
+                showMessage("Update skipped: installs are not allowed for Cypher TV", 5000)
+            }
         }
     }
 
@@ -185,6 +190,8 @@ class MainActivity : Activity(), PlayerController.Listener {
             val r = repo.refresh()
             runOnUiThread {
                 if (isDestroyed) return@runOnUiThread
+                // Retry soon after a failure (e.g. Wi-Fi not up yet at boot), normally every few hours.
+                ui.postDelayed(refreshLoop, backoff.next(r.ok, REFRESH_EVERY_MS))
                 r.channels?.takeIf { it != channels }?.let { applyCatalog(it) }
                 if (currentId == null && channels.isNotEmpty() && mode == Mode.PLAYER) {
                     val first = favourites.ids.firstOrNull() ?: channels.first().id

@@ -49,4 +49,10 @@ class M3uTest {
         val e = M3u.parse("#EXTINF:-1 tvg-id=\"A.in@SD\",A\n#EXTVLCOPT:http-user-agent=UA1\nhttps://z/a.m3u8").single()
         assertEquals("UA1", e.ua)
     }
+
+    @Test fun resolutionIsReadFromTheTitleTag() {
+        val e = M3u.parse("#EXTINF:-1 tvg-id=\"A.in@SD\",A (1080p) [Geo-blocked]\nhttps://z/a.m3u8\n#EXTINF:-1 tvg-id=\"A.in@SD\",A\nhttps://z/b.m3u8")
+        assertEquals(1080, e[0].height); assertEquals("A", e[0].name)
+        assertEquals(0, e[1].height)
+    }
 }

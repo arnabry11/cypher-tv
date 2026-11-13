@@ -11,10 +11,13 @@ data class PlaylistEntry(
     val referer: String?,
     val url: String,
     val geoBlocked: Boolean,
+    /** Vertical resolution from a "(1080p)" tag in the title, 0 when unknown. */
+    val height: Int = 0,
 )
 
 object M3u {
     private val attr = Regex("""([A-Za-z0-9_-]+)="([^"]*)"""")
+    private val resolution = Regex("""\((\d{3,4})p\)""")
     private val trailingTags = Regex("""(\s*(\([^()]*\)|\[[^\]]*]))+\s*$""")
 
     fun parse(text: String): List<PlaylistEntry> {
@@ -63,6 +66,7 @@ object M3u {
             referer = (vlcRef ?: attrs["http-referrer"])?.ifEmpty { null },
             url = url,
             geoBlocked = title.contains("[Geo-blocked]", ignoreCase = true),
+            height = resolution.find(title)?.groupValues?.get(1)?.toIntOrNull() ?: 0,
         )
     }
 

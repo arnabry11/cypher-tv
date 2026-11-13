@@ -46,8 +46,8 @@ class BuildChannelsTest {
         val byId = r.channels.associateBy { it.id }
         assertEquals(setOf("AajTak.in", "TV9Telugu.in"), byId.keys)
         val aaj = byId.getValue("AajTak.in")
-        assertEquals(listOf("https://a/1.m3u8", "https://a/2.m3u8"), aaj.streams.map { it.url })
-        assertEquals("UA-X", aaj.streams[1].ua); assertEquals("https://ref/", aaj.streams[1].referer)
+        assertEquals(listOf("https://a/2.m3u8", "https://a/1.m3u8"), aaj.streams.map { it.url }) // 1080p before 576p
+        assertEquals("UA-X", aaj.streams[0].ua); assertEquals("https://ref/", aaj.streams[0].referer)
         assertEquals("https://logo/aaj.png", aaj.logo)
         assertEquals("News", aaj.cat); assertEquals("Hindi", aaj.lang); assertEquals(100, aaj.num)
         val tv9 = byId.getValue("TV9Telugu.in")
@@ -65,12 +65,12 @@ class BuildChannelsTest {
     @Test fun extraChannelsAndPreferredStream() {
         val ov = Overrides(
             extra = listOf(ExtraChannel("DDNational.in", lang = "Hindi")),
-            preferred = mapOf("AajTak.in" to "/2.m3u8"),
+            preferred = mapOf("AajTak.in" to "/1.m3u8"),
         )
         val r = BuildChannels.build(ftas, M3u.parse(streams), M3u.parse(index), ov, emptyMap())
         val byId = r.channels.associateBy { it.id }
         assertNotNull(byId["DDNational.in"])
-        assertEquals("https://a/2.m3u8", byId.getValue("AajTak.in").streams.first().url)
+        assertEquals("https://a/1.m3u8", byId.getValue("AajTak.in").streams.first().url) // preferred beats resolution
         assertEquals("Entertainment", byId.getValue("DDNational.in").cat) // "General" is not a useful category
     }
 
@@ -91,5 +91,23 @@ class BuildChannelsTest {
         val idx = M3u.parse("#EXTM3U\n#EXTINF:-1 tvg-id=\"TV9Telugu.in@SD\" group-title=\"Culture;Music\",TV9 Telugu\nhttps://t/1.m3u8")
         val r = BuildChannels.build(ftas, M3u.parse(streams), idx, Overrides(), emptyMap())
         assertEquals("Culture", r.channels.first { it.id == "TV9Telugu.in" }.cat)
+    }
+
+    @Test fun streamsAreOrderedByResolutionKeepingPlaylistOrderWithinTheSameResolution() {
+        val pl = M3u.parse("""
+            #EXTM3U
+            #EXTINF:-1 tvg-id="X.in@SD",X (576p)
+            https://x/a
+            #EXTINF:-1 tvg-id="X.in@SD",X
+            https://x/unknown
+            #EXTINF:-1 tvg-id="X.in@HD",X (1080p)
+            https://x/b
+            #EXTINF:-1 tvg-id="X.in@SD",X (720p)
+            https://x/c
+            #EXTINF:-1 tvg-id="X.in@HD",X (1080p)
+            https://x/d
+        """.trimIndent())
+        val r = BuildChannels.build(listOf(fta("X", "News", "Hindi")), pl, emptyList(), Overrides(), emptyMap())
+        assertEquals(listOf("https://x/b", "https://x/d", "https://x/c", "https://x/a", "https://x/unknown"), r.channels.single().streams.map { it.url })
     }
 }

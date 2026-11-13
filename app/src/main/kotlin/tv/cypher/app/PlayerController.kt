@@ -3,6 +3,7 @@ package tv.cypher.app
 import android.content.Context
 import android.os.Handler
 import android.os.Looper
+import android.os.SystemClock
 import android.view.SurfaceView
 import androidx.media3.common.AudioAttributes
 import androidx.media3.common.C
@@ -39,15 +40,15 @@ class PlayerController(
     private var player: ExoPlayer? = null
     private var channel: Channel? = null
     private var failover: StreamFailover? = null
-    private var playedOk = false
-    private val stall = Runnable { advance() }
+    /** When the current stream first reached READY (0 = not yet); decides retry-same-stream vs move-on. */
+    private var readyAt = 0L
+    private val stall = Runnable { fail() }
 
     val hasPlayer: Boolean get() = player != null
 
     fun play(ch: Channel, lastGoodIndex: Int) {
         channel = ch
         failover = StreamFailover(ch.streams.size, lastGoodIndex)
-        playedOk = false
         startCurrent()
     }
 
@@ -91,10 +92,12 @@ class PlayerController(
                     }
                     Player.STATE_READY -> {
                         handler.removeCallbacks(stall)
-                        playedOk = true
+                        if (readyAt == 0L) readyAt = SystemClock.elapsedRealtime()
                         listener.onBuffering(false)
                         failover?.let { listener.onPlaying(ch, it.current) }
                     }
+                    // A live stream that ends (server closed it, ENDLIST) is as dead as one that errors.
+                    Player.STATE_ENDED -> fail()
                     else -> Unit
                 }
             }
@@ -104,25 +107,20 @@ class PlayerController(
                     p.seekToDefaultPosition(); p.prepare()
                     return
                 }
-                advance()
+                fail()
             }
         })
         player = p
         return p
     }
 
-    private fun advance() {
+    /** The current stream stopped working: retry it if it had been healthy for a while, else try the next one. */
+    private fun fail() {
         val ch = channel ?: return
         handler.removeCallbacks(stall)
         val f = failover ?: return
-        if (playedOk) {
-            // It was working and then broke: retry this stream first, then the others.
-            playedOk = false
-            failover = StreamFailover(ch.streams.size, f.current)
-            startCurrent()
-            return
-        }
-        if (f.advance() == null) {
+        val playedMs = if (readyAt > 0) SystemClock.elapsedRealtime() - readyAt else 0L
+        if (f.failed(playedMs) == null) {
             player?.stop()
             listener.onBuffering(false)
             listener.onFailed(ch)
@@ -136,6 +134,7 @@ class PlayerController(
         val idx = failover?.current ?: return
         if (idx < 0) { listener.onFailed(ch); return }
         val s = ch.streams[idx]
+        readyAt = 0L
         val http = DefaultHttpDataSource.Factory()
             .setUserAgent(s.ua ?: DEFAULT_UA)
             .setAllowCrossProtocolRedirects(true)

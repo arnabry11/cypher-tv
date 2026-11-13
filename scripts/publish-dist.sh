@@ -14,12 +14,25 @@ cleanup() {
 }
 trap cleanup EXIT
 
-if git fetch --depth 1 origin "$branch:refs/remotes/origin/$branch" 2>/dev/null; then
-  git worktree add -q --detach "$work" "origin/$branch"
-else
-  git worktree add -q --detach "$work" HEAD
-  git -C "$work" rm -rfq . 2>/dev/null || true
-fi
+# Does the branch exist on the remote? ls-remote exits 2 when it does not; anything else is a real error
+# (network, auth) and must stop us rather than silently publishing onto an empty tree.
+rc=0
+git ls-remote --exit-code --heads origin "$branch" >/dev/null 2>&1 || rc=$?
+case "$rc" in
+  0)
+    # Leading "+": dist is force-pushed as a fresh orphan commit each time, so a stale local ref must be overwritten.
+    git fetch --depth 1 origin "+$branch:refs/remotes/origin/$branch"
+    git worktree add -q --detach "$work" "origin/$branch"
+    ;;
+  2)
+    git worktree add -q --detach "$work" HEAD
+    git -C "$work" rm -rfq . 2>/dev/null || true
+    ;;
+  *)
+    echo "Cannot reach origin (ls-remote exit $rc); not publishing" >&2
+    exit 1
+    ;;
+esac
 cp -R "$src"/. "$work"/
 cd "$work"
 git add -A

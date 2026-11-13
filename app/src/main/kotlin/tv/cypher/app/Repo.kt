@@ -4,6 +4,7 @@ import android.content.Context
 import tv.cypher.core.AppInfo
 import tv.cypher.core.Channel
 import tv.cypher.core.Config
+import tv.cypher.core.ConfigLoader
 import tv.cypher.core.Formats
 import kotlinx.serialization.builtins.ListSerializer
 import java.io.File
@@ -15,7 +16,8 @@ class Repo(private val ctx: Context, private val prefs: Prefs, val guide: GuideD
     private val channelsFile = File(dir, "channels.json")
     private val epgFile = File(ctx.cacheDir, "epg.json.gz")
 
-    class Refresh(val channels: List<Channel>?, val update: AppInfo?, val guideUpdated: Boolean)
+    /** [ok] is false when any stage failed, so the caller can retry sooner than the normal interval. */
+    class Refresh(val channels: List<Channel>?, val update: AppInfo?, val guideUpdated: Boolean, val ok: Boolean)
 
     /** Channels from the last download, or the copy bundled in the APK on first run, or empty. */
     fun loadCachedChannels(): List<Channel> {
@@ -38,24 +40,26 @@ class Repo(private val ctx: Context, private val prefs: Prefs, val guide: GuideD
 
     /** Blocking. Fetches config, channels and guide; each stage fails independently. */
     fun refresh(): Refresh {
+        var ok = true
         var channels: List<Channel>? = null
         var update: AppInfo? = null
         var guideUpdated = false
 
+        // Validate before replacing: a captive-portal page or a newer schema must not overwrite the last good config.
         val cfgFile = File(dir, "config.json")
-        val config: Config? = try {
-            val url = BuildConfig.CONFIG_URL
-            val d = Net.downloadWithFallback(url, cfgFile)
-            if (!d.notModified) prefs.setEtag(url, d.etag)
-            Formats.compact.decodeFromString(Config.serializer(), cfgFile.readText()).takeIf { it.schema <= SUPPORTED_SCHEMA }
-        } catch (_: Exception) {
-            null
-        } ?: try {
-            if (cfgFile.exists()) Formats.compact.decodeFromString(Config.serializer(), cfgFile.readText()) else null
+        val stagedCfg = File(dir, "config.new")
+        var config: Config? = try {
+            Net.downloadWithFallback(BuildConfig.CONFIG_URL, stagedCfg)
+            ConfigLoader.parse(stagedCfg.readText(), SUPPORTED_SCHEMA)?.also { stagedCfg.renameTo(cfgFile) }
         } catch (_: Exception) {
             null
         }
-        if (config == null) return Refresh(null, null, false)
+        stagedCfg.delete()
+        if (config == null) {
+            ok = false
+            config = cfgFile.takeIf { it.exists() }?.let { ConfigLoader.parse(it.readText(), SUPPORTED_SCHEMA) }
+        }
+        if (config == null) return Refresh(null, null, false, false)
 
         config.app?.takeIf { it.versionCode > BuildConfig.VERSION_CODE }?.let { update = it }
 
@@ -63,14 +67,14 @@ class Repo(private val ctx: Context, private val prefs: Prefs, val guide: GuideD
             val staged = File(dir, "channels.new")
             Net.downloadWithFallback(config.channelsUrl, staged)
             val parsed = parseChannels(staged.readText())
-            if (parsed != null) {
-                channelsFile.delete()
-                staged.renameTo(channelsFile)
+            if (parsed != null && staged.renameTo(channelsFile)) { // rename replaces atomically
                 channels = parsed
             } else {
+                ok = false
                 staged.delete()
             }
         } catch (_: Exception) {
+            ok = false
         }
 
         try {
@@ -81,8 +85,9 @@ class Repo(private val ctx: Context, private val prefs: Prefs, val guide: GuideD
                 guideUpdated = true
             }
         } catch (_: Exception) {
+            ok = false
         }
-        return Refresh(channels, update, guideUpdated)
+        return Refresh(channels, update, guideUpdated, ok)
     }
 
     companion object {
