@@ -39,4 +39,9 @@ class BuildEpgTest {
         assertEquals(listOf("One", "Two"), guide.getValue("A.in").map { it.title })
         assertEquals(listOf("Bee"), guide.getValue("B.in").map { it.title })
     }
+
+    @Test fun idsWithProgrammesListsCoveredChannels() {
+        val xml = """<tv><programme start="20261113060000 +0530" stop="20261113070000 +0530" channel="A.in@SD"><title>X</title></programme></tv>"""
+        assertEquals(setOf("A.in"), BuildEpg.idsWithProgrammes(xml.byteInputStream()))
+    }
 }

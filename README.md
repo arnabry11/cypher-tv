@@ -40,13 +40,13 @@ iptv-org/epg grabber ─> XMLTV ─> tools:build-epg ─> epg.json.gz ───�
 * `core/` pure Kotlin: models, JSON formats, name normalisation and matching, numbering, the logic the app
   uses (favourites, zapping, number entry, Now/Next, stream failover). Fully unit-tested on the JVM.
 * `tools/` command-line tools run locally and in CI (`./gradlew :tools:run --args="..."`):
-  `extract-fta`, `build-channels`, `epg-channels`, `build-epg`, `make-config`.
+  `extract-fta`, `build-channels`, `epg-channels`, `build-epg`, `epg-missing`, `make-config`.
 * `app/` the Android app.
 * `data/` `fta.json` (the 572 MIB FTA channels), `overrides.json` (manual fixes), `numbers.json`
   (channel numbers, append-only, never reused). `numbers.json` does not exist until the first daily run
   assigns numbers, and CI commits it from then on. A local `build-dist.sh` also writes it: discard that file
   (`git checkout data/numbers.json` or delete it) instead of committing numbers you did not review.
-* `scripts/` `build-dist.sh` builds everything the TV downloads, `publish-dist.sh` pushes it to `dist`.
+* `scripts/` `build-dist.sh` builds everything the TV downloads (the guide step retries throttled channels and stops after a 20 minute budget, publishing what it has), `publish-dist.sh` pushes it to `dist`.
 
 The only URL baked into the APK is `dist/config.json`; channels, guide and the app update offer can all be
 redirected from there. Files are read from raw.githubusercontent.com with jsDelivr as a fallback.

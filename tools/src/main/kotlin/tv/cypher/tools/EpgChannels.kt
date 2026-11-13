@@ -23,6 +23,10 @@ object EpgChannels {
         return Result(render(chosen.values), chosen.keys.toSet(), ids.filter { it !in chosen }.sorted())
     }
 
+    /** [channelsXml] without the channels in [covered]: what is left to grab on a retry. */
+    fun without(channelsXml: String, covered: Set<String>): String =
+        render(parse(channelsXml).filter { it.xmltvId.substringBefore('@') !in covered })
+
     private fun render(entries: Collection<Entry>) = buildString {
         appendLine("""<?xml version="1.0" encoding="UTF-8"?>""")
         appendLine("<channels>")

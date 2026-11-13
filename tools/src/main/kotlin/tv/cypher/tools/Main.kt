@@ -14,6 +14,7 @@ private const val USAGE = """Usage: tools <command> [--key value ...]
   epg-channels    --sites-dir epg/sites --sites tataplay.com,dishtv.in --channels dist/channels.json --out channels.xml
   make-config     --repo owner/name [--branch dist] [--previous config.json] --out dist/config.json
                   [--version-code N --apk-url URL --sha256 HEX [--notes TEXT]]
+  epg-missing     --channels-xml channels.xml --xmltv a.xml[,b.xml] --out pending.xml
   build-epg       --xmltv guide.xml[,guide2.xml] --channels dist/channels.json --out dist/epg.json.gz [--now EPOCH]"""
 
 fun main(args: Array<String>) {
@@ -66,6 +67,13 @@ fun main(args: Array<String>) {
             File(req("out")).also { it.absoluteFile.parentFile.mkdirs() }
                 .writeText(Formats.pretty.encodeToString(Config.serializer(), cfg) + "\n")
             println("Wrote ${req("out")} (app versionCode ${cfg.app?.versionCode ?: "none"})")
+        }
+        "epg-missing" -> {
+            val covered = req("xmltv").split(',').map { File(it.trim()) }.filter { it.exists() }
+                .flatMap { f -> f.inputStream().use { BuildEpg.idsWithProgrammes(it).toList() } }.toSet()
+            val rest = EpgChannels.without(File(req("channels-xml")).readText(), covered)
+            File(req("out")).writeText(rest)
+            println("${rest.split("<channel ").size - 1} channels still without a guide")
         }
         "build-epg" -> {
             val channels = Formats.compact.decodeFromString(ListSerializer(Channel.serializer()), File(req("channels")).readText())
