@@ -71,6 +71,8 @@ class MainActivity : Activity(), PlayerController.Listener {
     private var longPressHandled = false
     private var updateOffered = false
     private var updateInProgress = false
+    /** A downloaded, verified APK waiting for the user to allow installs from this app. */
+    private var pendingApk: java.io.File? = null
 
     private val hideBanner = Runnable { banner.visibility = View.GONE }
     private val commitNumber = Runnable { commitNumberEntry() }
@@ -124,6 +126,14 @@ class MainActivity : Activity(), PlayerController.Listener {
             showMessage("Loading channels…", 0)
         }
         ui.post(refreshLoop)
+    }
+
+    override fun onResume() {
+        super.onResume()
+        pendingApk?.let { apk ->
+            pendingApk = null
+            if (!Updater.install(this, apk)) pendingApk = apk
+        }
     }
 
     override fun onStart() {
@@ -509,8 +519,9 @@ class MainActivity : Activity(), PlayerController.Listener {
                     updateInProgress = false
                     messageView.visibility = View.GONE
                     if (!Updater.install(this, apk)) {
-                        showMessage("Allow installs for Cypher TV, then update again", 5000)
-                        updateOffered = false
+                        // Android opened its one-time "install unknown apps" screen; onResume continues from there.
+                        pendingApk = apk
+                        showMessage("Allow installs for Cypher TV, then press Back", 6000)
                     }
                 }
             } catch (e: Exception) {

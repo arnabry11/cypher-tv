@@ -8,3 +8,6 @@ local.properties
 *.keystore
 captures/
 dist/
+
+# bundled first-run copy; produced by the build, not committed
+app/src/main/assets/channels.json

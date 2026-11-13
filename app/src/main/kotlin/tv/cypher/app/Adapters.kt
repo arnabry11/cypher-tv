@@ -40,8 +40,8 @@ class ChannelAdapter(
         h.star.visibility = if (isFavourite(ch.id)) View.VISIBLE else View.INVISIBLE
         val nowSec = System.currentTimeMillis() / 1000
         val (now, next) = guide.nowNext(ch.id, nowSec)
-        h.now.text = now?.let { "${time.format(Date(it.start * 1000))}  ${it.title}" }.orEmpty()
-        h.next.text = next?.let { "${time.format(Date(it.start * 1000))}  ${it.title}" }.orEmpty()
+        bindLine(h.now, now?.let { "${time.format(Date(it.start * 1000))}  ${it.title}" })
+        bindLine(h.next, next?.let { "${time.format(Date(it.start * 1000))}  ${it.title}" })
         h.itemView.setBackgroundColor(
             when {
                 position != selected -> Color.TRANSPARENT
@@ -50,6 +50,11 @@ class ChannelAdapter(
             },
         )
     }
+}
+
+private fun bindLine(view: TextView, text: String?) {
+    view.text = text.orEmpty()
+    view.visibility = if (text.isNullOrEmpty()) View.GONE else View.VISIBLE
 }
 
 class ScheduleAdapter : RecyclerView.Adapter<ScheduleAdapter.VH>() {
