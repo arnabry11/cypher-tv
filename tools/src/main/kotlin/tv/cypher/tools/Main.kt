@@ -11,6 +11,7 @@ private const val USAGE = """Usage: tools <command> [--key value ...]
   extract-fta     --xlsx FILE --out data/fta.json
   build-channels  --fta data/fta.json --streams in.m3u [--index countries-in.m3u] [--overrides data/overrides.json]
                   [--numbers data/numbers.json] --out dist [--report dist/match-report.md]
+  epg-channels    --sites-dir epg/sites --sites tataplay.com,dishtv.in --channels dist/channels.json --out channels.xml
   build-epg       --xmltv guide.xml --channels dist/channels.json --out dist/epg.json.gz [--now EPOCH]"""
 
 fun main(args: Array<String>) {
@@ -42,6 +43,17 @@ fun main(args: Array<String>) {
                 Formats.pretty.encodeToString(numSer, r.numbers.entries.sortedBy { it.value }.associate { it.key to it.value }) + "\n",
             )
             println("Published ${r.channels.size} channels")
+        }
+        "epg-channels" -> {
+            val channels = Formats.compact.decodeFromString(ListSerializer(Channel.serializer()), File(req("channels")).readText())
+            val dir = File(req("sites-dir"))
+            val sites = req("sites").split(',').map { it.trim() }.filter { it.isNotEmpty() }.flatMap { site ->
+                File(dir, site).listFiles { f -> f.name.endsWith(".channels.xml") }.orEmpty().sortedBy { it.name }
+                    .map { site to it.readText() }
+            }
+            val r = EpgChannels.build(sites, channels.map { it.id }.toSet())
+            File(req("out")).also { it.absoluteFile.parentFile.mkdirs() }.writeText(r.xml)
+            println("Grabber channels: ${r.covered.size} of ${channels.size} published channels have a guide source")
         }
         "build-epg" -> {
             val channels = Formats.compact.decodeFromString(ListSerializer(Channel.serializer()), File(req("channels")).readText())
