@@ -35,6 +35,8 @@ android {
     }
 
     buildTypes {
+        // Installs next to the released app (which is signed with the release key), for trying changes on the TV.
+        debug { applicationIdSuffix = ".dev" }
         release {
             isMinifyEnabled = true
             isShrinkResources = true

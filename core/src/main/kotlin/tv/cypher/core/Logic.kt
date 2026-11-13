@@ -82,6 +82,13 @@ object NowNext {
         val next = rows.firstOrNull { it.start >= after && it !== current && (current != null || it.start > now) }
         return current to next
     }
+
+    /** How far through [p] we are at [now], 0..100. */
+    fun percent(p: Programme, now: Long): Int {
+        val length = p.stop - p.start
+        if (length <= 0) return 0
+        return ((now - p.start) * 100 / length).toInt().coerceIn(0, 100)
+    }
 }
 
 /** Order in which a channel's streams are tried: the remembered one first, then lower quality, then higher; each once. */

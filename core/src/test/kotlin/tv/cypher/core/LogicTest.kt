@@ -5,6 +5,13 @@ import kotlin.test.assertEquals
 import kotlin.test.assertNull
 
 class LogicTest {
+    @Test fun percentThroughAProgramme() {
+        val p = Programme(1000, 3000, "x")
+        assertEquals(0, NowNext.percent(p, 1000)); assertEquals(25, NowNext.percent(p, 1500))
+        assertEquals(100, NowNext.percent(p, 9999)); assertEquals(0, NowNext.percent(p, 10))
+        assertEquals(0, NowNext.percent(Programme(5, 5, "zero length"), 5))
+    }
+
     @Test fun moveAmongShownSkipsHiddenFavouritesAndKeepsThem() {
         val f = Favourites(listOf("a", "gone", "b", "c"))
         val shown = { id: String -> id != "gone" }

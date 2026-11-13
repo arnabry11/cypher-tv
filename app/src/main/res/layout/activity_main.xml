@@ -74,56 +74,105 @@
             android:textSize="20sp" />
     </LinearLayout>
 
+    <!-- The guide: tab strip, channels on the left, the highlighted channel's schedule on the right, key hints. -->
     <LinearLayout
         android:id="@+id/listPanel"
-        android:layout_width="460dp"
+        android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#F0101820"
+        android:background="#EB0C141B"
         android:orientation="vertical"
         android:visibility="gone">
 
-        <TextView
-            android:id="@+id/tabLabel"
+        <HorizontalScrollView
+            android:id="@+id/tabScroll"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:gravity="center"
-            android:padding="14dp"
-            android:textColor="#FFFFFF"
-            android:textSize="24sp"
-            android:textStyle="bold" />
+            android:background="#FF0A1016"
+            android:focusable="false"
+            android:scrollbars="none">
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/list"
+            <LinearLayout
+                android:id="@+id/tabStrip"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingStart="24dp"
+                android:paddingEnd="24dp"
+                android:paddingTop="10dp"
+                android:paddingBottom="10dp" />
+        </HorizontalScrollView>
+
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1"
-            android:focusable="false" />
-    </LinearLayout>
+            android:orientation="horizontal">
 
-    <LinearLayout
-        android:id="@+id/schedulePanel"
-        android:layout_width="400dp"
-        android:layout_height="match_parent"
-        android:layout_marginStart="460dp"
-        android:background="#F2182A38"
-        android:orientation="vertical"
-        android:visibility="gone">
+            <FrameLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="11">
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/list"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:focusable="false" />
+
+                <TextView
+                    android:id="@+id/listEmpty"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:gravity="center"
+                    android:lineSpacingExtra="6dp"
+                    android:padding="32dp"
+                    android:textColor="#B8C7D0"
+                    android:textSize="20sp"
+                    android:visibility="gone" />
+            </FrameLayout>
+
+            <LinearLayout
+                android:id="@+id/schedulePanel"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="9"
+                android:background="#66182A38"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/scheduleTitle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingStart="28dp"
+                    android:paddingEnd="24dp"
+                    android:paddingTop="14dp"
+                    android:paddingBottom="10dp"
+                    android:singleLine="true"
+                    android:textColor="#FFFFFF"
+                    android:textSize="24sp"
+                    android:textStyle="bold" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/schedule"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:focusable="false" />
+            </LinearLayout>
+        </LinearLayout>
 
         <TextView
-            android:id="@+id/scheduleTitle"
+            android:id="@+id/hints"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:padding="14dp"
+            android:background="#FF0A1016"
+            android:paddingStart="28dp"
+            android:paddingEnd="28dp"
+            android:paddingTop="8dp"
+            android:paddingBottom="10dp"
             android:singleLine="true"
-            android:textColor="#FFFFFF"
-            android:textSize="24sp"
-            android:textStyle="bold" />
-
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/schedule"
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1"
-            android:focusable="false" />
+            android:textColor="#9FB3BF"
+            android:textSize="17sp" />
     </LinearLayout>
 </FrameLayout>

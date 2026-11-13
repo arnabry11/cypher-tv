@@ -9,17 +9,20 @@ is under 1 MB and uses roughly 45 MB of RAM while playing (measured on a Google 
 
 ## Using it
 
-| Key | In the player | In the channel list |
+| Key | While watching | In the guide |
 | --- | --- | --- |
-| Up / CH+ | next channel (favourites, or all if none) | move up (Up on the first row focuses the tabs) |
+| Up / CH+ | next channel (favourites, or all if none) | move up (CH+ jumps 6 rows) |
 | Down / CH- | previous channel | move down |
-| OK | open the channel list | tune the selected row |
-| Long-press OK | | favourite / unfavourite. In the Favourites tab: Move or Remove |
-| Right | | today's schedule for the row (Left / Back returns) |
-| Left / Right on the tab bar | | switch tab: Favourites, All, one per language |
+| OK | open the guide on the channel being watched | watch the highlighted channel |
+| Hold OK | favourite / unfavourite the channel being watched | favourite / unfavourite. In the Favourites tab: Move or Remove |
+| Left / Right | | previous / next tab: Favourites, All, one per language |
 | 0-9 | type a channel number, tunes after 2 s | same |
-| Menu / Guide / Info | list / list / show banner | |
-| Back | press twice to exit | close the list |
+| Menu / Guide / Info | guide / guide / show banner | close the guide |
+| Back | press twice to exit | close the guide |
+
+The guide has the tabs across the top, the channels on the left (what is on now with a progress bar, and what
+is next) and, on the right, the highlighted channel's programmes from now on. The keys that apply are listed
+along the bottom.
 
 In Move mode Up/Down shifts the row and OK drops it. The zap banner shows number, name, Now and Next.
 Each channel's streams are published best resolution first (playlist order within a resolution). A channel

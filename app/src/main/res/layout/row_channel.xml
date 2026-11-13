@@ -38,6 +38,16 @@
             android:textColor="#B8C7D0"
             android:textSize="16sp" />
 
+        <ProgressBar
+            android:id="@+id/progress"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="160dp"
+            android:layout_height="3dp"
+            android:layout_marginTop="3dp"
+            android:layout_marginBottom="2dp"
+            android:max="100"
+            android:progressDrawable="@drawable/progress" />
+
         <TextView
             android:id="@+id/next"
             android:layout_width="match_parent"

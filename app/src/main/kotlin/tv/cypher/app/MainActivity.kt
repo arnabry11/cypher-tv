@@ -10,6 +10,8 @@ import android.view.KeyEvent
 import android.view.SurfaceView
 import android.view.View
 import android.view.WindowManager
+import android.widget.HorizontalScrollView
+import android.widget.LinearLayout
 import android.widget.TextView
 import android.widget.Toast
 import androidx.media3.common.util.UnstableApi
@@ -18,6 +20,7 @@ import androidx.recyclerview.widget.RecyclerView
 import tv.cypher.core.Channel
 import tv.cypher.core.Favourites
 import tv.cypher.core.Numbering
+import tv.cypher.core.NowNext
 import tv.cypher.core.NumberEntry
 import tv.cypher.core.Programme
 import tv.cypher.core.QualityMemory
@@ -25,13 +28,12 @@ import tv.cypher.core.Stream
 import tv.cypher.core.RetryBackoff
 import tv.cypher.core.Zap
 import java.text.DateFormat
-import java.util.Calendar
 import java.util.Date
 import java.util.concurrent.Executors
 
 @UnstableApi
 class MainActivity : Activity(), PlayerController.Listener {
-    private enum class Mode { PLAYER, LIST, SCHEDULE }
+    private enum class Mode { PLAYER, LIST }
 
     private class Tab(val title: String, val language: String?)
 
@@ -48,9 +50,11 @@ class MainActivity : Activity(), PlayerController.Listener {
     private lateinit var bannerNow: TextView
     private lateinit var bannerNext: TextView
     private lateinit var listPanel: View
-    private lateinit var tabLabel: TextView
+    private lateinit var tabScroll: HorizontalScrollView
+    private lateinit var tabStrip: LinearLayout
     private lateinit var listView: RecyclerView
-    private lateinit var schedulePanel: View
+    private lateinit var listEmpty: TextView
+    private lateinit var hints: TextView
     private lateinit var scheduleTitle: TextView
     private lateinit var scheduleView: RecyclerView
 
@@ -66,11 +70,10 @@ class MainActivity : Activity(), PlayerController.Listener {
     private var favourites = Favourites()
     private var tabs: List<Tab> = emptyList()
     private var tabIndex = 0
-    private var inTabs = false
     private var currentId: String? = null
     private var mode = Mode.PLAYER
     private val numberEntry = NumberEntry()
-    private var centerDownInList = false
+    private var okDown = false
     private var longPressHandled = false
     /** "Switching to 720p": shown instead of plain "Buffering…" while the new stream starts. */
     private var switchText: String? = null
@@ -85,6 +88,16 @@ class MainActivity : Activity(), PlayerController.Listener {
     private val hideMessage = Runnable { messageView.visibility = View.GONE }
     private val backoff = RetryBackoff()
     private val refreshLoop = Runnable { refreshAsync() }
+    private val showSchedule = Runnable { fillSchedule() }
+    /** While the guide is open, keeps Now / Next and the progress bars moving. */
+    private val tick = object : Runnable {
+        override fun run() {
+            if (mode != Mode.LIST) return
+            channelAdapter.notifyDataSetChanged()
+            fillSchedule()
+            ui.postDelayed(this, TICK_MS)
+        }
+    }
 
     // ---------------------------------------------------------------- lifecycle
 
@@ -105,9 +118,14 @@ class MainActivity : Activity(), PlayerController.Listener {
         bannerNow = findViewById(R.id.bannerNow)
         bannerNext = findViewById(R.id.bannerNext)
         listPanel = findViewById(R.id.listPanel)
-        tabLabel = findViewById(R.id.tabLabel)
+        tabScroll = findViewById(R.id.tabScroll)
+        // A scroll view makes itself focusable whatever the layout says, and would then swallow Left / Right.
+        tabScroll.isFocusable = false
+        tabScroll.descendantFocusability = android.view.ViewGroup.FOCUS_BLOCK_DESCENDANTS
+        tabStrip = findViewById(R.id.tabStrip)
         listView = findViewById(R.id.list)
-        schedulePanel = findViewById(R.id.schedulePanel)
+        listEmpty = findViewById(R.id.listEmpty)
+        hints = findViewById(R.id.hints)
         scheduleTitle = findViewById(R.id.scheduleTitle)
         scheduleView = findViewById(R.id.schedule)
 
@@ -178,6 +196,7 @@ class MainActivity : Activity(), PlayerController.Listener {
         val ordered = Numbering.languages.filter { it in present } + (present - Numbering.languages.toSet()).sorted()
         tabs = listOf(Tab("Favourites", null), Tab("All", null)) + ordered.map { Tab(it, it) }
         tabIndex = tabIndex.coerceIn(0, tabs.lastIndex)
+        buildTabStrip()
         if (mode != Mode.PLAYER) refreshList()
     }
 
@@ -269,7 +288,7 @@ class MainActivity : Activity(), PlayerController.Listener {
     }
 
     private fun fillBanner(ch: Channel) {
-        bannerTitle.text = "${ch.num}   ${ch.name}"
+        bannerTitle.text = "${ch.num}   ${ch.name}" + if (ch.id in favourites) "   ★" else ""
         val (now, next) = guide.nowNext(ch.id, System.currentTimeMillis() / 1000)
         bannerNow.text = now?.let { "Now   ${range(it)}   ${it.title}" }.orEmpty()
         bannerNext.text = next?.let { "Next  ${time.format(Date(it.start * 1000))}   ${it.title}" }.orEmpty()
@@ -305,36 +324,71 @@ class MainActivity : Activity(), PlayerController.Listener {
         }
     }
 
-    // ---------------------------------------------------------------- list overlay
+    // ---------------------------------------------------------------- guide (channel list + schedule)
 
+    private fun buildTabStrip() {
+        tabStrip.removeAllViews()
+        val pad = (resources.displayMetrics.density * 16).toInt()
+        for (tab in tabs) {
+            tabStrip.addView(TextView(this).apply {
+                text = if (tab.title == "Favourites") "★ Favourites" else tab.title
+                textSize = 20f
+                setPadding(pad, pad / 3, pad, pad / 3)
+            })
+        }
+    }
+
+    /** Opens the guide on the channel being watched: in Favourites when it is one, otherwise in All. */
     private fun openList() {
         if (channels.isEmpty()) return
         mode = Mode.LIST
-        inTabs = false
-        tabIndex = if (favourites.ids.none { it in byId }) 1 else 0
+        val current = currentId
+        tabIndex = if (current != null && current in favourites || current == null && favourites.ids.any { it in byId }) 0 else 1
         listPanel.visibility = View.VISIBLE
-        schedulePanel.visibility = View.GONE
         banner.visibility = View.GONE
         refreshList()
-        val at = rowsForTab().indexOfFirst { it.id == currentId }.coerceAtLeast(0)
-        select(at)
+        select(rowsForTab().indexOfFirst { it.id == current }.coerceAtLeast(0))
+        ui.removeCallbacks(tick)
+        ui.postDelayed(tick, TICK_MS)
     }
 
     private fun closeList() {
         channelAdapter.moveMode = false
         mode = Mode.PLAYER
         listPanel.visibility = View.GONE
-        schedulePanel.visibility = View.GONE
+        ui.removeCallbacks(tick)
+        ui.removeCallbacks(showSchedule)
     }
+
+    private fun onFavouritesTab() = tabs.getOrNull(tabIndex)?.title == "Favourites"
 
     private fun refreshList() {
         val rows = rowsForTab()
         channelAdapter.rows = rows
         channelAdapter.selected = channelAdapter.selected.coerceIn(0, (rows.size - 1).coerceAtLeast(0))
         channelAdapter.notifyDataSetChanged()
-        val tab = tabs[tabIndex]
-        tabLabel.text = "◀   ${tab.title} (${rows.size})   ▶"
-        tabLabel.setBackgroundColor(if (inTabs) 0xFF0B7285.toInt() else Color.TRANSPARENT)
+        for (i in 0 until tabStrip.childCount) {
+            val v = tabStrip.getChildAt(i) as TextView
+            val on = i == tabIndex
+            v.setTextColor(if (on) Color.WHITE else 0xFF9FB3BF.toInt())
+            v.setTypeface(null, if (on) android.graphics.Typeface.BOLD else android.graphics.Typeface.NORMAL)
+            v.setBackgroundColor(if (on) 0xFF0B7285.toInt() else Color.TRANSPARENT)
+        }
+        tabStrip.getChildAt(tabIndex)?.let { v ->
+            tabScroll.post { tabScroll.smoothScrollTo((v.left - tabScroll.width / 3).coerceAtLeast(0), 0) }
+        }
+        listEmpty.visibility = if (rows.isEmpty()) View.VISIBLE else View.GONE
+        listEmpty.text = if (onFavouritesTab()) "No favourites yet.\nHold OK on any channel to add it." else "No channels here."
+        updateHints()
+        scheduleSoon()
+    }
+
+    private fun updateHints() {
+        hints.text = when {
+            channelAdapter.moveMode -> "▲ ▼  Move        OK  Done"
+            onFavouritesTab() -> "OK  Watch        Hold OK  Move / Remove        ◀ ▶  Category        Back  Close"
+            else -> "OK  Watch        Hold OK  ★ Favourite        ◀ ▶  Category        Back  Close"
+        }
     }
 
     private fun select(index: Int) {
@@ -342,7 +396,12 @@ class MainActivity : Activity(), PlayerController.Listener {
         channelAdapter.selected = index.coerceIn(0, (channelAdapter.rows.size - 1).coerceAtLeast(0))
         channelAdapter.notifyItemChanged(old)
         channelAdapter.notifyItemChanged(channelAdapter.selected)
-        listView.scrollToPosition(channelAdapter.selected)
+        // Keep a row of context above and below the highlight instead of pinning it to the edge.
+        val lm = listView.layoutManager as LinearLayoutManager
+        val at = channelAdapter.selected
+        if (at <= lm.findFirstCompletelyVisibleItemPosition()) listView.scrollToPosition((at - 1).coerceAtLeast(0))
+        else if (at >= lm.findLastCompletelyVisibleItemPosition()) listView.scrollToPosition((at + 1).coerceAtMost(channelAdapter.rows.size - 1))
+        scheduleSoon()
     }
 
     private fun selectedChannel(): Channel? = channelAdapter.rows.getOrNull(channelAdapter.selected)
@@ -351,25 +410,19 @@ class MainActivity : Activity(), PlayerController.Listener {
         tabIndex = (tabIndex + delta + tabs.size) % tabs.size
         channelAdapter.selected = 0
         refreshList()
+        // Land on the channel being watched when the new tab has it.
+        val at = channelAdapter.rows.indexOfFirst { it.id == currentId }
+        if (at > 0) select(at) else listView.scrollToPosition(0)
     }
 
     private fun onListKey(keyCode: Int): Boolean {
         when (keyCode) {
-            KeyEvent.KEYCODE_DPAD_UP -> when {
-                inTabs -> Unit
-                channelAdapter.moveMode -> moveSelected(-1)
-                channelAdapter.selected > 0 -> select(channelAdapter.selected - 1)
-                else -> { inTabs = true; refreshList() }
-            }
-            KeyEvent.KEYCODE_DPAD_DOWN -> when {
-                inTabs -> { inTabs = false; refreshList() }
-                channelAdapter.moveMode -> moveSelected(+1)
-                else -> select(channelAdapter.selected + 1)
-            }
-            KeyEvent.KEYCODE_DPAD_LEFT -> if (inTabs) changeTab(-1)
-            KeyEvent.KEYCODE_DPAD_RIGHT -> if (inTabs) changeTab(+1) else openSchedule()
-            KeyEvent.KEYCODE_PAGE_UP, KeyEvent.KEYCODE_CHANNEL_UP -> select(channelAdapter.selected - 8)
-            KeyEvent.KEYCODE_PAGE_DOWN, KeyEvent.KEYCODE_CHANNEL_DOWN -> select(channelAdapter.selected + 8)
+            KeyEvent.KEYCODE_DPAD_UP -> if (channelAdapter.moveMode) moveSelected(-1) else select(channelAdapter.selected - 1)
+            KeyEvent.KEYCODE_DPAD_DOWN -> if (channelAdapter.moveMode) moveSelected(+1) else select(channelAdapter.selected + 1)
+            KeyEvent.KEYCODE_DPAD_LEFT -> if (!channelAdapter.moveMode) changeTab(-1)
+            KeyEvent.KEYCODE_DPAD_RIGHT -> if (!channelAdapter.moveMode) changeTab(+1)
+            KeyEvent.KEYCODE_PAGE_UP, KeyEvent.KEYCODE_CHANNEL_UP -> if (!channelAdapter.moveMode) select(channelAdapter.selected - 6)
+            KeyEvent.KEYCODE_PAGE_DOWN, KeyEvent.KEYCODE_CHANNEL_DOWN -> if (!channelAdapter.moveMode) select(channelAdapter.selected + 6)
             else -> return false
         }
         return true
@@ -386,13 +439,14 @@ class MainActivity : Activity(), PlayerController.Listener {
         listView.scrollToPosition(to)
     }
 
+    private fun setMoveMode(on: Boolean) {
+        channelAdapter.moveMode = on
+        channelAdapter.notifyItemChanged(channelAdapter.selected)
+        updateHints()
+    }
+
     private fun activateSelected() {
-        if (inTabs) { inTabs = false; refreshList(); return }
-        if (channelAdapter.moveMode) {
-            channelAdapter.moveMode = false
-            channelAdapter.notifyItemChanged(channelAdapter.selected)
-            return
-        }
+        if (channelAdapter.moveMode) { setMoveMode(false); return }
         val ch = selectedChannel() ?: return
         closeList()
         tune(ch)
@@ -401,15 +455,12 @@ class MainActivity : Activity(), PlayerController.Listener {
     /** Long-press OK on a row. */
     private fun onRowLongPress() {
         val ch = selectedChannel() ?: return
-        if (channelAdapter.moveMode || inTabs) return
-        if (tabs[tabIndex].title == "Favourites") {
+        if (channelAdapter.moveMode) return
+        if (onFavouritesTab()) {
             AlertDialog.Builder(this)
                 .setTitle(ch.name)
                 .setItems(arrayOf("Move", "Remove from favourites")) { _, which ->
-                    if (which == 0) {
-                        channelAdapter.moveMode = true
-                        channelAdapter.notifyItemChanged(channelAdapter.selected)
-                    } else {
+                    if (which == 0) setMoveMode(true) else {
                         favourites.remove(ch.id)
                         saveFavourites()
                         refreshList()
@@ -417,36 +468,47 @@ class MainActivity : Activity(), PlayerController.Listener {
                 }
                 .show()
         } else {
-            favourites.toggle(ch.id)
-            saveFavourites()
-            val on = ch.id in favourites
-            Toast.makeText(this, if (on) "Added to favourites" else "Removed from favourites", Toast.LENGTH_SHORT).show()
+            toggleFavourite(ch)
             channelAdapter.notifyItemChanged(channelAdapter.selected)
+            fillSchedule()
         }
     }
 
-    // ---------------------------------------------------------------- schedule
+    /** Adds or removes [ch] and says so. */
+    private fun toggleFavourite(ch: Channel) {
+        favourites.toggle(ch.id)
+        saveFavourites()
+        showMessage(if (ch.id in favourites) "★  ${ch.name} added to favourites" else "${ch.name} removed from favourites", 2500)
+    }
 
-    private fun openSchedule() {
-        val ch = selectedChannel() ?: return
-        val cal = Calendar.getInstance().apply {
-            set(Calendar.HOUR_OF_DAY, 0); set(Calendar.MINUTE, 0); set(Calendar.SECOND, 0); set(Calendar.MILLISECOND, 0)
+    // ---------------------------------------------------------------- schedule pane
+
+    /** Fills the schedule shortly after the highlight settles, so holding Up/Down does not query for every row passed. */
+    private fun scheduleSoon() {
+        ui.removeCallbacks(showSchedule)
+        ui.postDelayed(showSchedule, SCHEDULE_DELAY_MS)
+    }
+
+    private fun fillSchedule() {
+        ui.removeCallbacks(showSchedule)
+        val ch = selectedChannel()
+        if (ch == null) {
+            scheduleTitle.text = ""
+            scheduleAdapter.rows = emptyList()
+            scheduleAdapter.notifyDataSetChanged()
+            return
         }
-        val from = cal.timeInMillis / 1000
         val now = System.currentTimeMillis() / 1000
-        val items = guide.schedule(ch.id, from, from + 86400)
-        scheduleTitle.text = ch.name
-        scheduleAdapter.rows = if (items.isEmpty()) listOf(ScheduleAdapter.Row("No guide for this channel", false))
-        else items.map { ScheduleAdapter.Row("${time.format(Date(it.start * 1000))}  ${it.title}", it.start <= now && now < it.stop) }
+        val items = guide.schedule(ch.id, now, now + SCHEDULE_AHEAD_S)
+        scheduleTitle.text = "${ch.num}   ${ch.name}" + if (ch.id in favourites) "   ★" else ""
+        scheduleAdapter.rows = if (items.isEmpty()) listOf(ScheduleAdapter.Row("No guide for this channel")) else items.map {
+            val text = "${time.format(Date(it.start * 1000))}   ${it.title}"
+            if (it.start <= now && now < it.stop) {
+                ScheduleAdapter.Row(text, NowNext.percent(it, now), "till ${time.format(Date(it.stop * 1000))}")
+            } else ScheduleAdapter.Row(text)
+        }
         scheduleAdapter.notifyDataSetChanged()
-        schedulePanel.visibility = View.VISIBLE
-        mode = Mode.SCHEDULE
-        scheduleView.scrollToPosition(scheduleAdapter.rows.indexOfFirst { it.current }.coerceAtLeast(0))
-    }
-
-    private fun closeSchedule() {
-        schedulePanel.visibility = View.GONE
-        mode = Mode.LIST
+        scheduleView.scrollToPosition(0)
     }
 
     // ---------------------------------------------------------------- keys
@@ -461,7 +523,11 @@ class MainActivity : Activity(), PlayerController.Listener {
             pressDigit(keyCode - KeyEvent.KEYCODE_NUMPAD_0)
             return true
         }
-        val isOk = keyCode == KeyEvent.KEYCODE_DPAD_CENTER || keyCode == KeyEvent.KEYCODE_ENTER
+        if (keyCode == KeyEvent.KEYCODE_DPAD_CENTER || keyCode == KeyEvent.KEYCODE_ENTER) {
+            // Acted on at key-up, so a long press (favourite) can be told from a short one.
+            if (event.repeatCount == 0) { okDown = true; event.startTracking() }
+            return true
+        }
         when (mode) {
             Mode.PLAYER -> when (keyCode) {
                 // Up / CH+ go to the next channel, Down / CH- to the previous one.
@@ -478,51 +544,38 @@ class MainActivity : Activity(), PlayerController.Listener {
                         return true
                     }
                 }
-                else -> if (isOk) { openList(); return true }
             }
             Mode.LIST -> {
-                if (isOk) {
-                    if (event.repeatCount == 0) { centerDownInList = true; event.startTracking() }
-                    return true
-                }
                 if (keyCode == KeyEvent.KEYCODE_BACK) {
-                    if (channelAdapter.moveMode) {
-                        channelAdapter.moveMode = false
-                        channelAdapter.notifyItemChanged(channelAdapter.selected)
-                    } else closeList()
+                    if (channelAdapter.moveMode) setMoveMode(false) else closeList()
                     return true
                 }
-                if (keyCode == KeyEvent.KEYCODE_MENU) { closeList(); return true }
+                if (keyCode == KeyEvent.KEYCODE_MENU || keyCode == KeyEvent.KEYCODE_GUIDE) { closeList(); return true }
                 if (onListKey(keyCode)) return true
-            }
-            Mode.SCHEDULE -> {
-                when (keyCode) {
-                    KeyEvent.KEYCODE_DPAD_UP -> scheduleView.scrollBy(0, -SCROLL_PX)
-                    KeyEvent.KEYCODE_DPAD_DOWN -> scheduleView.scrollBy(0, SCROLL_PX)
-                    KeyEvent.KEYCODE_DPAD_LEFT, KeyEvent.KEYCODE_BACK -> closeSchedule()
-                    else -> if (!isOk) return super.onKeyDown(keyCode, event)
-                }
-                return true
             }
         }
         return super.onKeyDown(keyCode, event)
     }
 
     override fun onKeyLongPress(keyCode: Int, event: KeyEvent): Boolean {
-        if (mode == Mode.LIST && (keyCode == KeyEvent.KEYCODE_DPAD_CENTER || keyCode == KeyEvent.KEYCODE_ENTER)) {
+        if (keyCode == KeyEvent.KEYCODE_DPAD_CENTER || keyCode == KeyEvent.KEYCODE_ENTER) {
             longPressHandled = true
-            onRowLongPress()
+            when (mode) {
+                Mode.LIST -> onRowLongPress()
+                // Watching: favourite (or unfavourite) this channel without opening anything.
+                Mode.PLAYER -> byId[currentId]?.let { toggleFavourite(it); showBanner(it) }
+            }
             return true
         }
         return super.onKeyLongPress(keyCode, event)
     }
 
     override fun onKeyUp(keyCode: Int, event: KeyEvent): Boolean {
-        if (mode == Mode.LIST && centerDownInList &&
-            (keyCode == KeyEvent.KEYCODE_DPAD_CENTER || keyCode == KeyEvent.KEYCODE_ENTER)
-        ) {
-            centerDownInList = false
-            if (!longPressHandled) activateSelected()
+        if (okDown && (keyCode == KeyEvent.KEYCODE_DPAD_CENTER || keyCode == KeyEvent.KEYCODE_ENTER)) {
+            okDown = false
+            if (!longPressHandled) {
+                if (mode == Mode.LIST) activateSelected() else openList()
+            }
             return true
         }
         return super.onKeyUp(keyCode, event)
@@ -531,7 +584,8 @@ class MainActivity : Activity(), PlayerController.Listener {
     // ---------------------------------------------------------------- self-update
 
     private fun offerUpdate(info: tv.cypher.core.AppInfo) {
-        if (updateOffered || updateInProgress) return
+        // A debug build is a side-by-side test copy: the published APK is a different app, never an update of it.
+        if (BuildConfig.DEBUG || updateOffered || updateInProgress) return
         updateOffered = true
         AlertDialog.Builder(this)
             .setTitle("Update available")
@@ -586,7 +640,9 @@ class MainActivity : Activity(), PlayerController.Listener {
         private const val BANNER_MS = 4_000L
         private const val NUMBER_COMMIT_MS = 2_000L
         private const val REFRESH_EVERY_MS = 3 * 60 * 60 * 1000L
-        private const val SCROLL_PX = 240
+        private const val TICK_MS = 30_000L
+        private const val SCHEDULE_DELAY_MS = 250L
+        private const val SCHEDULE_AHEAD_S = 18 * 3600L
         private const val BACK_AGAIN_MS = 2_500L
         private const val MSG_STATUS = "status"
         private const val MSG_NOTE = "note"
