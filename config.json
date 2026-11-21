@@ -1,0 +1,10 @@
+{
+    "channelsUrl": "https://raw.githubusercontent.com/arnabry11/cypher-tv/dist/channels.json",
+    "epgUrl": "https://raw.githubusercontent.com/arnabry11/cypher-tv/dist/epg.json.gz",
+    "app": {
+        "versionCode": 103,
+        "apkUrl": "https://github.com/arnabry11/cypher-tv/releases/download/v0.1.3/cypher-tv-0.1.3.apk",
+        "sha256": "8763223a7d4a103f56bbfd1735fe9a1bc865a6e19d65b8938a0e7d83b66d0f1d",
+        "notes": "Cypher TV 0.1.3"
+    }
+}
